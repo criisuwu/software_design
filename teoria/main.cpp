@@ -9,6 +9,12 @@ Goal: The first try to C++
 
 int main()
 {
-    std::cout << "Hello world in C++!\n";
+    int n;
+    float d1 = 5.523;
+    char c = 'C';
+    std::cout << d1 << "\n";
+    std::cout << "Introduce un numero: ";
+    std::cin >> n;
+    std::cout << "Tu numero es " << n << "\n";
     return 0;
 }
