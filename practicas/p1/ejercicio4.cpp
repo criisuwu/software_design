@@ -1,5 +1,5 @@
 /* ------------------------------------------------
-File: main.cpp
+File: ejercicio4.cpp
 Author: Cristina Homobono Fernández
 Date: 17/09/2025
 Goal: Draw a pyramid based on the number given

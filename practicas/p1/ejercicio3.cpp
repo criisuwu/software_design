@@ -1,5 +1,5 @@
 /* ------------------------------------------------
-File: main.cpp
+File: ejercicio3.cpp
 Author: Cristina Homobono Fernández
 Date: 17/09/2025
 Goal: Check if the numbers are multiples

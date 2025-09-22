@@ -1,5 +1,5 @@
 /* ------------------------------------------------
-File: main.cpp
+File: ejercicio2.cpp
 Author: Cristina Homobono Fernández
 Date: 17/09/2025
 Goal: Get the average mark of the given numbers

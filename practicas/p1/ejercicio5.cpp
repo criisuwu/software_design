@@ -1,5 +1,5 @@
 /* ------------------------------------------------
-File: main.cpp
+File: ejercicio5.cpp
 Author: Cristina Homobono Fernández
 Date: 17/09/2025
 Goal: Generate a random number and it stops when
@@ -28,6 +28,7 @@ int main()
             std::cout << "El numero a adivinar es mas bajo que " << guess << "\n";
         else if(guess <= num)
             std::cout << "El numero a adivinar es mas alto que " << guess << "\n";
+    }
     std::cout << num << "\n";
     return 0;
 }

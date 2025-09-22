@@ -1,5 +1,5 @@
 /* ------------------------------------------------
-File: main.cpp
+File: ejercicio1.cpp
 Author: Cristina Homobono Fernández
 Date: 17/09/2025
 Goal: Do a program that make the simple operations
