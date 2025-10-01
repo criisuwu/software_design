@@ -10,7 +10,7 @@ Goal: Do a fcatorial of a number, get the precision
 #include <iostream>
 #include <cmath>
 
-// TODO terminar bien este codigo, porque se que estoy cerca pero no jaja
+// * es una funcion para hacer el factorial del denominador
 int doFactorial(int num)
 {
     int total = 1;
@@ -30,34 +30,32 @@ int doFactorial(int num)
     return total;
 }
 
-// ! Esta es una funcion para hacer el factorial con el exponente
-int factorialExp(float num, float exp) //con esta funcion solo queda sumarle el uno del inicio de la sucesion y ya estaria
+// * Esta es una funcion para hacer el factorial con el exponente
+int factorialExp(int num, int exp)      //con esta funcion solo queda sumarle el uno del inicio de la sucesion y ya estaria
 {
     // int num;
     int i;
-    float total = 1;
-    float fact;
-    i = 1;
+    float total = 0;
+    int fact;
+    i = num;
 
+    printf("Entro en factorialexp\n");
+    printf("exo: %d\n", exp);
     while(num > 0)
     {
-        fact = doFactorial(num);
-        printf("fact: %f\n", fact);
-        printf("pow: %f", pow(exp, 1));
-        total += pow(exp, i) / fact;
-        printf("total: %f\n", total);
+        fact = doFactorial(num);        // Lo estoy haciendo de mas grande a mas pequeño
+        total += pow(exp, i) / fact;    // ! Aqui hago la suma en el orden inverso pero por alguna razon no me da bien el resultado de e^x
         num--;
-        i++;
+        i--;
     }
     return total;
 }
 
-// * Duda, preguntar si x es igual al numero de terminos en la suma o cada uno es independiente
 void getValue()
 {
-    float num;
-    float exp;
-    float total = 1;
+    int num;
+    int exp;
+    float total = 0;
     float temp;
     float fact;
 
@@ -70,10 +68,10 @@ void getValue()
     while(num > 0)
     {
         fact = factorialExp(num, exp);
-        total += 1 + fact;
+        total += fact;
         num--;
     }
-    std::cout << "El valor de e con precision " << temp << " es: " << total << "\n";
+    std::cout << "El valor de e con precision " << temp << " es: " << total << "\n"; // ! Me da demasiado alto y entiendo que el fallo puede ser en la forma en la que he plateado la formula
 }
 
 int main()

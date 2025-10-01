@@ -47,7 +47,7 @@ int main()
     auto initMins = parse_hora(horaIni);
     auto finMis = parse_hora(horaFin);
 
-    if (initMins >= finMis)
+    if (initMins >= finMis) //Pongo esta verificacion porque si pones un numero mayor primero no imprime bien las franjas horarias
     {
         std::cout << "Error: La hora de inicio debe ser anterior a la hora de fin." << std::endl;
         return 1;

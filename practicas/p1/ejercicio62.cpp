@@ -9,6 +9,7 @@ Goal: Get the value at solving the constant
 #include <iostream>
 #include <cmath>
 
+// * Es una funcion para poder hacer el factorial
 int doFactorial(int num)
 {
     int total = 1;
