@@ -31,16 +31,13 @@ int doFactorial(int num)
 }
 
 // * Esta es una funcion para hacer el factorial con el exponente
-int factorialExp(int num, int exp)      //con esta funcion solo queda sumarle el uno del inicio de la sucesion y ya estaria
+int factorialExp(int num, int exp)
 {
-    // int num;
     int i;
     float total = 0;
     int fact;
     i = num;
 
-    printf("Entro en factorialexp\n");
-    printf("exo: %d\n", exp);
     while(num > 0)
     {
         fact = doFactorial(num);        // Lo estoy haciendo de mas grande a mas pequeño
