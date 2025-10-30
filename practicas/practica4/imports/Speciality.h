@@ -5,14 +5,15 @@
 #include <string>
 
 class Speciality {
+public:
+    //Constructor
+    Speciality(const std::string& name = "");
+
+    std::string GetSpeciality() const;  //No estoy segura de si deberia de haber un setSpeciality puesto que eso lo hace el Administrator
+    void ShowSpeciality() const;
+    
 private:
     std::string name;
-
-public:
-    Speciality(const std::string& name = "");   //Constructor
-
-    std::string GetSpeciality() const;
-    void ShowSpeciality() const;
 };
 
 #endif

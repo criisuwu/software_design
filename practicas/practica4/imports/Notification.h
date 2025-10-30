@@ -5,10 +5,6 @@
 #include <iostream>
 
 class Notification {
-private:
-    std::string InfoAppointment;
-    bool State;
-
 public:
     // Constructor
     Notification(const std::string& info, bool state = false);
@@ -19,6 +15,10 @@ public:
     void sendNotification();
     bool changeState(bool newState);
     void displayNotification() const;
+
+private:
+    std::string InfoAppointment;
+    bool State;
 };
 
 #endif

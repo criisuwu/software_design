@@ -2,7 +2,7 @@
 
 // * constructor
 Speciality::Speciality(const std::string& n) {
-    name = n;
+    this->name = n;
 }
 
 // * Recibe la especialidad
