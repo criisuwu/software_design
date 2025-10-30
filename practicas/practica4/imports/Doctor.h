@@ -1,19 +1,19 @@
 //relacion con agenda
-# ifndef DOCTOR.H
-# define DOCTOR.H
+# ifndef DOCTOR_H
+# define DOCTOR_H
 
 #include <iostream>
 #include <memory>
-#include "imports/Appointment.h"
-#include "imports/Speciality.h"
+#include "Appointment.h"
+#include "Speciality.h"
 
 class Doctor {
 public:
     Doctor (const std::string& name = "",
            const std::string& idDoctor = "",
            const std::string& email = "",
-           const std::string& user,
-           const std::string& pass,
+           const std::string& user = "",
+           const std::string& pass = "",
            int number = 0,
            std::unique_ptr<Speciality> speciality = nullptr);
     std::string changeData(std::string);

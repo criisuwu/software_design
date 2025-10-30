@@ -1,18 +1,18 @@
-# ifndef PATIENT.H
-# define PATIENT.H
+# ifndef PATIENT_H
+# define PATIENT_H
 
 #include <iostream>
 #include <memory>
-#include "imports/Appointment.h"
-#include "imports/Login.h"
+#include "Appointment.h"
+#include "Login.h"
 
 class Patient {
 public:
     Patient (const std::string& name = "",
             const std::string& idPatient = "",
             const std::string& email = "",
-            const std::string& user,
-            const std::string& pass,
+            const std::string& user = "",
+            const std::string& pass = "",
             int number = 0,
             int phone = 0);
     std::string changeData(std::string);
