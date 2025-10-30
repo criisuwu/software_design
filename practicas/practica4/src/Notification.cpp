@@ -1,4 +1,4 @@
-#include "Notification.h"
+#include "../imports/Notification.h"
 
 // * Constructor
 Notification::Notification(const std::string& info, bool state) {

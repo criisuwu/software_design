@@ -1,9 +1,9 @@
 #include <iostream>
 #include <memory>
-#include "Administrator.h"
-#include "Notification.h"
-#include "Schedule.h"
-#include "Appointment.h"
+#include "imports/Administrator.h"
+#include "imports/Notification.h"
+#include "imports/Schedule.h"
+#include "imports/Appointment.h"
 
 
 // Falta crear un paciente y verificar que funcione pero tengo un error en la clase Patient
@@ -58,7 +58,6 @@ int main() {
     appointment->confirmAppointment();
     appointment->moveAppointment("2025-11-12");
     appointment->changeStatusAppointment();
-    appointment->admit();
     appointment->cancelAppointment();
     return 0;
 }

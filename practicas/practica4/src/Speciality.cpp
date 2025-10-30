@@ -1,4 +1,4 @@
-#include "imports/Speciality.h"
+#include "../imports/Speciality.h"
 
 // * constructor
 Speciality::Speciality(const std::string& n) {

@@ -1,4 +1,4 @@
-#include "Schedule.h"
+#include "../imports/Schedule.h"
 
 // * Constructor
 Schedule::Schedule(int hour, const std::string& appointment) {

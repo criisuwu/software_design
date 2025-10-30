@@ -1,4 +1,4 @@
-#include "Administrator.h"
+#include "../imports/Administrator.h"
 
 // * Constructor
 Administrator::Administrator(const std::string& id, const std::string& user, const std::string& pass,

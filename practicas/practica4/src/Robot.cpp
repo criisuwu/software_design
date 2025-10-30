@@ -1,4 +1,4 @@
-#include "imports/Robot.h"
+#include "../imports/Robot.h"
 
 // * Constructor
 Robot::Robot(const std::string& id, int pos, double spd, bool st, int dim) {

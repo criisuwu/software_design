@@ -1,4 +1,4 @@
-#include "imports/Patient.h"
+#include "../imports/Patient.h"
 
 // * Constructor
 Patient::Patient(const std::string& name, const std::string& idPatient, 

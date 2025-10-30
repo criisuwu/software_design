@@ -1,4 +1,4 @@
-#include "imports/Appointment.h"
+#include "../imports/Appointment.h"
 
 // * Constructor
 Appointment::Appointment(const std::string& date, const std::string& place, const std::string& info) {
