@@ -51,7 +51,7 @@ int main() {
         "2025-11-05", "Consultorio 3", "Chequeo general"
     );
 
-    //Verificacion de que la clae Appointment funciona
+    //Verificacion de que la clase Appointment funciona
     std::cout << "\n--- Cita ---" << std::endl;
     appointment->displayAppointment();
     appointment->seeAppointment();
@@ -61,3 +61,6 @@ int main() {
     appointment->cancelAppointment();
     return 0;
 }
+
+
+// TODO: Faltan comprobar un par de cosas con un main mas elavorado
