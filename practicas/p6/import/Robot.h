@@ -6,6 +6,7 @@
 #include <mutex> //para gestionar acciones en paralelo
 #include <vector>
 
+//  !! Para no tener que llamar a los archivos que tengo en la practica 4 y mantenerlo un poco mas simple he decidido crear estructuras con Login y Appointment
 struct Appointment {
     std::string patientName;
     std::string time;
@@ -24,7 +25,7 @@ private:
     std::chrono::steady_clock::time_point ultimaActividad;
     std::mutex mtx;
 
-    //  **MI CODIGO**
+    //  **MI CODIGO(Practica 4)**
     bool active;
     int position;
     double speed;
@@ -38,7 +39,7 @@ public:
     std::chrono::steady_clock::time_point getUltimaActividad();
     int getId();
 
-    //  **MI CODIGO**
+    //  **MI CODIGO(Practica 4)**
     void Move(int newPos);
     void PrintTicket(const std::string& ticketInfo);
     bool CheckList(const Appointment& appointment, const Login& userLogin);
