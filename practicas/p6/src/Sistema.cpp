@@ -10,7 +10,7 @@ Sistema::Sistema(int cantidadRobots) {
     }
 }
 
-void Sistema::mostrarEstados() const {
+void Sistema::showState() const {
     std::cout << "\n=== ESTADO DE LOS ROBOTS ===\n";
     for (const auto& r : robots) {
         std::cout << "Robot " << r->getId()
@@ -19,7 +19,7 @@ void Sistema::mostrarEstados() const {
     std::cout << "=============================\n";
 }
 
-void Sistema::asignarRobot(int segundos) {
+void Sistema::assingRobot(int segundos) {
     // Buscar el primer robot libre (el que lleva más tiempo sin actividad)
     auto it = std::find_if(robots.begin(), robots.end(),
         [](const std::shared_ptr<Robot>& r) { return r->getState() == "Libre"; });
@@ -32,7 +32,7 @@ void Sistema::asignarRobot(int segundos) {
     }
 }
 
-void Sistema::asignarRobot(int segundos, int idRobot) {
+void Sistema::assingRobot(int segundos, int idRobot) {
     auto it = std::find_if(robots.begin(), robots.end(),
         [idRobot](const std::shared_ptr<Robot>& r) { return r->getId() == idRobot; });
 
@@ -48,7 +48,7 @@ void Sistema::asignarRobot(int segundos, int idRobot) {
     }
 }
 
-void Sistema::forzarLibre(int idRobot) {
+void Sistema::freeRobot(int idRobot) {
     auto it = std::find_if(robots.begin(), robots.end(),
         [idRobot](const std::shared_ptr<Robot>& r) { return r->getId() == idRobot; });
 

@@ -21,10 +21,10 @@ private:
 public:
     Sistema(int cantidadRobots);
 
-    void mostrarEstados() const;
-    void asignarRobot(int segundos);
-    void asignarRobot(int segundos, int idRobot); // asigna un robot específico
-    void forzarLibre(int idRobot);                 // libera manualmente un robot
+    void showState() const;
+    void assingRobot(int segundos);
+    void assingRobot(int segundos, int idRobot); // asigna un robot específico
+    void freeRobot(int idRobot);                 // libera manualmente un robot
 
 };
 
