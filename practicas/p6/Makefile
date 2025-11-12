@@ -1,5 +1,5 @@
 NAME = robot
-SRCS = src/Robot.cpp src/main.cpp
+SRCS = src/Robot.cpp src/main.cpp src/Sistema.cpp
 
 OBJS = $(SRCS:.c=.o)
 
@@ -12,7 +12,7 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	$(RM) $(OBJS)
