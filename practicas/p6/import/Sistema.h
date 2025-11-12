@@ -23,6 +23,9 @@ public:
 
     void mostrarEstados() const;
     void asignarRobot(int segundos);
+    void asignarRobot(int segundos, int idRobot); // asigna un robot específico
+    void forzarLibre(int idRobot);                 // libera manualmente un robot
+
 };
 
 #endif

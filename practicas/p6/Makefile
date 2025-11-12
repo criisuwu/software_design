@@ -1,7 +1,7 @@
 NAME = robot
 SRCS = src/Robot.cpp src/main.cpp src/Sistema.cpp
 
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:.cpp=.o)
 
 ROBOT = robot
 
