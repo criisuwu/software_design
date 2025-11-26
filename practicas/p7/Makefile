@@ -27,13 +27,15 @@ database: sql_tools
 	@cd db && ./create_db
 
 data: sql_tools
-	@cd $(SQL_DIR) && ./insert_data
+	@cd db && ./insert_data
 
 clean:
 	$(RM) $(OBJS)
+	$(RM) db/create_db db/insert_data
 	
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) db/appointment_system.db
 
 re: fclean all
 
