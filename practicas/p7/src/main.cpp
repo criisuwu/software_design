@@ -1,288 +1,214 @@
 #include <iostream>
-#include <limits>
 #include <memory>
+#include <limits>
+#include <sqlite3.h>
+#include "../import/User.h"
+#include "../import/Patient.h"
+#include "../import/Doctor.h"
+#include "../import/Admin.h"
 #include "../import/Sistema.h"
-#include "../import/Robot.h"
 
-//  Muestra el menu principal
-void showMainMenu() {
-    std::cout << "\n=== SISTEMA DE GESTIÓN DE ROBOTS HOSPITALARIOS ===\n";
-    std::cout << "1. Mostrar estado de todos los robots\n";
-    std::cout << "2. Asignar tarea automáticamente\n";
-    std::cout << "3. Asignar tarea a robot específico\n";
-    std::cout << "4. Forzar liberación de robot\n";
-    std::cout << "5. Funciones avanzadas del robot\n";
-    std::cout << "6. Salir\n";
-    std::cout << "Seleccione una opción: ";
-}
-
-//  Como en mi codigo robot de la practica 4 tenia muchos metodos he decidido implementarlos de forma basica. Y este es el menu de esos metodos
-void showMenuRobot() {
-    std::cout << "\n=== FUNCIONES AVANZADAS DEL ROBOT ===\n";
-    std::cout << "1. Mover robot\n";
-    std::cout << "2. Generar ticket\n";
-    std::cout << "3. Verificar appointment\n";
-    std::cout << "4. Hablar\n";
-    std::cout << "5. Escanear espacio\n";
-    std::cout << "6. Verificar info\n";
-    std::cout << "7. Cambiar estado (activo/inactivo)\n";
-    std::cout << "8. Mostrar información del robot\n";
-    std::cout << "9. Volver al menú principal\n";
-    std::cout << "Seleccione una opción: ";
-}
-
-//  Limpia el buffer
 void clearBuffer() {
     std::cin.clear();
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
-//  Los casos para el menu de los metodos extra que tenia en el codigo de la practica 4
-void advancedRobot() {
-    int optionRobot;
-    bool enMenuRobot = true;
-    
-    while (enMenuRobot) {
-        showMenuRobot();
-        std::cin >> optionRobot;
+void showMainMenu() {
+    std::cout << "\n=== PLATAFORMA GESTIÓN DE CITAS ===\n";
+    std::cout << "1. Registrar nuevo usuario\n";
+    std::cout << "2. Iniciar Sesión\n";
+    std::cout << "3. Estado del Sistema de Robots\n";
+    std::cout << "4. Salir\n";
+    std::cout << "Seleccione una opción: ";
+}
+
+void robotManagementMenu(Sistema& system) {
+    int option;
+    do {
+        std::cout << "\n=== GESTIÓN DE ROBOTS ===\n";
+        std::cout << "1. Ver estado de robots\n";
+        std::cout << "2. Asignar tarea automáticamente\n";
+        std::cout << "3. Asignar tarea a robot específico\n";
+        std::cout << "4. Volver al menú principal\n";
+        std::cout << "Seleccione una opción: ";
+        std::cin >> option;
         
-        switch (optionRobot) {
-            case 1: {
-                int idRobot, newPosition;
-                std::cout << "Ingrese el ID del robot: ";
-                std::cin >> idRobot;
-                std::cout << "Ingrese la nueva posición: ";
-                std::cin >> newPosition;
-                
-                Robot robotTemp(idRobot);
-                robotTemp.Move(newPosition);
+        switch(option) {
+            case 1:
+                system.showRobotsStatus();
                 break;
-            }
-            
             case 2: {
-                int idRobot;
-                std::string ticketInfo;
-                std::cout << "Ingrese el ID del robot: ";
-                std::cin >> idRobot;
-                clearBuffer();
-                std::cout << "Ingrese la información del ticket: ";
-                std::getline(std::cin, ticketInfo);
-                
-                Robot robotTemp(idRobot);
-                robotTemp.PrintTicket(ticketInfo);
+                int seconds;
+                std::cout << "Duración de la tarea (segundos): ";
+                std::cin >> seconds;
+                system.assignAnyRobot(seconds, "Tarea general");
                 break;
             }
-            
             case 3: {
-                int idRobot;
-                Appointment appointment;
-                Login login;
-                
-                std::cout << "Ingrese el ID del robot: ";
-                std::cin >> idRobot;
-                clearBuffer();
-                
-                std::cout << "Ingrese nombre del paciente: ";
-                std::getline(std::cin, appointment.patientName);
-                std::cout << "Ingrese hora de la appointment: ";
-                std::getline(std::cin, appointment.time);
-                std::cout << "Ingrese destino: ";
-                std::getline(std::cin, appointment.destination);
-                std::cout << "Ingrese usuario: ";
-                std::getline(std::cin, login.username);
-                std::cout << "Ingrese contraseña: ";
-                std::getline(std::cin, login.password);
-                
-                Robot robotTemp(idRobot);
-                bool validAppointment = robotTemp.CheckList(appointment, login);
-                std::cout << "Cita " << (validAppointment ? "confirmada" : "rechazada") << std::endl;
+                int robotId, seconds;
+                std::cout << "ID del robot: ";
+                std::cin >> robotId;
+                std::cout << "Duración de la tarea (segundos): ";
+                std::cin >> seconds;
+                system.assignRobotTask(robotId, seconds, "Tarea específica");
                 break;
             }
-            
-            case 4: {
-                int idRobot;
-                std::string words;
-                std::cout << "Ingrese el ID del robot: ";
-                std::cin >> idRobot;
-                clearBuffer();
-                std::cout << "Ingrese lo que debe decir el robot: ";
-                std::getline(std::cin, words);
-                
-                Robot robotTemp(idRobot);
-                robotTemp.Talk(words);
-                break;
-            }
-            
-            case 5: {
-                int idRobot;
-                std::cout << "Ingrese el ID del robot: ";
-                std::cin >> idRobot;
-                
-                Robot robotTemp(idRobot);
-                bool freeSpace = robotTemp.ScanSpace();
-                std::cout << "Espacio " << (freeSpace ? "libre" : "ocupado") << std::endl;
-                break;
-            }
-            
-            case 6: {
-                int idRobot;
-                std::string info;
-                std::cout << "Ingrese el ID del robot: ";
-                std::cin >> idRobot;
-                clearBuffer();
-                std::cout << "Ingrese la info a verificar: ";
-                std::getline(std::cin, info);
-                
-                Robot robotTemp(idRobot);
-                bool validInfo = robotTemp.CheckCredential(info);
-                std::cout << "Credencial " << (validInfo ? "válida" : "inválida") << std::endl;
-                break;
-            }
-            
-            case 7: {
-                int idRobot, newState;
-                std::cout << "Ingrese el ID del robot: ";
-                std::cin >> idRobot;
-                std::cout << "Ingrese el nuevo estado (1=Activo, 0=Inactivo): ";
-                std::cin >> newState;
-                
-                Robot robotTemp(idRobot);
-                robotTemp.ChangeState(newState != 0);
-                break;
-            }
-            
-            case 8: {
-                int idRobot;
-                std::cout << "Ingrese el ID del robot: ";
-                std::cin >> idRobot;
-                
-                Robot robotTemp(idRobot);
-                robotTemp.ShowInfo();
-                break;
-            }
-            
-            case 9: {
-                enMenuRobot = false;
+            case 4:
                 std::cout << "Volviendo al menú principal...\n";
                 break;
-            }
-            
-            default: {
-                std::cout << "Opción no válida. Intente nuevamente.\n";
-                break;
-            }
+            default:
+                std::cout << "Opción no válida\n";
         }
         
-        if (optionRobot != 9) {
+        if (option != 4) {
             std::cout << "\nPresione Enter para continuar...";
             clearBuffer();
             std::cin.get();
         }
+    } while(option != 4);
+}
+
+void registerNewUser(Sistema& system) {
+    std::string username, password, role, name, email, specialty, telephone;
+    
+    std::cout << "\n=== REGISTRO DE NUEVO USUARIO ===\n";
+    std::cout << "Nombre de usuario: ";
+    std::getline(std::cin, username);
+    std::cout << "Contraseña: ";
+    std::getline(std::cin, password);
+    
+    // Validar rol
+    do {
+        std::cout << "Tipo de usuario (Doctor/Patient/Administrator): ";
+        std::getline(std::cin, role);
+        if (role != "Doctor" && role != "Patient" && role != "Administrator") {
+            std::cout << "Error: Rol debe ser Doctor, Patient o Administrator\n";
+        }
+    } while (role != "Doctor" && role != "Patient" && role != "Administrator");
+    
+    std::cout << "Nombre completo: ";
+    std::getline(std::cin, name);
+    std::cout << "Email: ";
+    std::getline(std::cin, email);
+    
+    if (role == "Doctor") {
+        std::cout << "Especialidad: ";
+        std::getline(std::cin, specialty);
+    } else if (role == "Patient") {
+        std::cout << "Teléfono: ";
+        std::getline(std::cin, telephone);
+    }
+    
+    if (system.registerUser(username, password, role, name, email, specialty, telephone)) {
+        std::cout << "✅ Usuario registrado exitosamente!\n";
+    } else {
+        std::cout << "❌ Error al registrar usuario (posiblemente el nombre de usuario ya existe)\n";
     }
 }
 
-//  El main con el menu principal y sus condiciones principales (Lo pedido para esta practica)
-int main() {
-    int numberRobots;
-    std::cout << "=== INICIALIZACIÓN DEL SISTEMA ===\n";
-    std::cout << "Ingrese la cantidad de robots a crear: ";
-    std::cin >> numberRobots;
+void loginUser(Sistema& system) {
+    std::string username, password;
     
-    if (std::cin.fail() || numberRobots <= 0) {
-        std::cout << "Error: debe ingresar un número válido mayor que 0.\n";
-        return 1;
+    std::cout << "\n=== INICIO DE SESIÓN ===\n";
+    std::cout << "Nombre de usuario: ";
+    std::getline(std::cin, username);
+    std::cout << "Contraseña: ";
+    std::getline(std::cin, password);
+    
+    std::unique_ptr<User> user = system.loginUser(username, password);
+    if (user) {
+        std::cout << "✅ Login exitoso. Bienvenido ";
+        if (!user->getRole().empty()) {
+            std::cout << user->getRole();
+        }
+        std::cout << "!\n";
+        
+        // Polimorfismo en acción - llama al showMenu() correcto
+        user->showMenu();
+    } else {
+        std::cout << "❌ Usuario o contraseña incorrectos\n";
+    }
+}
+
+void demonstratePolymorphism() {
+    std::cout << "\n=== DEMOSTRACIÓN DE POLIMORFISMO ===\n";
+    
+    // Crear diferentes tipos de usuarios
+    std::unique_ptr<User> patient = std::make_unique<Patient>(
+        1, "paciente_ejemplo", "pass123", "Juan Pérez", "juan@email.com", "123456789");
+    
+    std::unique_ptr<User> doctor = std::make_unique<Doctor>(
+        2, "doctor_ejemplo", "pass123", "Dr. García", "garcia@hospital.com", "Cardiología");
+    
+    std::unique_ptr<User> admin = std::make_unique<Admin>(
+        3, "admin_ejemplo", "pass123", "Admin Principal", "admin@hospital.com");
+    
+    // Array de punteros a User - polimorfismo
+    std::vector<std::unique_ptr<User>> users;
+    users.push_back(std::move(patient));
+    users.push_back(std::move(doctor));
+    users.push_back(std::move(admin));
+    
+    // Mostrar información de cada usuario
+    for (const auto& user : users) {
+        std::cout << "\n--- Información del Usuario ---\n";
+        user->displayInfo();
+        std::cout << "Tipo real: " << typeid(*user).name() << "\n";
     }
     
-    // Crear el system con la cantidad especificada de robots
-    Sistema system(numberRobots);
-    std::cout << "Sistema inicializado con " << numberRobots << " robots.\n";
+    std::cout << "\nPresione Enter para continuar...";
+    clearBuffer();
+    std::cin.get();
+}
+
+int main() {
+    Sistema system;
+    
+    // Inicializar sistema de robots
+    system.initializeRobots(3);
+    
+    std::cout << "========================================\n";
+    std::cout << "   SISTEMA DE GESTIÓN DE CITAS MÉDICAS\n";
+    std::cout << "   Con SQLite3, Herencia y Polimorfismo\n";
+    std::cout << "========================================\n";
     
     int option;
-    bool program = true;
     
-    while (program) {
+    do {
         showMainMenu();
         std::cin >> option;
+        clearBuffer();
         
-        if (std::cin.fail()) {
-            std::cout << "Error: ingrese un número válido.\n";
-            clearBuffer();
-            continue;
+        switch(option) {
+            case 1:
+                registerNewUser(system);
+                break;
+            
+            case 2:
+                loginUser(system);
+                break;
+            
+            case 3:
+                robotManagementMenu(system);
+                break;
+                
+            case 4:
+                std::cout << "\n¡Gracias por usar el sistema! Hasta pronto.\n";
+                break;
+                
+            case 99: // Opción secreta para demostración
+                demonstratePolymorphism();
+                break;
+                
+            default:
+                std::cout << "❌ Opción no válida. Por favor, seleccione 1-4.\n";
         }
         
-        switch (option) {
-            case 1: {
-                system.showState();
-                break;
-            }
-            
-            case 2: {
-                int seconds;
-                std::cout << "Ingrese la duración de la tarea (seconds): ";
-                std::cin >> seconds;
-                
-                if (std::cin.fail() || seconds < 0) {
-                    std::cout << "Error: ingrese un número válido de seconds.\n";
-                    clearBuffer();
-                } else {
-                    system.assingRobot(seconds);
-                }
-                break;
-            }
-            
-            case 3: {
-                int idRobot, seconds;
-                std::cout << "Ingrese el ID del robot: ";
-                std::cin >> idRobot;
-                std::cout << "Ingrese la duración de la tarea (seconds): ";
-                std::cin >> seconds;
-                
-                if (std::cin.fail() || seconds < 0 || idRobot <= 0) {
-                    std::cout << "Error: ingrese valores válidos.\n";
-                    clearBuffer();
-                } else {
-                    system.assingRobot(seconds, idRobot);
-                }
-                break;
-            }
-            
-            case 4: {
-                int idRobot;
-                std::cout << "Ingrese el ID del robot a liberar: ";
-                std::cin >> idRobot;
-                
-                if (std::cin.fail() || idRobot <= 0) {
-                    std::cout << "Error: ingrese un ID válido.\n";
-                    clearBuffer();
-                } else {
-                    system.freeRobot(idRobot);
-                }
-                break;
-            }
-            
-            case 5: {
-                advancedRobot();
-                break;
-            }
-            
-            case 6: {
-                program = false;
-                std::cout << "Saliendo del system... ¡Hasta pronto!\n";
-                break;
-            }
-            
-            default: {
-                std::cout << "Opción no válida. Intente nuevamente.\n";
-                break;
-            }
-        }
-        
-        if (option != 6 && option != 5) {
+        if (option != 4 && option != 99) {
             std::cout << "\nPresione Enter para continuar...";
-            clearBuffer();
             std::cin.get();
         }
-    }
+    } while(option != 4);
     
     return 0;
 }

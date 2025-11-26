@@ -1,30 +1,23 @@
-#ifndef ADMINISTRATOR_H
-#define ADMINISTRATOR_H
+#ifndef ADMIN_H
+#define ADMIN_H
 
-#include <string>
+#include "User.h"
 #include <iostream>
+#include <string>
 
-class Administrator {
+class Admin : public User {
 public:
-    // Constructor
-    Administrator(const std::string& id, const std::string& user, const std::string& pass,
-                  const std::string& tel, const std::string& email, const std::string& name);
-
-    std::string getIdAdministrator() const;
-    std::string getUser() const;
-    std::string getName() const;
-    void assignSpeciality(const std::string& speciality);
-    void manageSchedule();
-    void manageCensus();
-    void displayInfo() const;
+    Admin(int id = 0, const std::string& username = "", const std::string& password = "", 
+          const std::string& name = "", const std::string& email = "");
     
-private:
-    std::string IdAdministrator;
-    std::string User;           //Esto y la password creo que lo podria sacar anidandolo con login
-    std::string Password;
-    std::string Telephone;
-    std::string Email;
-    std::string Name;
+    void showMenu() override;
+    void displayInfo() const override;
+    
+    // Funcionalidades específicas del administrador
+    void createDoctor();
+    void assignSchedule();
+    void viewDoctorsList();
+    void viewAllUsers();
 };
 
 #endif

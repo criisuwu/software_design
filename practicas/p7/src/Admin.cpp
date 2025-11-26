@@ -1,47 +1,69 @@
-#include "../imports/Administrator.h"
+#include "../import/Admin.h"
+#include <iostream>
 
-// * Constructor
-Administrator::Administrator(const std::string& id, const std::string& user, const std::string& pass,
-                             const std::string& tel, const std::string& email, const std::string& name)
-{
-    this->IdAdministrator = id;
-    this->User = user;
-    this->Password = pass;
-    this->Telephone = tel;
-    this->Email = email;
-    this->Name = name;
+Admin::Admin(int id, const std::string& username, const std::string& password, 
+             const std::string& name, const std::string& email)
+    : User(id, username, password, "Administrator", name, email) {}
+
+void Admin::showMenu() {
+    int option;
+    do {
+        std::cout << "\n=== MENÚ ADMINISTRADOR ===\n";
+        std::cout << "1. Crear Doctor\n";
+        std::cout << "2. Asignar Agenda a Doctor\n";
+        std::cout << "3. Ver Lista de Doctores\n";
+        std::cout << "4. Ver Todos los Usuarios\n";
+        std::cout << "5. Ver Mi Información\n";
+        std::cout << "6. Cerrar Sesión\n";
+        std::cout << "Seleccione una opción: ";
+        std::cin >> option;
+        
+        switch(option) {
+            case 1:
+                createDoctor();
+                break;
+            case 2:
+                assignSchedule();
+                break;
+            case 3:
+                viewDoctorsList();
+                break;
+            case 4:
+                viewAllUsers();
+                break;
+            case 5:
+                displayInfo();
+                break;
+            case 6:
+                std::cout << "Cerrando sesión...\n";
+                break;
+            default:
+                std::cout << "Opción no válida\n";
+        }
+    } while(option != 6);
 }
 
-// * Gets de la informacion
-std::string Administrator::getIdAdministrator() const { return IdAdministrator; }
-std::string Administrator::getUser() const {
-    return User;
-}
-std::string Administrator::getName() const {
-    return Name;
+void Admin::displayInfo() const {
+    std::cout << "\n=== INFORMACIÓN DEL ADMINISTRADOR ===\n";
+    User::displayInfo();
 }
 
-
-// * Asignar la especialidad (Solo a los doctores)
-void Administrator::assignSpeciality(const std::string& speciality) {
-    std::cout << "Asignando especialidad: " << speciality << " al personal médico..." << std::endl;
+void Admin::createDoctor() {
+    std::cout << "\n--- Crear Doctor ---\n";
+    std::cout << "Funcionalidad en desarrollo...\n";
 }
 
-// * Mirar el schedule
-void Administrator::manageSchedule() {
-    std::cout << "El administrador " << Name << " está gestionando el horario general." << std::endl;
+void Admin::assignSchedule() {
+    std::cout << "\n--- Asignar Agenda ---\n";
+    std::cout << "Funcionalidad en desarrollo...\n";
 }
 
-// * Gestionar el numero de doctores
-void Administrator::manageCensus() {
-    std::cout << "El administrador " << Name << " está actualizando el censo de pacientes." << std::endl;
+void Admin::viewDoctorsList() {
+    std::cout << "\n--- Lista de Doctores ---\n";
+    std::cout << "Funcionalidad en desarrollo...\n";
 }
 
-void Administrator::displayInfo() const {
-    std::cout << "\t*Info del administrador*\t" << std::endl;
-    std::cout << "ID: " << IdAdministrator << std::endl;
-    std::cout << "Usuario: " << User << std::endl;
-    std::cout << "Nombre: " << Name << std::endl;
-    std::cout << "Teléfono: " << Telephone << std::endl;
-    std::cout << "Email: " << Email << std::endl;
+void Admin::viewAllUsers() {
+    std::cout << "\n--- Todos los Usuarios ---\n";
+    std::cout << "Funcionalidad en desarrollo...\n";
 }

@@ -1,31 +1,42 @@
 #ifndef SISTEMA_H
 #define SISTEMA_H
 
-#include <set>
-#include <vector>
+#include <sqlite3.h>
 #include <memory>
+#include <vector>
+#include <algorithm>
+#include "User.h"
+#include "Patient.h"
+#include "Doctor.h"
+#include "Admin.h"
 #include "Robot.h"
 
-// Comparador para ordenar los robots por su última actividad
-struct CompararPorActividad {
-    bool operator()(const std::shared_ptr<Robot>& a, const std::shared_ptr<Robot>& b) const {
-        return a->getUltimaActividad() < b->getUltimaActividad();
-    }
-};
-
-// Clase Sistema: gestiona los robots del hospitala
 class Sistema {
 private:
-    std::set<std::shared_ptr<Robot>, CompararPorActividad> robots;
-
+    sqlite3* db;
+    std::vector<std::shared_ptr<Robot>> robots;
+    
 public:
-    Sistema(int cantidadRobots);
-
-    void showState() const;
-    void assingRobot(int segundos);
-    void assingRobot(int segundos, int idRobot); // asigna un robot específico
-    void freeRobot(int idRobot);                 // libera manualmente un robot
-
+    Sistema();
+    ~Sistema();
+    
+    // Gestión de base de datos
+    bool connectDatabase();
+    bool registerUser(const std::string& username, const std::string& password, const std::string& role,
+                     const std::string& name = "", const std::string& email = "", 
+                     const std::string& specialty = "", const std::string& telephone = "");
+    std::unique_ptr<User> loginUser(const std::string& username, const std::string& password);
+    
+    // Gestión de robots
+    void initializeRobots(int count);
+    void showRobotsStatus() const;
+    void assignRobotTask(int robotId, int seconds, const std::string& taskType);
+    void assignAnyRobot(int seconds, const std::string& taskType);
+    void freeRobot(int robotId);
+    
+    // Funcionalidades administrativas
+    std::vector<std::shared_ptr<User>> getDoctorsList() const;
+    std::vector<std::shared_ptr<User>> getAllUsers() const;
 };
 
 #endif
