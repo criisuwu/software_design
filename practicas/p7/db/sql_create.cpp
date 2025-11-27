@@ -30,31 +30,16 @@ int main() {
         "ID INTEGER PRIMARY KEY AUTOINCREMENT, "
         "USERNAME TEXT NOT NULL UNIQUE, "
         "PASSWORD TEXT NOT NULL, "
-        "ROLE TEXT NOT NULL CHECK(ROLE IN ('Doctor','Patient','Administrator'))"
+        "ROLE TEXT NOT NULL CHECK(ROLE IN ('Doctor','Patient','Administrator')), "
+        "NAME TEXT NOT NULL, "
+        "EMAIL TEXT, "
+        "SPECIALTY TEXT, "
+        "TELEPHONE TEXT"
         ");";
 
     rc = sqlite3_exec(db, sqlCreateUser, nullptr, nullptr, &errMsg);
     if (rc != SQLITE_OK) {
         std::cerr << "Error creando la tabla USER: " << errMsg << "\n";
-        sqlite3_free(errMsg);
-        sqlite3_close(db);
-        return 1;
-    }
-
-    // Sentencia para crear la tabla USER_DETAILS (información adicional)
-    const char *sqlCreateUserDetails =
-        "CREATE TABLE IF NOT EXISTS USER_DETAILS ("
-        "USER_ID INTEGER PRIMARY KEY, "
-        "NAME TEXT NOT NULL, "
-        "EMAIL TEXT, "
-        "SPECIALTY TEXT, "  // Solo para doctores
-        "TELEPHONE TEXT, "  // Solo para pacientes
-        "FOREIGN KEY(USER_ID) REFERENCES USER(ID) ON DELETE CASCADE"
-        ");";
-
-    rc = sqlite3_exec(db, sqlCreateUserDetails, nullptr, nullptr, &errMsg);
-    if (rc != SQLITE_OK) {
-        std::cerr << "Error creando la tabla USER_DETAILS: " << errMsg << "\n";
         sqlite3_free(errMsg);
         sqlite3_close(db);
         return 1;

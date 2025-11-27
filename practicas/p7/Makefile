@@ -24,10 +24,10 @@ sql_tools: $(SQL)
 	$(CC) $(CFLAGS) db/sql_insert.cpp -o db/insert_data $(LIBS)
 
 database: sql_tools
-	@cd db && ./create_db
+	@./db/create_db
 
 data: sql_tools
-	@cd db && ./insert_data
+	@./db/insert_data
 
 clean:
 	$(RM) $(OBJS)
@@ -35,7 +35,7 @@ clean:
 	
 fclean: clean
 	$(RM) $(NAME)
-	$(RM) db/appointment_system.db
+	$(RM) appointment_system.db
 
 re: fclean all
 
