@@ -25,39 +25,58 @@ int main() {
         sqlite3_free(mensajeError);
     }
 
-    /* // Crear la tabla PERSONAS (igual que tu código original)
-    std::string sqlPersonas = "CREATE TABLE IF NOT EXISTS PERSONAS("
-                              "ID INTEGER PRIMARY KEY AUTOINCREMENT, "
-                              "NOMBRE TEXT NOT NULL, "
-                              "EDAD INT NOT NULL);";
+    // // Crear la tabla PERSONAS (igual que tu código original)
+    // std::string sqlPersonas = "CREATE TABLE IF NOT EXISTS PERSONAS("
+    //                           "ID INTEGER PRIMARY KEY AUTOINCREMENT, "
+    //                           "NOMBRE TEXT NOT NULL, "
+    //                           "EDAD INT NOT NULL);";
 
-    exit = sqlite3_exec(db, sqlPersonas.c_str(), NULL, 0, &mensajeError);
+    // exit = sqlite3_exec(db, sqlPersonas.c_str(), NULL, 0, &mensajeError);
+
+    // if (exit != SQLITE_OK) {
+    //     std::cerr << "Error al crear la tabla PERSONAS: " << mensajeError << std::endl;
+    //     sqlite3_free(mensajeError);
+    // } else {
+    //     std::cout << "Tabla PERSONAS creada correctamente." << std::endl;
+    // }
+
+    // // Crear una nueva tabla PEDIDOS con Foreign Key a PERSONAS
+    // std::string sqlPedidos = "CREATE TABLE IF NOT EXISTS PEDIDOS("
+    //                          "ID INTEGER PRIMARY KEY AUTOINCREMENT, "
+    //                          "DESCRIPCION TEXT NOT NULL, "
+    //                          "PRECIO REAL NOT NULL, "
+    //                          "PERSONA_ID INTEGER NOT NULL, "
+    //                          "FOREIGN KEY (PERSONA_ID) REFERENCES PERSONAS(ID) "
+    //                          "ON DELETE CASCADE "
+    //                          "ON UPDATE CASCADE);";
+
+    // exit = sqlite3_exec(db, sqlPedidos.c_str(), NULL, 0, &mensajeError);
+
+    // if (exit != SQLITE_OK) {
+    //     std::cerr << "Error al crear la tabla PEDIDOS: " << mensajeError << std::endl;
+    //     sqlite3_free(mensajeError);
+    // } else {
+    //     std::cout << "Tabla PEDIDOS creada correctamente con Foreign Key a PERSONAS." << std::endl;
+    // }
+
+
+    std::string sqlDirecciones = "CREATE TABLE IF NOT EXISTS DIRECCIONES("
+                                 "ID INTEGER PRIMARY KEY AUTOINCREMENT, "
+                                 "CALLE TEXT NOT NULL, "
+                                 "CIUDAD TEXT NOT NULL, "
+                                 "PERSONA_ID INTEGER, "
+                                 "FOREIGN KEY (PERSONA_ID) REFERENCES PERSONAS(ID) "
+                                 "ON DELETE SET NULL "
+                                 "ON UPDATE CASCADE);";
+
+    exit = sqlite3_exec(db, sqlDirecciones.c_str(), NULL, 0, &mensajeError);
 
     if (exit != SQLITE_OK) {
-        std::cerr << "Error al crear la tabla PERSONAS: " << mensajeError << std::endl;
+        std::cerr << "Error al crear la tabla DIRECCIONES: " << mensajeError << std::endl;
         sqlite3_free(mensajeError);
     } else {
-        std::cout << "Tabla PERSONAS creada correctamente." << std::endl;
+        std::cout << "Tabla DIRECCIONES creada correctamente con Foreign Key a PERSONAS." << std::endl;
     }
-
-    // Crear una nueva tabla PEDIDOS con Foreign Key a PERSONAS
-    std::string sqlPedidos = "CREATE TABLE IF NOT EXISTS PEDIDOS("
-                             "ID INTEGER PRIMARY KEY AUTOINCREMENT, "
-                             "DESCRIPCION TEXT NOT NULL, "
-                             "PRECIO REAL NOT NULL, "
-                             "PERSONA_ID INTEGER NOT NULL, "
-                             "FOREIGN KEY (PERSONA_ID) REFERENCES PERSONAS(ID) "
-                             "ON DELETE CASCADE "
-                             "ON UPDATE CASCADE);";
-
-    exit = sqlite3_exec(db, sqlPedidos.c_str(), NULL, 0, &mensajeError);
-
-    if (exit != SQLITE_OK) {
-        std::cerr << "Error al crear la tabla PEDIDOS: " << mensajeError << std::endl;
-        sqlite3_free(mensajeError);
-    } else {
-        std::cout << "Tabla PEDIDOS creada correctamente con Foreign Key a PERSONAS." << std::endl;
-    } */
 
     // Cerrar la base de datos
     sqlite3_close(db);
