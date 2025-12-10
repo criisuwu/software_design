@@ -1,8 +1,8 @@
 <map id="Sistema::connectDatabase" name="Sistema::connectDatabase">
-<area shape="rect" id="Node000001" title=" " alt="" coords="763,80,943,105"/>
-<area shape="rect" id="Node000002" href="$classSistema.html#a815b07845ef6b03247b239333fe75e28" title=" " alt="" coords="588,80,715,105"/>
+<area shape="rect" id="Node000001" title="Conecta el sistema a la base de datos SQLite." alt="" coords="763,80,943,105"/>
+<area shape="rect" id="Node000002" href="$classSistema.html#a815b07845ef6b03247b239333fe75e28" title="Constructor de la clase Sistema." alt="" coords="588,80,715,105"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="749,95,715,95,715,90,749,90"/>
-<area shape="rect" id="Node000003" href="$classSistema.html#ae6f4460ef7164a0c4b77b072e22c8db4" title=" " alt="" coords="393,80,540,105"/>
+<area shape="rect" id="Node000003" href="$classSistema.html#ae6f4460ef7164a0c4b77b072e22c8db4" title="Obtiene la instancia única del sistema (Singleton)." alt="" coords="393,80,540,105"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="574,95,541,95,541,90,574,90"/>
 <area shape="rect" id="Node000004" href="$classAdmin.html#a6fd079434d5bdc14a2c195e42687039e" title=" " alt="" coords="185,5,344,31"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="424,77,344,45,310,33,312,28,346,39,426,72"/>

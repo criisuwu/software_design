@@ -1,11 +1,11 @@
 <map id="Admin::assignSchedule" name="Admin::assignSchedule">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,42,164,67"/>
-<area shape="rect" id="Node000002" href="$classSistema.html#a6c0b070e337e25c0a9f25d60570a7eeb" title=" " alt="" coords="212,5,396,45"/>
+<area shape="rect" id="Node000002" href="$classSistema.html#a6c0b070e337e25c0a9f25d60570a7eeb" title="Asigna un horario laboral a un médico." alt="" coords="212,5,396,45"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,41,198,37,199,42,165,47"/>
-<area shape="rect" id="Node000003" href="$classSistema.html#ae6f4460ef7164a0c4b77b072e22c8db4" title=" " alt="" coords="231,70,377,95"/>
+<area shape="rect" id="Node000003" href="$classSistema.html#ae6f4460ef7164a0c4b77b072e22c8db4" title="Obtiene la instancia única del sistema (Singleton)." alt="" coords="231,70,377,95"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="165,62,217,69,216,74,164,67"/>
-<area shape="rect" id="Node000004" href="$classSistema.html#a815b07845ef6b03247b239333fe75e28" title=" " alt="" coords="444,70,571,95"/>
+<area shape="rect" id="Node000004" href="$classSistema.html#a815b07845ef6b03247b239333fe75e28" title="Constructor de la clase Sistema." alt="" coords="444,70,571,95"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="378,80,430,80,430,85,378,85"/>
-<area shape="rect" id="Node000005" href="$classSistema.html#a7ac408e57125975eff9ee9df0835041c" title=" " alt="" coords="619,70,799,95"/>
+<area shape="rect" id="Node000005" href="$classSistema.html#a7ac408e57125975eff9ee9df0835041c" title="Conecta el sistema a la base de datos SQLite." alt="" coords="619,70,799,95"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="571,80,605,80,605,85,571,85"/>
 </map>

@@ -2,6 +2,11 @@
 \hypertarget{classSistema}{}\label{classSistema}\index{Sistema@{Sistema}}
 
 
+Clase principal encargada de gestionar el sistema, incluyendo la base de datos, el inicio de sesión, registro de usuarios y administración de robots.  
+
+
+
+
 {\ttfamily \#include $<$Sistema.\+h$>$}
 
 
@@ -18,54 +23,56 @@ Collaboration diagram for Sistema\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classSistema_a815b07845ef6b03247b239333fe75e28}{Sistema}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Constructor de la clase \doxylink{classSistema}{Sistema}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classSistema_aafc86e0f2c3d734fb4c0985f70c27a1a}{\texorpdfstring{$\sim$}{\string~}\+Sistema}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor del sistema. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classSistema_a7ac408e57125975eff9ee9df0835041c}{connect\+Database}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Conecta el sistema a la base de datos SQLite. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classSistema_a9366045d0285940588214d310432f02c}{register\+User}} (const std\+::string \&username, const std\+::string \&password, const std\+::string \&role, const std\+::string \&name="{}"{}, const std\+::string \&email="{}"{}, const std\+::string \&specialty="{}"{}, const std\+::string \&telephone="{}"{})
-\item 
+\begin{DoxyCompactList}\small\item\em Registra un nuevo usuario en la base de datos. \end{DoxyCompactList}\item 
 std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classUser}{User}} $>$ \mbox{\hyperlink{classSistema_a47d1acd84ef5cd60735f821f303d3c80}{login\+User}} (const std\+::string \&username, const std\+::string \&password)
-\item 
+\begin{DoxyCompactList}\small\item\em Autentica un usuario mediante sus credenciales. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSistema_ae73f607f7499295c3d838f0804298058}{initialize\+Robots}} (int count)
-\item 
+\begin{DoxyCompactList}\small\item\em Inicializa una cantidad específica de robots dentro del sistema. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSistema_a436062bec22de4d3b31b97a8be693ae8}{show\+Robots\+Status}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Muestra el estado actual de todos los robots en el sistema. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSistema_ab441c045868f9835285de2ac160fa8af}{assign\+Robot\+Task}} (int robot\+Id, int seconds, const std\+::string \&task\+Type)
-\item 
+\begin{DoxyCompactList}\small\item\em Asigna una tarea a un robot específico. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSistema_a8f94144d7165754eaa871512469039ae}{assign\+Any\+Robot}} (int seconds, const std\+::string \&task\+Type)
-\item 
+\begin{DoxyCompactList}\small\item\em Asigna una tarea al primer robot disponible. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classSistema_a8160e9638ddcff4971a961f892a5fbc9}{free\+Robot}} (int robot\+Id)
-\item 
+\begin{DoxyCompactList}\small\item\em Libera un robot que haya terminado su trabajo. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUser}{User}} $>$ $>$ \mbox{\hyperlink{classSistema_a9b25934d304fb47644608d6ca3128e00}{get\+Doctors\+List}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Obtiene la lista de doctores registrados. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUser}{User}} $>$ $>$ \mbox{\hyperlink{classSistema_a10fad5f3abeee0871c9a4761468aa4a4}{get\+All\+Users}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Obtiene la lista completa de usuarios del sistema. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classSistema_a6c0b070e337e25c0a9f25d60570a7eeb}{assign\+Schedule\+To\+Doctor}} (int id\+Doctor, const std\+::string \&day, const std\+::string \&start, const std\+::string \&end)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Asigna un horario laboral a un médico. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{classSistema}{Sistema}} \& \mbox{\hyperlink{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4}{get\+Instance}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Obtiene la instancia única del sistema (Singleton). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 sqlite3 \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}
-\item 
+\begin{DoxyCompactList}\small\item\em Puntero al objeto de la base de datos SQLite. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRobot}{Robot}} $>$ $>$ \mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Lista de robots administrados por el sistema. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{classSistema}{Sistema}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{instance}} = nullptr
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Instancia única del sistema (patrón Singleton). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Clase principal encargada de gestionar el sistema, incluyendo la base de datos, el inicio de sesión, registro de usuarios y administración de robots. 
 
+Esta clase implementa el patrón Singleton para asegurar que solo exista una instancia global del sistema. Permite interactuar con la base de datos SQLite, registrar y autenticar usuarios, así como administrar las funcionalidades relacionadas con los robots. 
 
-Definition at line \mbox{\hyperlink{Sistema_8h_source_l00014}{14}} of file \mbox{\hyperlink{Sistema_8h_source}{Sistema.\+h}}.
+Definition at line \mbox{\hyperlink{Sistema_8h_source_l00024}{24}} of file \mbox{\hyperlink{Sistema_8h_source}{Sistema.\+h}}.
 
 
 
@@ -77,6 +84,10 @@ Definition at line \mbox{\hyperlink{Sistema_8h_source_l00014}{14}} of file \mbox
 {\footnotesize\ttfamily Sistema\+::\+Sistema (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
+
+Constructor de la clase \doxylink{classSistema}{Sistema}. 
+
+Inicializa valores por defecto y prepara la estructura del sistema. 
 
 Definition at line \mbox{\hyperlink{Sistema_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{Sistema_8cpp_source}{Sistema.\+cpp}}.
 
@@ -119,6 +130,10 @@ Here is the caller graph for this function\+:
 
 
 
+Destructor del sistema. 
+
+Libera la memoria asociada y cierra la conexión con la base de datos. 
+
 Definition at line \mbox{\hyperlink{Sistema_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{Sistema_8cpp_source}{Sistema.\+cpp}}.
 
 
@@ -143,6 +158,22 @@ References \mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}
 \doxysubsubsection{\texorpdfstring{assignAnyRobot()}{assignAnyRobot()}}
 {\footnotesize\ttfamily void Sistema\+::assign\+Any\+Robot (\begin{DoxyParamCaption}\item[{int}]{seconds,  }\item[{const std\+::string \&}]{task\+Type }\end{DoxyParamCaption})}
 
+
+
+Asigna una tarea al primer robot disponible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seconds} & Duración de la tarea en segundos. \\
+\hline
+{\em task\+Type} & Tipo de tarea.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & Si no hay robots disponibles. \\
+\hline
+\end{DoxyExceptions}
 
 
 Definition at line \mbox{\hyperlink{Sistema_8cpp_source_l00145}{145}} of file \mbox{\hyperlink{Sistema_8cpp_source}{Sistema.\+cpp}}.
@@ -184,6 +215,24 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{assignRobotTask()}{assignRobotTask()}}
 {\footnotesize\ttfamily void Sistema\+::assign\+Robot\+Task (\begin{DoxyParamCaption}\item[{int}]{robot\+Id,  }\item[{int}]{seconds,  }\item[{const std\+::string \&}]{task\+Type }\end{DoxyParamCaption})}
 
+
+
+Asigna una tarea a un robot específico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em robot\+Id} & ID del robot. \\
+\hline
+{\em seconds} & Duración estimada de la tarea en segundos. \\
+\hline
+{\em task\+Type} & Tipo de tarea asignada.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & Si el robot\+Id no corresponde a ningún robot. \\
+\hline
+\end{DoxyExceptions}
 
 
 Definition at line \mbox{\hyperlink{Sistema_8cpp_source_l00130}{130}} of file \mbox{\hyperlink{Sistema_8cpp_source}{Sistema.\+cpp}}.
@@ -228,6 +277,29 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{assignScheduleToDoctor()}{assignScheduleToDoctor()}}
 {\footnotesize\ttfamily bool Sistema\+::assign\+Schedule\+To\+Doctor (\begin{DoxyParamCaption}\item[{int}]{id\+Doctor,  }\item[{const std\+::string \&}]{day,  }\item[{const std\+::string \&}]{start,  }\item[{const std\+::string \&}]{end }\end{DoxyParamCaption})}
 
+
+
+Asigna un horario laboral a un médico. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Doctor} & ID del médico. \\
+\hline
+{\em day} & Día asignado. \\
+\hline
+{\em start} & Hora de inicio. \\
+\hline
+{\em end} & Hora de fin.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si el horario fue asignado correctamente.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classDatabaseError}{Database\+Error}} & Si ocurre un error al ejecutar la consulta SQL. \\
+\hline
+\end{DoxyExceptions}
 
 
 Definition at line \mbox{\hyperlink{SistemaUtils_8cpp_source_l00075}{75}} of file \mbox{\hyperlink{SistemaUtils_8cpp_source}{Sistema\+Utils.\+cpp}}.
@@ -284,6 +356,20 @@ Here is the caller graph for this function\+:
 
 
 
+Conecta el sistema a la base de datos SQLite. 
+
+\begin{DoxyReturn}{Returns}
+true si la conexión fue exitosa. 
+
+false si ocurrió un error al abrir la base de datos. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classDatabaseError}{Database\+Error}} & Si SQLite devuelve un error de ejecución. \\
+\hline
+\end{DoxyExceptions}
+
+
 Definition at line \mbox{\hyperlink{Sistema_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{Sistema_8cpp_source}{Sistema.\+cpp}}.
 
 
@@ -327,6 +413,20 @@ Here is the caller graph for this function\+:
 
 
 
+Libera un robot que haya terminado su trabajo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em robot\+Id} & ID del robot a liberar.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::out\+\_\+of\+\_\+range} & Si el robot\+Id es inválido. \\
+\hline
+\end{DoxyExceptions}
+
+
 Definition at line \mbox{\hyperlink{Sistema_8cpp_source_l00157}{157}} of file \mbox{\hyperlink{Sistema_8cpp_source}{Sistema.\+cpp}}.
 
 
@@ -354,6 +454,13 @@ References \mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robo
 \doxysubsubsection{\texorpdfstring{getAllUsers()}{getAllUsers()}}
 {\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUser}{User}} $>$ $>$ Sistema\+::get\+All\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+
+
+Obtiene la lista completa de usuarios del sistema. 
+
+\begin{DoxyReturn}{Returns}
+Vector de punteros a objetos \doxylink{classUser}{User}. 
+\end{DoxyReturn}
 
 
 Definition at line \mbox{\hyperlink{SistemaUtils_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{SistemaUtils_8cpp_source}{Sistema\+Utils.\+cpp}}.
@@ -425,6 +532,13 @@ Here is the caller graph for this function\+:
 
 
 
+Obtiene la lista de doctores registrados. 
+
+\begin{DoxyReturn}{Returns}
+Vector de punteros a objetos \doxylink{classUser}{User} con rol de doctor. 
+\end{DoxyReturn}
+
+
 Definition at line \mbox{\hyperlink{SistemaUtils_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{SistemaUtils_8cpp_source}{Sistema\+Utils.\+cpp}}.
 
 
@@ -483,14 +597,23 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{Sistema_8h_source_l00024}{24}} of file \mbox{\hyperlink{Sistema_8h_source}{Sistema.\+h}}.
+Obtiene la instancia única del sistema (Singleton). 
+
+Si la instancia aún no existe, la crea automáticamente.
+
+\begin{DoxyReturn}{Returns}
+Referencia a la instancia única del sistema. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{Sistema_8h_source_l00060}{60}} of file \mbox{\hyperlink{Sistema_8h_source}{Sistema.\+h}}.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{instance}})\ \mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{instance}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classSistema_a815b07845ef6b03247b239333fe75e28}{Sistema}}();}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{instance}};}
-\DoxyCodeLine{00027\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{instance}})\ \mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{instance}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classSistema_a815b07845ef6b03247b239333fe75e28}{Sistema}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{instance}};}
+\DoxyCodeLine{00063\ \ \ \ \ \}}
 
 \end{DoxyCode}
 
@@ -523,6 +646,15 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{initializeRobots()}{initializeRobots()}}
 {\footnotesize\ttfamily void Sistema\+::initialize\+Robots (\begin{DoxyParamCaption}\item[{int}]{count }\end{DoxyParamCaption})}
 
+
+
+Inicializa una cantidad específica de robots dentro del sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em count} & Cantidad de robots a crear. \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line \mbox{\hyperlink{Sistema_8cpp_source_l00115}{115}} of file \mbox{\hyperlink{Sistema_8cpp_source}{Sistema.\+cpp}}.
@@ -560,6 +692,27 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{loginUser()}{loginUser()}}
 {\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classUser}{User}} $>$ Sistema\+::login\+User (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username,  }\item[{const std\+::string \&}]{password }\end{DoxyParamCaption})}
 
+
+
+Autentica un usuario mediante sus credenciales. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Nombre de usuario. \\
+\hline
+{\em password} & Contraseña del usuario.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Puntero único al objeto \doxylink{classUser}{User} correspondiente al rol detectado.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classInvalidCredentialsError}{Invalid\+Credentials\+Error}} & Si el usuario o la contraseña no coinciden. \\
+\hline
+{\em \doxylink{classDatabaseError}{Database\+Error}} & Si ocurre un error al consultar la base de datos. \\
+\hline
+\end{DoxyExceptions}
 
 
 Definition at line \mbox{\hyperlink{Sistema_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{Sistema_8cpp_source}{Sistema.\+cpp}}.
@@ -641,6 +794,37 @@ Here is the caller graph for this function\+:
 
 
 
+Registra un nuevo usuario en la base de datos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em username} & Nombre de usuario. \\
+\hline
+{\em password} & Contraseña del usuario. \\
+\hline
+{\em role} & Rol del usuario (e.\+g., "{}doctor"{}, "{}patient"{}, "{}admin"{}). \\
+\hline
+{\em name} & Nombre completo del usuario (opcional). \\
+\hline
+{\em email} & Correo electrónico del usuario (opcional). \\
+\hline
+{\em specialty} & Especialidad del doctor si aplica (opcional). \\
+\hline
+{\em telephone} & Teléfono del usuario si aplica (opcional).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true si el registro fue exitoso. 
+
+false si el usuario no pudo registrarse.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classDatabaseError}{Database\+Error}} & Si ocurre un error en la ejecución de la consulta SQL. \\
+\hline
+\end{DoxyExceptions}
+
+
 Definition at line \mbox{\hyperlink{Sistema_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{Sistema_8cpp_source}{Sistema.\+cpp}}.
 
 
@@ -701,6 +885,10 @@ Here is the caller graph for this function\+:
 
 
 
+Muestra el estado actual de todos los robots en el sistema. 
+
+
+
 Definition at line \mbox{\hyperlink{Sistema_8cpp_source_l00123}{123}} of file \mbox{\hyperlink{Sistema_8cpp_source}{Sistema.\+cpp}}.
 
 
@@ -740,7 +928,11 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line \mbox{\hyperlink{Sistema_8h_source_l00016}{16}} of file \mbox{\hyperlink{Sistema_8h_source}{Sistema.\+h}}.
+Puntero al objeto de la base de datos SQLite. 
+
+
+
+Definition at line \mbox{\hyperlink{Sistema_8h_source_l00029}{29}} of file \mbox{\hyperlink{Sistema_8h_source}{Sistema.\+h}}.
 
 
 
@@ -754,7 +946,11 @@ Referenced by \mbox{\hyperlink{classSistema_a6c0b070e337e25c0a9f25d60570a7eeb}{a
 
 
 
-Definition at line \mbox{\hyperlink{Sistema_8h_source_l00018}{18}} of file \mbox{\hyperlink{Sistema_8h_source}{Sistema.\+h}}.
+Instancia única del sistema (patrón Singleton). 
+
+
+
+Definition at line \mbox{\hyperlink{Sistema_8h_source_l00037}{37}} of file \mbox{\hyperlink{Sistema_8h_source}{Sistema.\+h}}.
 
 
 
@@ -768,7 +964,11 @@ Referenced by \mbox{\hyperlink{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4}{g
 
 
 
-Definition at line \mbox{\hyperlink{Sistema_8h_source_l00017}{17}} of file \mbox{\hyperlink{Sistema_8h_source}{Sistema.\+h}}.
+Lista de robots administrados por el sistema. 
+
+
+
+Definition at line \mbox{\hyperlink{Sistema_8h_source_l00033}{33}} of file \mbox{\hyperlink{Sistema_8h_source}{Sistema.\+h}}.
 
 
 

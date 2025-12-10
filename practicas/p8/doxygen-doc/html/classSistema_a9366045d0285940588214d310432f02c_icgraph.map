@@ -1,5 +1,5 @@
 <map id="Sistema::registerUser" name="Sistema::registerUser">
-<area shape="rect" id="Node000001" title=" " alt="" coords="375,31,524,56"/>
+<area shape="rect" id="Node000001" title="Registra un nuevo usuario en la base de datos." alt="" coords="375,31,524,56"/>
 <area shape="rect" id="Node000002" href="$classAdmin.html#a958abf574102bdb641d166fcc9ada1d4" title=" " alt="" coords="184,5,327,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="361,34,327,30,327,25,362,29"/>
 <area shape="rect" id="Node000004" href="$main_8cpp.html#a772fb6161ca7b62e307249661c3806a9" title=" " alt="" coords="195,55,315,80"/>

@@ -15,43 +15,53 @@
 \DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Admin_8h}{Admin.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00012}00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Robot_8h}{Robot.h}}"{}}}
 \DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00013}00013\ }
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00014}\mbox{\hyperlink{classSistema}{00014}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSistema}{Sistema}}\ \{}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00015}00015\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00016}\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{00016}}\ \ \ \ \ sqlite3*\ \mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}};}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00017}\mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{00017}}\ \ \ \ \ std::vector<std::shared\_ptr<Robot>>\ \mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}};}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00018}\mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{00018}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classSistema}{Sistema}}*\ \mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{instance}};}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00019}00019\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00020}00020\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00021}00021\ \ \ \ \ \mbox{\hyperlink{classSistema_a815b07845ef6b03247b239333fe75e28}{Sistema}}();}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00022}00022\ \ \ \ \ \mbox{\hyperlink{classSistema_aafc86e0f2c3d734fb4c0985f70c27a1a}{\string~Sistema}}();}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00023}00023\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00024}\mbox{\hyperlink{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4}{00024}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classSistema}{Sistema}}\&\ \mbox{\hyperlink{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4}{getInstance}}()\ \{}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00025}00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{instance}})\ \mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{instance}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classSistema_a815b07845ef6b03247b239333fe75e28}{Sistema}}();}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00026}00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{instance}};}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00027}00027\ \ \ \ \ \}}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00028}00028\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00029}00029\ \ \ \ \ \textcolor{comment}{//\ Gestión\ de\ base\ de\ datos}}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSistema_a7ac408e57125975eff9ee9df0835041c}{connectDatabase}}();}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00031}00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSistema_a9366045d0285940588214d310432f02c}{registerUser}}(\textcolor{keyword}{const}\ std::string\&\ username,\ \textcolor{keyword}{const}\ std::string\&\ password,\ \textcolor{keyword}{const}\ std::string\&\ role,}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ name\ =\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{keyword}{const}\ std::string\&\ email\ =\ \textcolor{stringliteral}{"{}"{}},\ }
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ specialty\ =\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{keyword}{const}\ std::string\&\ telephone\ =\ \textcolor{stringliteral}{"{}"{}});}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00034}00034\ \ \ \ \ std::unique\_ptr<User>\ \mbox{\hyperlink{classSistema_a47d1acd84ef5cd60735f821f303d3c80}{loginUser}}(\textcolor{keyword}{const}\ std::string\&\ username,\ \textcolor{keyword}{const}\ std::string\&\ password);}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00035}00035\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ Gestión\ de\ robots}}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSistema_ae73f607f7499295c3d838f0804298058}{initializeRobots}}(\textcolor{keywordtype}{int}\ count);}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00038}00038\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSistema_a436062bec22de4d3b31b97a8be693ae8}{showRobotsStatus}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSistema_ab441c045868f9835285de2ac160fa8af}{assignRobotTask}}(\textcolor{keywordtype}{int}\ robotId,\ \textcolor{keywordtype}{int}\ seconds,\ \textcolor{keyword}{const}\ std::string\&\ taskType);}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00040}00040\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSistema_a8f94144d7165754eaa871512469039ae}{assignAnyRobot}}(\textcolor{keywordtype}{int}\ seconds,\ \textcolor{keyword}{const}\ std::string\&\ taskType);}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSistema_a8160e9638ddcff4971a961f892a5fbc9}{freeRobot}}(\textcolor{keywordtype}{int}\ robotId);}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00042}00042\ \ \ \ \ }
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00043}00043\ \ \ \ \ \textcolor{comment}{//\ Funcionalidades\ administrativas}}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00044}00044\ \ \ \ \ std::vector<std::shared\_ptr<User>>\ \mbox{\hyperlink{classSistema_a9b25934d304fb47644608d6ca3128e00}{getDoctorsList}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00045}00045\ \ \ \ \ std::vector<std::shared\_ptr<User>>\ \mbox{\hyperlink{classSistema_a10fad5f3abeee0871c9a4761468aa4a4}{getAllUsers}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSistema_a6c0b070e337e25c0a9f25d60570a7eeb}{assignScheduleToDoctor}}(\textcolor{keywordtype}{int}\ idDoctor,\ \textcolor{keyword}{const}\ std::string\&\ day,}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ start,\ \textcolor{keyword}{const}\ std::string\&\ end);}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00048}00048\ }
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00049}00049\ \};}
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00050}00050\ }
-\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00051}00051\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00024}\mbox{\hyperlink{classSistema}{00024}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classSistema}{Sistema}}\ \{}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00025}00025\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00029}\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{00029}}\ \ \ \ \ sqlite3*\ \mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}};}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00033}\mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{00033}}\ \ \ \ \ std::vector<std::shared\_ptr<Robot>>\ \mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}};}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00037}\mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{00037}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classSistema}{Sistema}}*\ \mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{instance}};}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00038}00038\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00039}00039\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00045}00045\ \ \ \ \ \mbox{\hyperlink{classSistema_a815b07845ef6b03247b239333fe75e28}{Sistema}}();}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00051}00051\ \ \ \ \ \mbox{\hyperlink{classSistema_aafc86e0f2c3d734fb4c0985f70c27a1a}{\string~Sistema}}();}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00052}00052\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00060}\mbox{\hyperlink{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4}{00060}}\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classSistema}{Sistema}}\&\ \mbox{\hyperlink{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4}{getInstance}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00061}00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{instance}})\ \mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{instance}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classSistema_a815b07845ef6b03247b239333fe75e28}{Sistema}}();}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00062}00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{instance}};}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00063}00063\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00064}00064\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00065}00065\ \ \ \ \ \textcolor{comment}{//\ ======================================================}}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00066}00066\ \ \ \ \ \textcolor{comment}{//\ Gestión\ de\ Base\ de\ Datos}}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00067}00067\ \ \ \ \ \textcolor{comment}{//\ ======================================================}}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00076}00076\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSistema_a7ac408e57125975eff9ee9df0835041c}{connectDatabase}}();}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00093}00093\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSistema_a9366045d0285940588214d310432f02c}{registerUser}}(\textcolor{keyword}{const}\ std::string\&\ username,\ \textcolor{keyword}{const}\ std::string\&\ password,\ \textcolor{keyword}{const}\ std::string\&\ role,}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ name\ =\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{keyword}{const}\ std::string\&\ email\ =\ \textcolor{stringliteral}{"{}"{}},\ }
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ specialty\ =\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{keyword}{const}\ std::string\&\ telephone\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00096}00096\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00108}00108\ \ \ \ \ std::unique\_ptr<User>\ \mbox{\hyperlink{classSistema_a47d1acd84ef5cd60735f821f303d3c80}{loginUser}}(\textcolor{keyword}{const}\ std::string\&\ username,\ \textcolor{keyword}{const}\ std::string\&\ password);}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00109}00109\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00110}00110\ \ \ \ \ \textcolor{comment}{//\ ======================================================}}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00111}00111\ \ \ \ \ \textcolor{comment}{//\ Gestión\ de\ Robots}}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00112}00112\ \ \ \ \ \textcolor{comment}{//\ ======================================================}}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00119}00119\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSistema_ae73f607f7499295c3d838f0804298058}{initializeRobots}}(\textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00123}00123\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSistema_a436062bec22de4d3b31b97a8be693ae8}{showRobotsStatus}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00133}00133\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSistema_ab441c045868f9835285de2ac160fa8af}{assignRobotTask}}(\textcolor{keywordtype}{int}\ robotId,\ \textcolor{keywordtype}{int}\ seconds,\ \textcolor{keyword}{const}\ std::string\&\ taskType);}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00142}00142\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSistema_a8f94144d7165754eaa871512469039ae}{assignAnyRobot}}(\textcolor{keywordtype}{int}\ seconds,\ \textcolor{keyword}{const}\ std::string\&\ taskType);}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00150}00150\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classSistema_a8160e9638ddcff4971a961f892a5fbc9}{freeRobot}}(\textcolor{keywordtype}{int}\ robotId);}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00151}00151\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00152}00152\ \ \ \ \ \textcolor{comment}{//\ ======================================================}}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00153}00153\ \ \ \ \ \textcolor{comment}{//\ Funcionalidades\ Administrativas}}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00154}00154\ \ \ \ \ \textcolor{comment}{//\ ======================================================}}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00155}00155\ }
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00161}00161\ \ \ \ \ std::vector<std::shared\_ptr<User>>\ \mbox{\hyperlink{classSistema_a9b25934d304fb47644608d6ca3128e00}{getDoctorsList}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00167}00167\ \ \ \ \ std::vector<std::shared\_ptr<User>>\ \mbox{\hyperlink{classSistema_a10fad5f3abeee0871c9a4761468aa4a4}{getAllUsers}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00180}00180\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSistema_a6c0b070e337e25c0a9f25d60570a7eeb}{assignScheduleToDoctor}}(\textcolor{keywordtype}{int}\ idDoctor,\ \textcolor{keyword}{const}\ std::string\&\ day,}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00181}00181\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ start,\ \textcolor{keyword}{const}\ std::string\&\ end);}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00183}00183\ \};}
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00184}00184\ }
+\DoxyCodeLine{\Hypertarget{Sistema_8h_source_l00185}00185\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}
