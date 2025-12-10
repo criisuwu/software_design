@@ -1,0 +1,783 @@
+\doxysection{Sistema Class Reference}
+\hypertarget{classSistema}{}\label{classSistema}\index{Sistema@{Sistema}}
+
+
+{\ttfamily \#include $<$Sistema.\+h$>$}
+
+
+
+Collaboration diagram for Sistema\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{classSistema__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSistema_a815b07845ef6b03247b239333fe75e28}{Sistema}} ()
+\item 
+\mbox{\hyperlink{classSistema_aafc86e0f2c3d734fb4c0985f70c27a1a}{\texorpdfstring{$\sim$}{\string~}\+Sistema}} ()
+\item 
+bool \mbox{\hyperlink{classSistema_a7ac408e57125975eff9ee9df0835041c}{connect\+Database}} ()
+\item 
+bool \mbox{\hyperlink{classSistema_a9366045d0285940588214d310432f02c}{register\+User}} (const std\+::string \&username, const std\+::string \&password, const std\+::string \&role, const std\+::string \&name="{}"{}, const std\+::string \&email="{}"{}, const std\+::string \&specialty="{}"{}, const std\+::string \&telephone="{}"{})
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classUser}{User}} $>$ \mbox{\hyperlink{classSistema_a47d1acd84ef5cd60735f821f303d3c80}{login\+User}} (const std\+::string \&username, const std\+::string \&password)
+\item 
+void \mbox{\hyperlink{classSistema_ae73f607f7499295c3d838f0804298058}{initialize\+Robots}} (int count)
+\item 
+void \mbox{\hyperlink{classSistema_a436062bec22de4d3b31b97a8be693ae8}{show\+Robots\+Status}} () const
+\item 
+void \mbox{\hyperlink{classSistema_ab441c045868f9835285de2ac160fa8af}{assign\+Robot\+Task}} (int robot\+Id, int seconds, const std\+::string \&task\+Type)
+\item 
+void \mbox{\hyperlink{classSistema_a8f94144d7165754eaa871512469039ae}{assign\+Any\+Robot}} (int seconds, const std\+::string \&task\+Type)
+\item 
+void \mbox{\hyperlink{classSistema_a8160e9638ddcff4971a961f892a5fbc9}{free\+Robot}} (int robot\+Id)
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUser}{User}} $>$ $>$ \mbox{\hyperlink{classSistema_a9b25934d304fb47644608d6ca3128e00}{get\+Doctors\+List}} () const
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUser}{User}} $>$ $>$ \mbox{\hyperlink{classSistema_a10fad5f3abeee0871c9a4761468aa4a4}{get\+All\+Users}} () const
+\item 
+bool \mbox{\hyperlink{classSistema_a6c0b070e337e25c0a9f25d60570a7eeb}{assign\+Schedule\+To\+Doctor}} (int id\+Doctor, const std\+::string \&day, const std\+::string \&start, const std\+::string \&end)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classSistema}{Sistema}} \& \mbox{\hyperlink{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sqlite3 \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classRobot}{Robot}} $>$ $>$ \mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classSistema}{Sistema}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{instance}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Sistema_8h_source_l00014}{14}} of file \mbox{\hyperlink{Sistema_8h_source}{Sistema.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSistema_a815b07845ef6b03247b239333fe75e28}\label{classSistema_a815b07845ef6b03247b239333fe75e28} 
+\index{Sistema@{Sistema}!Sistema@{Sistema}}
+\index{Sistema@{Sistema}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{Sistema()}{Sistema()}}
+{\footnotesize\ttfamily Sistema\+::\+Sistema (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Sistema_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{Sistema_8cpp_source}{Sistema.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}(\textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \mbox{\hyperlink{classSistema_a7ac408e57125975eff9ee9df0835041c}{connectDatabase}}();}
+\DoxyCodeLine{00010\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classSistema_a7ac408e57125975eff9ee9df0835041c}{connect\+Database()}}.
+
+
+
+Referenced by \mbox{\hyperlink{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4}{get\+Instance()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classSistema_a815b07845ef6b03247b239333fe75e28_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a815b07845ef6b03247b239333fe75e28_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSistema_aafc86e0f2c3d734fb4c0985f70c27a1a}\label{classSistema_aafc86e0f2c3d734fb4c0985f70c27a1a} 
+\index{Sistema@{Sistema}!````~Sistema@{\texorpdfstring{$\sim$}{\string~}Sistema}}
+\index{````~Sistema@{\texorpdfstring{$\sim$}{\string~}Sistema}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Sistema()}{\string~Sistema()}}
+{\footnotesize\ttfamily Sistema\+::\texorpdfstring{$\sim$}{\string~}\+Sistema (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Sistema_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{Sistema_8cpp_source}{Sistema.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}})\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ sqlite3\_close(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}});}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSistema_a8f94144d7165754eaa871512469039ae}\label{classSistema_a8f94144d7165754eaa871512469039ae} 
+\index{Sistema@{Sistema}!assignAnyRobot@{assignAnyRobot}}
+\index{assignAnyRobot@{assignAnyRobot}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{assignAnyRobot()}{assignAnyRobot()}}
+{\footnotesize\ttfamily void Sistema\+::assign\+Any\+Robot (\begin{DoxyParamCaption}\item[{int}]{seconds,  }\item[{const std\+::string \&}]{task\+Type }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Sistema_8cpp_source_l00145}{145}} of file \mbox{\hyperlink{Sistema_8cpp_source}{Sistema.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::find\_if(\mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}}.begin(),\ \mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}}.end(),}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ [](\textcolor{keyword}{const}\ std::shared\_ptr<Robot>\&\ r)\ \{\ return\ r-\/>getState()\ ==\ \textcolor{stringliteral}{"{}Libre"{}};\ \});}
+\DoxyCodeLine{00148\ \ \ \ \ }
+\DoxyCodeLine{00149\ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}}.end())\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Asignando\ tarea\ al\ robot\ "{}}\ <<\ (*it)-\/>getId()\ <<\ \textcolor{stringliteral}{"{}...\(\backslash\)n"{}};}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ (*it)-\/>assignTask(seconds,\ taskType);}
+\DoxyCodeLine{00152\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ hay\ robots\ disponibles.\(\backslash\)n"{}};}
+\DoxyCodeLine{00154\ \ \ \ \ \}}
+\DoxyCodeLine{00155\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_ad448663e45a2e200260f02b5b7a24a2a}{robot\+Management\+Menu()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a8f94144d7165754eaa871512469039ae_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSistema_ab441c045868f9835285de2ac160fa8af}\label{classSistema_ab441c045868f9835285de2ac160fa8af} 
+\index{Sistema@{Sistema}!assignRobotTask@{assignRobotTask}}
+\index{assignRobotTask@{assignRobotTask}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{assignRobotTask()}{assignRobotTask()}}
+{\footnotesize\ttfamily void Sistema\+::assign\+Robot\+Task (\begin{DoxyParamCaption}\item[{int}]{robot\+Id,  }\item[{int}]{seconds,  }\item[{const std\+::string \&}]{task\+Type }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Sistema_8cpp_source_l00130}{130}} of file \mbox{\hyperlink{Sistema_8cpp_source}{Sistema.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::find\_if(\mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}}.begin(),\ \mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}}.end(),}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ [robotId](\textcolor{keyword}{const}\ std::shared\_ptr<Robot>\&\ r)\ \{\ return\ r-\/>getId()\ ==\ robotId;\ \});}
+\DoxyCodeLine{00133\ \ \ \ \ }
+\DoxyCodeLine{00134\ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}}.end())\ \{}
+\DoxyCodeLine{00135\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((*it)-\/>getState()\ ==\ \textcolor{stringliteral}{"{}Libre"{}})\ \{}
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \ \ \ \ (*it)-\/>assignTask(seconds,\ taskType);}
+\DoxyCodeLine{00137\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}El\ robot\ "{}}\ <<\ robotId\ <<\ \textcolor{stringliteral}{"{}\ está\ ocupado.\(\backslash\)n"{}};}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00140\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ existe\ el\ robot\ con\ ID\ "{}}\ <<\ robotId\ <<\ \textcolor{stringliteral}{"{}.\(\backslash\)n"{}};}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_ad448663e45a2e200260f02b5b7a24a2a}{robot\+Management\+Menu()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_ab441c045868f9835285de2ac160fa8af_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSistema_a6c0b070e337e25c0a9f25d60570a7eeb}\label{classSistema_a6c0b070e337e25c0a9f25d60570a7eeb} 
+\index{Sistema@{Sistema}!assignScheduleToDoctor@{assignScheduleToDoctor}}
+\index{assignScheduleToDoctor@{assignScheduleToDoctor}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{assignScheduleToDoctor()}{assignScheduleToDoctor()}}
+{\footnotesize\ttfamily bool Sistema\+::assign\+Schedule\+To\+Doctor (\begin{DoxyParamCaption}\item[{int}]{id\+Doctor,  }\item[{const std\+::string \&}]{day,  }\item[{const std\+::string \&}]{start,  }\item[{const std\+::string \&}]{end }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{SistemaUtils_8cpp_source_l00075}{75}} of file \mbox{\hyperlink{SistemaUtils_8cpp_source}{Sistema\+Utils.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00077\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ sql\ =\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}INSERT\ INTO\ SCHEDULE\ (ID\_DOCTOR,\ DAY,\ START\_TIME,\ END\_TIME)\ VALUES\ (?,\ ?,\ ?,\ ?)"{}};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ sqlite3\_stmt*\ stmt;}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{int}\ rc\ =\ sqlite3\_prepare\_v2(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}},\ sql,\ -\/1,\ \&stmt,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_OK)\ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classDatabaseError}{DatabaseError}}(std::string(\textcolor{stringliteral}{"{}sqlite3\_prepare\_v2:\ "{}})\ +\ sqlite3\_errmsg(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}));}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ sqlite3\_bind\_int(stmt,\ 1,\ idDoctor);}
+\DoxyCodeLine{00088\ \ \ \ \ sqlite3\_bind\_text(stmt,\ 2,\ day.c\_str(),\ -\/1,\ SQLITE\_STATIC);}
+\DoxyCodeLine{00089\ \ \ \ \ sqlite3\_bind\_text(stmt,\ 3,\ start.c\_str(),\ -\/1,\ SQLITE\_STATIC);}
+\DoxyCodeLine{00090\ \ \ \ \ sqlite3\_bind\_text(stmt,\ 4,\ end.c\_str(),\ -\/1,\ SQLITE\_STATIC);}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ rc\ =\ sqlite3\_step(stmt);}
+\DoxyCodeLine{00093\ \ \ \ \ sqlite3\_finalize(stmt);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_DONE)\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classDatabaseError}{DatabaseError}}(std::string(\textcolor{stringliteral}{"{}sqlite3\_step:\ "{}})\ +\ sqlite3\_errmsg(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}));}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keywordflow}{return}\ rc\ ==\ SQLITE\_DONE;}
+\DoxyCodeLine{00100\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}.
+
+
+
+Referenced by \mbox{\hyperlink{classAdmin_a6fd079434d5bdc14a2c195e42687039e}{Admin\+::assign\+Schedule()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a6c0b070e337e25c0a9f25d60570a7eeb_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSistema_a7ac408e57125975eff9ee9df0835041c}\label{classSistema_a7ac408e57125975eff9ee9df0835041c} 
+\index{Sistema@{Sistema}!connectDatabase@{connectDatabase}}
+\index{connectDatabase@{connectDatabase}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{connectDatabase()}{connectDatabase()}}
+{\footnotesize\ttfamily bool Sistema\+::connect\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Sistema_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{Sistema_8cpp_source}{Sistema.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{int}\ rc\ =\ sqlite3\_open(\textcolor{stringliteral}{"{}appointment\_system.db"{}},\ \&\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}});}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classDatabaseError}{DatabaseError}}(std::string(\textcolor{stringliteral}{"{}sqlite3\_open:\ "{}})\ +\ sqlite3\_errmsg(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}));}
+\DoxyCodeLine{00022\ \ \ \ \ \}}
+\DoxyCodeLine{00023\ \ \ \ \ }
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{comment}{//\ Activar\ claves\ foráneas}}
+\DoxyCodeLine{00025\ \ \ \ \ rc\ =\ sqlite3\_exec(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}},\ \textcolor{stringliteral}{"{}PRAGMA\ foreign\_keys\ =\ ON;"{}},\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_OK)\ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classDatabaseError}{DatabaseError}}(std::string(\textcolor{stringliteral}{"{}PRAGMA\ foreign\_keys:\ "{}})\ +\ sqlite3\_errmsg(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}));}
+\DoxyCodeLine{00028\ \ \ \ \ \}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00030\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}.
+
+
+
+Referenced by \mbox{\hyperlink{classSistema_a815b07845ef6b03247b239333fe75e28}{Sistema()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a7ac408e57125975eff9ee9df0835041c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSistema_a8160e9638ddcff4971a961f892a5fbc9}\label{classSistema_a8160e9638ddcff4971a961f892a5fbc9} 
+\index{Sistema@{Sistema}!freeRobot@{freeRobot}}
+\index{freeRobot@{freeRobot}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{freeRobot()}{freeRobot()}}
+{\footnotesize\ttfamily void Sistema\+::free\+Robot (\begin{DoxyParamCaption}\item[{int}]{robot\+Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Sistema_8cpp_source_l00157}{157}} of file \mbox{\hyperlink{Sistema_8cpp_source}{Sistema.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{keyword}{auto}\ it\ =\ std::find\_if(\mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}}.begin(),\ \mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}}.end(),}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ [robotId](\textcolor{keyword}{const}\ std::shared\_ptr<Robot>\&\ r)\ \{\ return\ r-\/>getId()\ ==\ robotId;\ \});}
+\DoxyCodeLine{00160\ \ \ \ \ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordflow}{if}\ (it\ !=\ \mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}}.end())\ \{}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Liberando\ robot\ "{}}\ <<\ robotId\ <<\ \textcolor{stringliteral}{"{}\ manualmente.\(\backslash\)n"{}};}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ En\ una\ implementación\ real,\ aquí\ se\ forzaría\ la\ liberación}}
+\DoxyCodeLine{00164\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Robot\ no\ encontrado.\(\backslash\)n"{}};}
+\DoxyCodeLine{00166\ \ \ \ \ \}}
+\DoxyCodeLine{00167\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}}.
+
+\Hypertarget{classSistema_a10fad5f3abeee0871c9a4761468aa4a4}\label{classSistema_a10fad5f3abeee0871c9a4761468aa4a4} 
+\index{Sistema@{Sistema}!getAllUsers@{getAllUsers}}
+\index{getAllUsers@{getAllUsers}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{getAllUsers()}{getAllUsers()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUser}{User}} $>$ $>$ Sistema\+::get\+All\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{SistemaUtils_8cpp_source_l00035}{35}} of file \mbox{\hyperlink{SistemaUtils_8cpp_source}{Sistema\+Utils.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ std::vector<std::shared\_ptr<User>>\ users;}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ sql\ =}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}SELECT\ ID,\ USERNAME,\ PASSWORD,\ ROLE,\ NAME,\ EMAIL,\ SPECIALTY,\ TELEPHONE\ FROM\ USER"{}};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ sqlite3\_stmt*\ stmt;}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ rc\ =\ sqlite3\_prepare\_v2(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}},\ sql,\ -\/1,\ \&stmt,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_OK)\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classDatabaseError}{DatabaseError}}(std::string(\textcolor{stringliteral}{"{}sqlite3\_prepare\_v2:\ "{}})\ +\ sqlite3\_errmsg(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}));}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{while}\ (sqlite3\_step(stmt)\ ==\ SQLITE\_ROW)\ \{}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ sqlite3\_column\_int(stmt,\ 0);}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ std::string\ username\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 1));}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ std::string\ password\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 2));}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ std::string\ role\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 3));}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ std::string\ name\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 4));}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ std::string\ email\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 5));}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ std::string\ specialty\ =\ sqlite3\_column\_text(stmt,\ 6)}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 6))}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ std::string\ telephone\ =\ sqlite3\_column\_text(stmt,\ 7)}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 7))}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (role\ ==\ \textcolor{stringliteral}{"{}Doctor"{}})}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ users.push\_back(std::make\_shared<Doctor>(\textcolor{keywordtype}{id},\ username,\ password,\ name,\ email,\ specialty));}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (role\ ==\ \textcolor{stringliteral}{"{}Patient"{}})}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ users.push\_back(std::make\_shared<Patient>(\textcolor{keywordtype}{id},\ username,\ password,\ name,\ email,\ telephone));}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (role\ ==\ \textcolor{stringliteral}{"{}Administrator"{}})}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ users.push\_back(std::make\_shared<Admin>(\textcolor{keywordtype}{id},\ username,\ password,\ name,\ email));}
+\DoxyCodeLine{00069\ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ sqlite3\_finalize(stmt);}
+\DoxyCodeLine{00072\ \ \ \ \ \textcolor{keywordflow}{return}\ users;}
+\DoxyCodeLine{00073\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}.
+
+
+
+Referenced by \mbox{\hyperlink{classAdmin_addd504e4890e76dbb708188bde645f7c}{Admin\+::view\+All\+Users()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a10fad5f3abeee0871c9a4761468aa4a4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSistema_a9b25934d304fb47644608d6ca3128e00}\label{classSistema_a9b25934d304fb47644608d6ca3128e00} 
+\index{Sistema@{Sistema}!getDoctorsList@{getDoctorsList}}
+\index{getDoctorsList@{getDoctorsList}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{getDoctorsList()}{getDoctorsList()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classUser}{User}} $>$ $>$ Sistema\+::get\+Doctors\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{SistemaUtils_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{SistemaUtils_8cpp_source}{Sistema\+Utils.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00007\ \ \ \ \ std::vector<std::shared\_ptr<User>>\ doctors;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ sql\ =}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}SELECT\ ID,\ USERNAME,\ PASSWORD,\ NAME,\ EMAIL,\ SPECIALTY\ "{}}}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}FROM\ USER\ WHERE\ ROLE\ =\ 'Doctor'"{}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ sqlite3\_stmt*\ stmt;}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{int}\ rc\ =\ sqlite3\_prepare\_v2(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}},\ sql,\ -\/1,\ \&stmt,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_OK)\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classDatabaseError}{DatabaseError}}(std::string(\textcolor{stringliteral}{"{}sqlite3\_prepare\_v2:\ "{}})\ +\ sqlite3\_errmsg(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}));}
+\DoxyCodeLine{00018\ \ \ \ \ \}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordflow}{while}\ (sqlite3\_step(stmt)\ ==\ SQLITE\_ROW)\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ sqlite3\_column\_int(stmt,\ 0);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ std::string\ username\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 1));}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ std::string\ password\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 2));}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ std::string\ name\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 3));}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ std::string\ email\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 4));}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ std::string\ specialty\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 5));}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ doctors.push\_back(std::make\_shared<Doctor>(\textcolor{keywordtype}{id},\ username,\ password,\ name,\ email,\ specialty));}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ sqlite3\_finalize(stmt);}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{return}\ doctors;}
+\DoxyCodeLine{00033\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}.
+
+
+
+Referenced by \mbox{\hyperlink{classAdmin_a63c185a2aef72ab4e4e8c62abd06c971}{Admin\+::view\+Doctors\+List()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a9b25934d304fb47644608d6ca3128e00_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4}\label{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4} 
+\index{Sistema@{Sistema}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classSistema}{Sistema}} \& Sistema\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line \mbox{\hyperlink{Sistema_8h_source_l00024}{24}} of file \mbox{\hyperlink{Sistema_8h_source}{Sistema.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{instance}})\ \mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{instance}}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classSistema_a815b07845ef6b03247b239333fe75e28}{Sistema}}();}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{instance}};}
+\DoxyCodeLine{00027\ \ \ \ \ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}{instance}}, and \mbox{\hyperlink{classSistema_a815b07845ef6b03247b239333fe75e28}{Sistema()}}.
+
+
+
+Referenced by \mbox{\hyperlink{classAdmin_a6fd079434d5bdc14a2c195e42687039e}{Admin\+::assign\+Schedule()}}, \mbox{\hyperlink{classAdmin_a958abf574102bdb641d166fcc9ada1d4}{Admin\+::create\+Doctor()}}, \mbox{\hyperlink{classAdmin_addd504e4890e76dbb708188bde645f7c}{Admin\+::view\+All\+Users()}}, and \mbox{\hyperlink{classAdmin_a63c185a2aef72ab4e4e8c62abd06c971}{Admin\+::view\+Doctors\+List()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSistema_ae73f607f7499295c3d838f0804298058}\label{classSistema_ae73f607f7499295c3d838f0804298058} 
+\index{Sistema@{Sistema}!initializeRobots@{initializeRobots}}
+\index{initializeRobots@{initializeRobots}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{initializeRobots()}{initializeRobots()}}
+{\footnotesize\ttfamily void Sistema\+::initialize\+Robots (\begin{DoxyParamCaption}\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Sistema_8cpp_source_l00115}{115}} of file \mbox{\hyperlink{Sistema_8cpp_source}{Sistema.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}}.clear();}
+\DoxyCodeLine{00117\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 1;\ i\ <=\ count;\ ++i)\ \{}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}}.push\_back(std::make\_shared<Robot>(i));}
+\DoxyCodeLine{00119\ \ \ \ \ \}}
+\DoxyCodeLine{00120\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Sistema\ de\ robots\ inicializado\ con\ "{}}\ <<\ count\ <<\ \textcolor{stringliteral}{"{}\ robots.\(\backslash\)n"{}};}
+\DoxyCodeLine{00121\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{classSistema_ae73f607f7499295c3d838f0804298058_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSistema_a47d1acd84ef5cd60735f821f303d3c80}\label{classSistema_a47d1acd84ef5cd60735f821f303d3c80} 
+\index{Sistema@{Sistema}!loginUser@{loginUser}}
+\index{loginUser@{loginUser}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{loginUser()}{loginUser()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classUser}{User}} $>$ Sistema\+::login\+User (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username,  }\item[{const std\+::string \&}]{password }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Sistema_8cpp_source_l00065}{65}} of file \mbox{\hyperlink{Sistema_8cpp_source}{Sistema.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00066\ \ \ \ \ sqlite3\_stmt*\ stmt;}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ sql\ =\ \textcolor{stringliteral}{"{}SELECT\ ID,\ USERNAME,\ PASSWORD,\ ROLE,\ NAME,\ EMAIL,\ SPECIALTY,\ TELEPHONE\ "{}}}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}FROM\ USER\ WHERE\ USERNAME\ =\ ?\ AND\ PASSWORD\ =\ ?"{}};}
+\DoxyCodeLine{00069\ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{int}\ rc\ =\ sqlite3\_prepare\_v2(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}},\ sql,\ -\/1,\ \&stmt,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_OK)\ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classDatabaseError}{DatabaseError}}(std::string(\textcolor{stringliteral}{"{}sqlite3\_prepare\_v2:\ "{}})\ +\ sqlite3\_errmsg(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}));}
+\DoxyCodeLine{00073\ \ \ \ \ \}}
+\DoxyCodeLine{00074\ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \ \ \ sqlite3\_bind\_text(stmt,\ 1,\ username.c\_str(),\ -\/1,\ SQLITE\_STATIC);}
+\DoxyCodeLine{00076\ \ \ \ \ sqlite3\_bind\_text(stmt,\ 2,\ password.c\_str(),\ -\/1,\ SQLITE\_STATIC);}
+\DoxyCodeLine{00077\ \ \ \ \ }
+\DoxyCodeLine{00078\ \ \ \ \ rc\ =\ sqlite3\_step(stmt);}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ ==\ SQLITE\_ROW)\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ sqlite3\_column\_int(stmt,\ 0);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ std::string\ db\_username\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 1));}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ std::string\ db\_password\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 2));}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ std::string\ role\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 3));}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ std::string\ name\ =\ sqlite3\_column\_text(stmt,\ 4)\ ?\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 4))\ :\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ std::string\ email\ =\ sqlite3\_column\_text(stmt,\ 5)\ ?\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 5))\ :\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ std::string\ specialty\ =\ sqlite3\_column\_text(stmt,\ 6)\ ?\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 6))\ :\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ std::string\ telephone\ =\ sqlite3\_column\_text(stmt,\ 7)\ ?\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 7))\ :\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ sqlite3\_finalize(stmt);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Crear\ el\ objeto\ correspondiente\ según\ el\ rol}}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (role\ ==\ \textcolor{stringliteral}{"{}Patient"{}})\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<Patient>(\textcolor{keywordtype}{id},\ db\_username,\ db\_password,\ name,\ email,\ telephone);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (role\ ==\ \textcolor{stringliteral}{"{}Doctor"{}})\ \{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<Doctor>(\textcolor{keywordtype}{id},\ db\_username,\ db\_password,\ name,\ email,\ specialty);}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (role\ ==\ \textcolor{stringliteral}{"{}Administrator"{}})\ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_unique<Admin>(\textcolor{keywordtype}{id},\ db\_username,\ db\_password,\ name,\ email);}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00103\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (rc\ ==\ SQLITE\_DONE)\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ sqlite3\_finalize(stmt);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classInvalidCredentialsError}{InvalidCredentialsError}}();}
+\DoxyCodeLine{00106\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ sqlite3\_finalize(stmt);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classDatabaseError}{DatabaseError}}(std::string(\textcolor{stringliteral}{"{}sqlite3\_step:\ "{}})\ +\ sqlite3\_errmsg(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}));}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ }
+\DoxyCodeLine{00111\ \ \ \ \ sqlite3\_finalize(stmt);}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00113\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_a16ba583341554f7a7286f4825794ec2b}{login\+User()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classSistema_a47d1acd84ef5cd60735f821f303d3c80_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSistema_a9366045d0285940588214d310432f02c}\label{classSistema_a9366045d0285940588214d310432f02c} 
+\index{Sistema@{Sistema}!registerUser@{registerUser}}
+\index{registerUser@{registerUser}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{registerUser()}{registerUser()}}
+{\footnotesize\ttfamily bool Sistema\+::register\+User (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{username,  }\item[{const std\+::string \&}]{password,  }\item[{const std\+::string \&}]{role,  }\item[{const std\+::string \&}]{name = {\ttfamily "{}"{}},  }\item[{const std\+::string \&}]{email = {\ttfamily "{}"{}},  }\item[{const std\+::string \&}]{specialty = {\ttfamily "{}"{}},  }\item[{const std\+::string \&}]{telephone = {\ttfamily "{}"{}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Sistema_8cpp_source_l00032}{32}} of file \mbox{\hyperlink{Sistema_8cpp_source}{Sistema.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00035\ \ \ \ \ sqlite3\_stmt*\ stmt;}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ sql\ =\ \textcolor{stringliteral}{"{}INSERT\ INTO\ USER\ (USERNAME,\ PASSWORD,\ ROLE,\ NAME,\ EMAIL,\ SPECIALTY,\ TELEPHONE)\ "{}}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}VALUES\ (?,\ ?,\ ?,\ ?,\ ?,\ ?,\ ?)"{}};}
+\DoxyCodeLine{00038\ \ \ \ \ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ rc\ =\ sqlite3\_prepare\_v2(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}},\ sql,\ -\/1,\ \&stmt,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_OK)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classDatabaseError}{DatabaseError}}(std::string(\textcolor{stringliteral}{"{}sqlite3\_prepare\_v2:\ "{}})\ +\ sqlite3\_errmsg(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}));}
+\DoxyCodeLine{00042\ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ sqlite3\_bind\_text(stmt,\ 1,\ username.c\_str(),\ -\/1,\ SQLITE\_STATIC);}
+\DoxyCodeLine{00045\ \ \ \ \ sqlite3\_bind\_text(stmt,\ 2,\ password.c\_str(),\ -\/1,\ SQLITE\_STATIC);}
+\DoxyCodeLine{00046\ \ \ \ \ sqlite3\_bind\_text(stmt,\ 3,\ role.c\_str(),\ -\/1,\ SQLITE\_STATIC);}
+\DoxyCodeLine{00047\ \ \ \ \ sqlite3\_bind\_text(stmt,\ 4,\ name.c\_str(),\ -\/1,\ SQLITE\_STATIC);}
+\DoxyCodeLine{00048\ \ \ \ \ sqlite3\_bind\_text(stmt,\ 5,\ email.c\_str(),\ -\/1,\ SQLITE\_STATIC);}
+\DoxyCodeLine{00049\ \ \ \ \ sqlite3\_bind\_text(stmt,\ 6,\ specialty.c\_str(),\ -\/1,\ SQLITE\_STATIC);}
+\DoxyCodeLine{00050\ \ \ \ \ sqlite3\_bind\_text(stmt,\ 7,\ telephone.c\_str(),\ -\/1,\ SQLITE\_STATIC);}
+\DoxyCodeLine{00051\ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \ \ rc\ =\ sqlite3\_step(stmt);}
+\DoxyCodeLine{00053\ \ \ \ \ sqlite3\_finalize(stmt);}
+\DoxyCodeLine{00054\ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_DONE)\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ ==\ SQLITE\_CONSTRAINT)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classDatabaseError}{DatabaseError}}(std::string(\textcolor{stringliteral}{"{}sqlite3\_step:\ "{}})\ +\ sqlite3\_errmsg(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}));}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00063\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}.
+
+
+
+Referenced by \mbox{\hyperlink{classAdmin_a958abf574102bdb641d166fcc9ada1d4}{Admin\+::create\+Doctor()}}, and \mbox{\hyperlink{main_8cpp_a772fb6161ca7b62e307249661c3806a9}{register\+New\+User()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a9366045d0285940588214d310432f02c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classSistema_a436062bec22de4d3b31b97a8be693ae8}\label{classSistema_a436062bec22de4d3b31b97a8be693ae8} 
+\index{Sistema@{Sistema}!showRobotsStatus@{showRobotsStatus}}
+\index{showRobotsStatus@{showRobotsStatus}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{showRobotsStatus()}{showRobotsStatus()}}
+{\footnotesize\ttfamily void Sistema\+::show\+Robots\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line \mbox{\hyperlink{Sistema_8cpp_source_l00123}{123}} of file \mbox{\hyperlink{Sistema_8cpp_source}{Sistema.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00124\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n===\ ESTADO\ DE\ LOS\ ROBOTS\ ===\(\backslash\)n"{}};}
+\DoxyCodeLine{00125\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ robot\ :\ \mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}})\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Robot\ "{}}\ <<\ robot-\/>getId()\ <<\ \textcolor{stringliteral}{"{}\ |\ Estado:\ "{}}\ <<\ robot-\/>getState()\ <<\ std::endl;}
+\DoxyCodeLine{00127\ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classSistema_a1954be491a70ce4aae67f05185d9ece0}{robots}}.
+
+
+
+Referenced by \mbox{\hyperlink{main_8cpp_ad448663e45a2e200260f02b5b7a24a2a}{robot\+Management\+Menu()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSistema_a436062bec22de4d3b31b97a8be693ae8_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classSistema_a56b517d20c53547a7882ffec2f4aaa73}\label{classSistema_a56b517d20c53547a7882ffec2f4aaa73} 
+\index{Sistema@{Sistema}!db@{db}}
+\index{db@{db}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{db}{db}}
+{\footnotesize\ttfamily sqlite3\texorpdfstring{$\ast$}{*} Sistema\+::db\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Sistema_8h_source_l00016}{16}} of file \mbox{\hyperlink{Sistema_8h_source}{Sistema.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{classSistema_a6c0b070e337e25c0a9f25d60570a7eeb}{assign\+Schedule\+To\+Doctor()}}, \mbox{\hyperlink{classSistema_a7ac408e57125975eff9ee9df0835041c}{connect\+Database()}}, \mbox{\hyperlink{classSistema_a10fad5f3abeee0871c9a4761468aa4a4}{get\+All\+Users()}}, \mbox{\hyperlink{classSistema_a9b25934d304fb47644608d6ca3128e00}{get\+Doctors\+List()}}, \mbox{\hyperlink{classSistema_a47d1acd84ef5cd60735f821f303d3c80}{login\+User()}}, \mbox{\hyperlink{classSistema_a9366045d0285940588214d310432f02c}{register\+User()}}, and \mbox{\hyperlink{classSistema_aafc86e0f2c3d734fb4c0985f70c27a1a}{\texorpdfstring{$\sim$}{\string~}\+Sistema()}}.
+
+\Hypertarget{classSistema_ac2d77d45c73ac63c7f8120264965c8c8}\label{classSistema_ac2d77d45c73ac63c7f8120264965c8c8} 
+\index{Sistema@{Sistema}!instance@{instance}}
+\index{instance@{instance}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{instance}{instance}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSistema}{Sistema}} \texorpdfstring{$\ast$}{*} Sistema\+::instance = nullptr\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Sistema_8h_source_l00018}{18}} of file \mbox{\hyperlink{Sistema_8h_source}{Sistema.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4}{get\+Instance()}}.
+
+\Hypertarget{classSistema_a1954be491a70ce4aae67f05185d9ece0}\label{classSistema_a1954be491a70ce4aae67f05185d9ece0} 
+\index{Sistema@{Sistema}!robots@{robots}}
+\index{robots@{robots}!Sistema@{Sistema}}
+\doxysubsubsection{\texorpdfstring{robots}{robots}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classRobot}{Robot}}$>$ $>$ Sistema\+::robots\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Sistema_8h_source_l00017}{17}} of file \mbox{\hyperlink{Sistema_8h_source}{Sistema.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{classSistema_a8f94144d7165754eaa871512469039ae}{assign\+Any\+Robot()}}, \mbox{\hyperlink{classSistema_ab441c045868f9835285de2ac160fa8af}{assign\+Robot\+Task()}}, \mbox{\hyperlink{classSistema_a8160e9638ddcff4971a961f892a5fbc9}{free\+Robot()}}, \mbox{\hyperlink{classSistema_ae73f607f7499295c3d838f0804298058}{initialize\+Robots()}}, and \mbox{\hyperlink{classSistema_a436062bec22de4d3b31b97a8be693ae8}{show\+Robots\+Status()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+import/\mbox{\hyperlink{Sistema_8h}{Sistema.\+h}}\item 
+src/\mbox{\hyperlink{Sistema_8cpp}{Sistema.\+cpp}}\item 
+src/\mbox{\hyperlink{SistemaUtils_8cpp}{Sistema\+Utils.\+cpp}}\end{DoxyCompactItemize}

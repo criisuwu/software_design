@@ -1,0 +1,106 @@
+\doxysection{Sistema\+Utils.\+cpp}
+\hypertarget{SistemaUtils_8cpp_source}{}\label{SistemaUtils_8cpp_source}\index{src/SistemaUtils.cpp@{src/SistemaUtils.cpp}}
+\mbox{\hyperlink{SistemaUtils_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../import/Sistema.h"{}}}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <sqlite3.h>}}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}../import/exceptions.h"{}}}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00006}\mbox{\hyperlink{classSistema_a9b25934d304fb47644608d6ca3128e00}{00006}}\ std::vector<std::shared\_ptr<User>>\ \mbox{\hyperlink{classSistema_a9b25934d304fb47644608d6ca3128e00}{Sistema::getDoctorsList}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00007}00007\ \ \ \ \ std::vector<std::shared\_ptr<User>>\ doctors;}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ sql\ =}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}SELECT\ ID,\ USERNAME,\ PASSWORD,\ NAME,\ EMAIL,\ SPECIALTY\ "{}}}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}FROM\ USER\ WHERE\ ROLE\ =\ 'Doctor'"{}};}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00013}00013\ \ \ \ \ sqlite3\_stmt*\ stmt;}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00014}00014\ \ \ \ \ \textcolor{keywordtype}{int}\ rc\ =\ sqlite3\_prepare\_v2(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}},\ sql,\ -\/1,\ \&stmt,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_OK)\ \{}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classDatabaseError}{DatabaseError}}(std::string(\textcolor{stringliteral}{"{}sqlite3\_prepare\_v2:\ "{}})\ +\ sqlite3\_errmsg(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}));}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{keywordflow}{while}\ (sqlite3\_step(stmt)\ ==\ SQLITE\_ROW)\ \{}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ sqlite3\_column\_int(stmt,\ 0);}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ std::string\ username\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 1));}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ std::string\ password\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 2));}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ std::string\ name\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 3));}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ std::string\ email\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 4));}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ std::string\ specialty\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 5));}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00027}00027\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ doctors.push\_back(std::make\_shared<Doctor>(\textcolor{keywordtype}{id},\ username,\ password,\ name,\ email,\ specialty));}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00029}00029\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00030}00030\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00031}00031\ \ \ \ \ sqlite3\_finalize(stmt);}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{return}\ doctors;}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00033}00033\ \}}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00035}\mbox{\hyperlink{classSistema_a10fad5f3abeee0871c9a4761468aa4a4}{00035}}\ std::vector<std::shared\_ptr<User>>\ \mbox{\hyperlink{classSistema_a10fad5f3abeee0871c9a4761468aa4a4}{Sistema::getAllUsers}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00036}00036\ \ \ \ \ std::vector<std::shared\_ptr<User>>\ users;}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ sql\ =}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}SELECT\ ID,\ USERNAME,\ PASSWORD,\ ROLE,\ NAME,\ EMAIL,\ SPECIALTY,\ TELEPHONE\ FROM\ USER"{}};}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00041}00041\ \ \ \ \ sqlite3\_stmt*\ stmt;}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{int}\ rc\ =\ sqlite3\_prepare\_v2(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}},\ sql,\ -\/1,\ \&stmt,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_OK)\ \{}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classDatabaseError}{DatabaseError}}(std::string(\textcolor{stringliteral}{"{}sqlite3\_prepare\_v2:\ "{}})\ +\ sqlite3\_errmsg(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}));}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00046}00046\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{while}\ (sqlite3\_step(stmt)\ ==\ SQLITE\_ROW)\ \{}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ sqlite3\_column\_int(stmt,\ 0);}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ std::string\ username\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 1));}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ std::string\ password\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 2));}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ std::string\ role\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 3));}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ std::string\ name\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 4));}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ std::string\ email\ =\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 5));}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ std::string\ specialty\ =\ sqlite3\_column\_text(stmt,\ 6)}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 6))}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ std::string\ telephone\ =\ sqlite3\_column\_text(stmt,\ 7)}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ?\ \textcolor{keyword}{reinterpret\_cast<}\textcolor{keyword}{const\ }\textcolor{keywordtype}{char}*\textcolor{keyword}{>}(sqlite3\_column\_text(stmt,\ 7))}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ :\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (role\ ==\ \textcolor{stringliteral}{"{}Doctor"{}})}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ users.push\_back(std::make\_shared<Doctor>(\textcolor{keywordtype}{id},\ username,\ password,\ name,\ email,\ specialty));}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (role\ ==\ \textcolor{stringliteral}{"{}Patient"{}})}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \ \ \ \ users.push\_back(std::make\_shared<Patient>(\textcolor{keywordtype}{id},\ username,\ password,\ name,\ email,\ telephone));}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (role\ ==\ \textcolor{stringliteral}{"{}Administrator"{}})}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ users.push\_back(std::make\_shared<Admin>(\textcolor{keywordtype}{id},\ username,\ password,\ name,\ email));}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00071}00071\ \ \ \ \ sqlite3\_finalize(stmt);}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{return}\ users;}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00073}00073\ \}}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00075}\mbox{\hyperlink{classSistema_a6c0b070e337e25c0a9f25d60570a7eeb}{00075}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classSistema_a6c0b070e337e25c0a9f25d60570a7eeb}{Sistema::assignScheduleToDoctor}}(\textcolor{keywordtype}{int}\ idDoctor,\ \textcolor{keyword}{const}\ std::string\&\ day,}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ start,\ \textcolor{keyword}{const}\ std::string\&\ end)\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00077}00077\ \{}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ sql\ =\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}INSERT\ INTO\ SCHEDULE\ (ID\_DOCTOR,\ DAY,\ START\_TIME,\ END\_TIME)\ VALUES\ (?,\ ?,\ ?,\ ?)"{}};}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00081}00081\ \ \ \ \ sqlite3\_stmt*\ stmt;}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00082}00082\ \ \ \ \ \textcolor{keywordtype}{int}\ rc\ =\ sqlite3\_prepare\_v2(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}},\ sql,\ -\/1,\ \&stmt,\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_OK)\ \{}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classDatabaseError}{DatabaseError}}(std::string(\textcolor{stringliteral}{"{}sqlite3\_prepare\_v2:\ "{}})\ +\ sqlite3\_errmsg(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}));}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00085}00085\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00086}00086\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00087}00087\ \ \ \ \ sqlite3\_bind\_int(stmt,\ 1,\ idDoctor);}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00088}00088\ \ \ \ \ sqlite3\_bind\_text(stmt,\ 2,\ day.c\_str(),\ -\/1,\ SQLITE\_STATIC);}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00089}00089\ \ \ \ \ sqlite3\_bind\_text(stmt,\ 3,\ start.c\_str(),\ -\/1,\ SQLITE\_STATIC);}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00090}00090\ \ \ \ \ sqlite3\_bind\_text(stmt,\ 4,\ end.c\_str(),\ -\/1,\ SQLITE\_STATIC);}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00092}00092\ \ \ \ \ rc\ =\ sqlite3\_step(stmt);}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00093}00093\ \ \ \ \ sqlite3\_finalize(stmt);}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00095}00095\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_DONE)\ \{}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classDatabaseError}{DatabaseError}}(std::string(\textcolor{stringliteral}{"{}sqlite3\_step:\ "{}})\ +\ sqlite3\_errmsg(\mbox{\hyperlink{classSistema_a56b517d20c53547a7882ffec2f4aaa73}{db}}));}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00097}00097\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00098}00098\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{return}\ rc\ ==\ SQLITE\_DONE;}
+\DoxyCodeLine{\Hypertarget{SistemaUtils_8cpp_source_l00100}00100\ \}}
+
+\end{DoxyCode}

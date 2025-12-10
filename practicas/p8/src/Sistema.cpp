@@ -1,6 +1,7 @@
 #include "../import/Sistema.h"
 #include <iostream>
 #include <sqlite3.h>
+#include "../import/exceptions.h"
 
 Sistema* Sistema::instance = nullptr;
 
@@ -17,12 +18,14 @@ Sistema::~Sistema() {
 bool Sistema::connectDatabase() {
     int rc = sqlite3_open("appointment_system.db", &db);
     if (rc) {
-        std::cerr << "No se pudo abrir la BD: " << sqlite3_errmsg(db) << std::endl;
-        return false;
+        throw DatabaseError(std::string("sqlite3_open: ") + sqlite3_errmsg(db));
     }
     
     // Activar claves foráneas
-    sqlite3_exec(db, "PRAGMA foreign_keys = ON;", nullptr, nullptr, nullptr);
+    rc = sqlite3_exec(db, "PRAGMA foreign_keys = ON;", nullptr, nullptr, nullptr);
+    if (rc != SQLITE_OK) {
+        throw DatabaseError(std::string("PRAGMA foreign_keys: ") + sqlite3_errmsg(db));
+    }
     return true;
 }
 
@@ -35,8 +38,7 @@ bool Sistema::registerUser(const std::string& username, const std::string& passw
     
     int rc = sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
     if (rc != SQLITE_OK) {
-        std::cerr << "Error preparando sentencia: " << sqlite3_errmsg(db) << std::endl;
-        return false;
+        throw DatabaseError(std::string("sqlite3_prepare_v2: ") + sqlite3_errmsg(db));
     }
     
     sqlite3_bind_text(stmt, 1, username.c_str(), -1, SQLITE_STATIC);
@@ -51,8 +53,10 @@ bool Sistema::registerUser(const std::string& username, const std::string& passw
     sqlite3_finalize(stmt);
     
     if (rc != SQLITE_DONE) {
-        std::cerr << "Error insertando usuario: " << sqlite3_errmsg(db) << std::endl;
-        return false;
+        if (rc == SQLITE_CONSTRAINT) {
+            return false;
+        }
+        throw DatabaseError(std::string("sqlite3_step: ") + sqlite3_errmsg(db));
     }
     
     return true;
@@ -65,8 +69,7 @@ std::unique_ptr<User> Sistema::loginUser(const std::string& username, const std:
     
     int rc = sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
     if (rc != SQLITE_OK) {
-        std::cerr << "Error preparando sentencia: " << sqlite3_errmsg(db) << std::endl;
-        return nullptr;
+        throw DatabaseError(std::string("sqlite3_prepare_v2: ") + sqlite3_errmsg(db));
     }
     
     sqlite3_bind_text(stmt, 1, username.c_str(), -1, SQLITE_STATIC);
@@ -97,6 +100,12 @@ std::unique_ptr<User> Sistema::loginUser(const std::string& username, const std:
         } else if (role == "Administrator") {
             return std::make_unique<Admin>(id, db_username, db_password, name, email);
         }
+    } else if (rc == SQLITE_DONE) {
+        sqlite3_finalize(stmt);
+        throw InvalidCredentialsError();
+    } else {
+        sqlite3_finalize(stmt);
+        throw DatabaseError(std::string("sqlite3_step: ") + sqlite3_errmsg(db));
     }
     
     sqlite3_finalize(stmt);
@@ -156,3 +165,11 @@ void Sistema::freeRobot(int robotId) {
         std::cout << "Robot no encontrado.\n";
     }
 }
+
+//NEW
+// Sistema* Sistema::getInstance() {
+//     if (instance == nullptr) {
+//         instance = new Sistema();
+//     }
+//     return instance;
+// }

@@ -1,0 +1,123 @@
+\doxysection{db/sql\+\_\+create.cpp File Reference}
+\hypertarget{sql__create_8cpp}{}\label{sql__create_8cpp}\index{db/sql\_create.cpp@{db/sql\_create.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sqlite3.\+h$>$}\newline
+Include dependency graph for sql\+\_\+create.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{sql__create_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{sql__create_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{sql__create_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{sql__create_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{sql\_create.cpp@{sql\_create.cpp}!main@{main}}
+\index{main@{main}!sql\_create.cpp@{sql\_create.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{sql__create_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{sql__create_8cpp_source}{sql\+\_\+create.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ \ \ \ \ sqlite3\ *db\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{char}\ *errMsg\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{int}\ rc;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{//\ Abrir\ (o\ crear)\ la\ base\ de\ datos}}
+\DoxyCodeLine{00010\ \ \ \ \ rc\ =\ sqlite3\_open(\textcolor{stringliteral}{"{}appointment\_system.db"{}},\ \&db);}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc)\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}No\ se\ pudo\ abrir/crear\ la\ BD:\ "{}}\ <<\ sqlite3\_errmsg(db)\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (db)\ sqlite3\_close(db);}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Activar\ foreign\ keys}}
+\DoxyCodeLine{00018\ \ \ \ \ rc\ =\ sqlite3\_exec(db,\ \textcolor{stringliteral}{"{}PRAGMA\ foreign\_keys\ =\ ON;"{}},\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ \&errMsg);}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_OK)\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ activando\ foreign\_keys:\ "{}}\ <<\ errMsg\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ sqlite3\_free(errMsg);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ sqlite3\_close(db);}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00024\ \ \ \ \ \}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ Sentencia\ para\ crear\ la\ tabla\ USER\ (solo\ campos\ básicos)}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *sqlCreateUser\ =}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ USER\ ("{}}}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ID\ INTEGER\ PRIMARY\ KEY\ AUTOINCREMENT,\ "{}}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}USERNAME\ TEXT\ NOT\ NULL\ UNIQUE,\ "{}}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}PASSWORD\ TEXT\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ROLE\ TEXT\ NOT\ NULL\ CHECK(ROLE\ IN\ ('Doctor','Patient','Administrator')),\ "{}}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}NAME\ TEXT\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}EMAIL\ TEXT,\ "{}}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}SPECIALTY\ TEXT,\ "{}}}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}TELEPHONE\ TEXT"{}}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{});"{}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ rc\ =\ sqlite3\_exec(db,\ sqlCreateUser,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ \&errMsg);}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_OK)\ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ creando\ la\ tabla\ USER:\ "{}}\ <<\ errMsg\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ sqlite3\_free(errMsg);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ sqlite3\_close(db);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{comment}{//\ Sentencia\ para\ crear\ la\ tabla\ SCHEDULE}}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *sqlCreateSchedule\ =}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ SCHEDULE\ ("{}}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ID\ INTEGER\ PRIMARY\ KEY\ AUTOINCREMENT,\ "{}}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ID\_DOCTOR\ INTEGER\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}DAY\ TEXT\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}START\_TIME\ TEXT\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}END\_TIME\ TEXT\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}FOREIGN\ KEY(ID\_DOCTOR)\ REFERENCES\ USER(ID)"{}}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{});"{}};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ rc\ =\ sqlite3\_exec(db,\ sqlCreateSchedule,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ \&errMsg);}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_OK)\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ creando\ la\ tabla\ SCHEDULE:\ "{}}\ <<\ errMsg\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ sqlite3\_free(errMsg);}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ sqlite3\_close(db);}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ Sentencia\ para\ crear\ la\ tabla\ APPOINTMENT}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *sqlCreateAppointment\ =}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ APPOINTMENT\ ("{}}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ID\ INTEGER\ PRIMARY\ KEY\ AUTOINCREMENT,\ "{}}}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ID\_PATIENT\ INTEGER\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ID\_DOCTOR\ INTEGER\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}DATE\ TEXT\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}TIME\ TEXT\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}STATUS\ TEXT\ DEFAULT\ 'Pendiente',\ "{}}}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}NOTES\ TEXT,\ "{}}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}FOREIGN\ KEY(ID\_PATIENT)\ REFERENCES\ USER(ID),\ "{}}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}FOREIGN\ KEY(ID\_DOCTOR)\ REFERENCES\ USER(ID)"{}}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{});"{}};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \ \ \ \ rc\ =\ sqlite3\_exec(db,\ sqlCreateAppointment,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ \&errMsg);}
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_OK)\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ creando\ la\ tabla\ APPOINTMENT:\ "{}}\ <<\ errMsg\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ sqlite3\_free(errMsg);}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ sqlite3\_close(db);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00086\ \ \ \ \ \}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Tablas\ creadas\ correctamente\ en\ appointment\_system.db\(\backslash\)n"{}};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ sqlite3\_close(db);}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00092\ \}}
+
+\end{DoxyCode}

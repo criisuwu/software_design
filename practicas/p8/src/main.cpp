@@ -7,6 +7,7 @@
 #include "../import/Doctor.h"
 #include "../import/Admin.h"
 #include "../import/Sistema.h"
+#include "../import/exceptions.h"
 
 void clearBuffer() {
     std::cin.clear();
@@ -99,10 +100,16 @@ void registerNewUser(Sistema& system) {
         std::getline(std::cin, telephone);
     }
     
-    if (system.registerUser(username, password, role, name, email, specialty, telephone)) {
-        std::cout << "Usuario registrado exitosamente!\n";
-    } else {
-        std::cout << "Error al registrar usuario (posiblemente el nombre de usuario ya existe)\n";
+    try {
+        if (system.registerUser(username, password, role, name, email, specialty, telephone)) {
+            std::cout << "Usuario registrado exitosamente!\n";
+        } else {
+            std::cout << "Error al registrar usuario (posiblemente el nombre de usuario ya existe)\n";
+        }
+    } catch (const DatabaseError& e) {
+        std::cerr << "Error de base de datos: " << e.what() << "\n";
+    } catch (const std::exception& e) {
+        std::cerr << "Error inesperado: " << e.what() << "\n";
     }
 }
 
@@ -115,18 +122,21 @@ void loginUser(Sistema& system) {
     std::cout << "Contraseña: ";
     std::getline(std::cin, password);
     
-    std::unique_ptr<User> user = system.loginUser(username, password);
-    if (user) {
+    try {
+        std::unique_ptr<User> user = system.loginUser(username, password);
         std::cout << "Login exitoso. Bienvenido ";
         if (!user->getRole().empty()) {
             std::cout << user->getRole();
         }
         std::cout << "!\n";
         
-        // Polimorfismo en acción - llama al showMenu() correcto
         user->showMenu();
-    } else {
-        std::cout << "Usuario o contraseña incorrectos\n";
+    } catch (const InvalidCredentialsError& e) {
+        std::cerr << "Error de inicio de sesión: " << e.what() << "\n";
+    } catch (const DatabaseError& e) {
+        std::cerr << "Error de base de datos: " << e.what() << "\n";
+    } catch (const std::exception& e) {
+        std::cerr << "Error inesperado: " << e.what() << "\n";
     }
 }
 

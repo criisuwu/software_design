@@ -1,0 +1,11 @@
+<map id="Admin::viewDoctorsList" name="Admin::viewDoctorsList">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,31,167,56"/>
+<area shape="rect" id="Node000002" href="$classSistema.html#a9b25934d304fb47644608d6ca3128e00" title=" " alt="" coords="215,5,377,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,31,201,27,202,32,167,36"/>
+<area shape="rect" id="Node000003" href="$classSistema.html#ae6f4460ef7164a0c4b77b072e22c8db4" title=" " alt="" coords="223,55,369,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="167,50,209,55,208,60,167,55"/>
+<area shape="rect" id="Node000004" href="$classSistema.html#a815b07845ef6b03247b239333fe75e28" title=" " alt="" coords="425,55,552,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="370,65,412,65,412,70,370,70"/>
+<area shape="rect" id="Node000005" href="$classSistema.html#a7ac408e57125975eff9ee9df0835041c" title=" " alt="" coords="600,55,780,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="552,65,586,65,586,70,552,70"/>
+</map>

@@ -1,3 +1,5 @@
+CYAN    = \033[0;36m
+
 NAME = robot
 
 SQL = db/sql_create.cpp db/sql_insert.cpp
@@ -25,10 +27,16 @@ sql_tools: $(SQL)
 	$(CC) $(CFLAGS) db/sql_insert.cpp -o db/insert_data $(LIBS)
 
 database: sql_tools
+	@echo "$(CYAN)Creando tabla..."
 	@./db/create_db
 
 data: sql_tools
+	@echo "$(CYAN)Insertando datos..."
 	@./db/insert_data
+
+test_sql: sql_tools
+	@echo "$(CYAN)Probando manejo de excepciones SQL..."
+	@./db/test_exceptions
 
 clean:
 	$(RM) $(OBJS)

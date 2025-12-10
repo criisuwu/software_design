@@ -1,6 +1,7 @@
 #include "../import/Sistema.h"
 #include <iostream>
 #include <sqlite3.h>
+#include "../import/exceptions.h"
 
 std::vector<std::shared_ptr<User>> Sistema::getDoctorsList() const {
     std::vector<std::shared_ptr<User>> doctors;
@@ -12,7 +13,9 @@ std::vector<std::shared_ptr<User>> Sistema::getDoctorsList() const {
     sqlite3_stmt* stmt;
     int rc = sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
 
-    if (rc != SQLITE_OK) return doctors;
+    if (rc != SQLITE_OK) {
+        throw DatabaseError(std::string("sqlite3_prepare_v2: ") + sqlite3_errmsg(db));
+    }
 
     while (sqlite3_step(stmt) == SQLITE_ROW) {
         int id = sqlite3_column_int(stmt, 0);
@@ -38,7 +41,9 @@ std::vector<std::shared_ptr<User>> Sistema::getAllUsers() const {
     sqlite3_stmt* stmt;
     int rc = sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
 
-    if (rc != SQLITE_OK) return users;
+    if (rc != SQLITE_OK) {
+        throw DatabaseError(std::string("sqlite3_prepare_v2: ") + sqlite3_errmsg(db));
+    }
 
     while (sqlite3_step(stmt) == SQLITE_ROW) {
 
@@ -75,7 +80,9 @@ bool Sistema::assignScheduleToDoctor(int idDoctor, const std::string& day,
 
     sqlite3_stmt* stmt;
     int rc = sqlite3_prepare_v2(db, sql, -1, &stmt, nullptr);
-    if (rc != SQLITE_OK) return false;
+    if (rc != SQLITE_OK) {
+        throw DatabaseError(std::string("sqlite3_prepare_v2: ") + sqlite3_errmsg(db));
+    }
 
     sqlite3_bind_int(stmt, 1, idDoctor);
     sqlite3_bind_text(stmt, 2, day.c_str(), -1, SQLITE_STATIC);
@@ -85,5 +92,9 @@ bool Sistema::assignScheduleToDoctor(int idDoctor, const std::string& day,
     rc = sqlite3_step(stmt);
     sqlite3_finalize(stmt);
 
+    if (rc != SQLITE_DONE) {
+        throw DatabaseError(std::string("sqlite3_step: ") + sqlite3_errmsg(db));
+    }
+    
     return rc == SQLITE_DONE;
 }

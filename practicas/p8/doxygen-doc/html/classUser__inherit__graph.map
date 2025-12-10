@@ -1,0 +1,9 @@
+<map id="User" name="User">
+<area shape="rect" id="Node000001" title=" " alt="" coords="191,5,303,411"/>
+<area shape="rect" id="Node000002" href="$classAdmin.html" title=" " alt="" coords="5,479,133,664"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,337,117,479,112,477,182,335"/>
+<area shape="rect" id="Node000003" href="$classDoctor.html" title=" " alt="" coords="158,459,335,684"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="249,424,249,458,244,458,244,424"/>
+<area shape="rect" id="Node000004" href="$classPatient.html" title=" " alt="" coords="359,469,518,674"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="312,325,387,467,382,470,307,328"/>
+</map>
