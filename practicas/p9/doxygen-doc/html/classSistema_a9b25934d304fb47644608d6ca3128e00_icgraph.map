@@ -1,0 +1,7 @@
+<map id="Sistema::getDoctorsList" name="Sistema::getDoctorsList">
+<area shape="rect" id="Node000001" title="Obtiene la lista de doctores registrados." alt="" coords="393,5,556,31"/>
+<area shape="rect" id="Node000002" href="$classAdmin.html#a63c185a2aef72ab4e4e8c62abd06c971" title=" " alt="" coords="184,5,345,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="379,21,346,21,346,15,379,15"/>
+<area shape="rect" id="Node000003" href="$classAdmin.html#a4678430f3f060a79b3864ae40c50984e" title=" " alt="" coords="5,5,136,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="170,21,136,21,136,15,170,15"/>
+</map>

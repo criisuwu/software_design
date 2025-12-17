@@ -1,0 +1,35 @@
+\doxysection{Doctor.\+h}
+\hypertarget{Doctor_8h_source}{}\label{Doctor_8h_source}\index{import/Doctor.h@{import/Doctor.h}}
+\mbox{\hyperlink{Doctor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ DOCTOR\_H}}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ DOCTOR\_H}}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{User_8h}{User.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00008}\mbox{\hyperlink{classDoctor}{00008}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDoctor}{Doctor}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classUser}{User}}\ \{}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00009}00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00010}\mbox{\hyperlink{classDoctor_a0af6906851207d4d36aac959dd747d11}{00010}}\ \ \ \ \ std::string\ \mbox{\hyperlink{classDoctor_a0af6906851207d4d36aac959dd747d11}{specialty}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00012}00012\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00013}00013\ \ \ \ \ \mbox{\hyperlink{classDoctor}{Doctor}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id}\ =\ 0,\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classUser_aacbb807e514280f69e00bec7d71f3aee}{username}}\ =\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classUser_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}}\ =\ \textcolor{stringliteral}{"{}"{}},\ }
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classUser_a085d8d69282b6298964eab8351584536}{name}}\ =\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classUser_ac35b7c63228119cb91acdbd7ed32b8cb}{email}}\ =\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{classDoctor_a0af6906851207d4d36aac959dd747d11}{specialty}}\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00015}00015\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00016}\mbox{\hyperlink{classDoctor_a8db27937fc7ea3afcff0666d2537dcdc}{00016}}\ \ \ \ \ std::string\ \mbox{\hyperlink{classDoctor_a8db27937fc7ea3afcff0666d2537dcdc}{getSpecialty}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDoctor_a0af6906851207d4d36aac959dd747d11}{specialty}};\ \}}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00017}\mbox{\hyperlink{classDoctor_a161d7244b1af3d56594de0914fcd9d7a}{00017}}\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDoctor_a161d7244b1af3d56594de0914fcd9d7a}{setSpecialty}}(\textcolor{keyword}{const}\ std::string\&\ spec)\ \{\ \mbox{\hyperlink{classDoctor_a0af6906851207d4d36aac959dd747d11}{specialty}}\ =\ spec;\ \}}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00018}00018\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00019}00019\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDoctor_a0276ca3bb4a6e18ca1fcf8a67dfd31ea}{showMenu}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00020}00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDoctor_a24f30b223f15a64e14278665316d2d78}{displayInfo}}()\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00021}00021\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00022}00022\ \ \ \ \ \textcolor{comment}{//\ Funcionalidades\ específicas}}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDoctor_a33e214194167b4cf8645cf38cb3ec8b4}{confirmAttendance}}();}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDoctor_aa71e0fb55a1f065cd461fc15a3d64a54}{modifySchedule}}();}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00025}00025\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDoctor_af964da62b97cdd21d7cac18674543c2f}{addNotesToAppointment}}();}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00026}00026\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDoctor_a694c23cd59b9b8f053734486cc4b5372}{viewMySchedule}}();}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00027}00027\ \};}
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{Doctor_8h_source_l00029}00029\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

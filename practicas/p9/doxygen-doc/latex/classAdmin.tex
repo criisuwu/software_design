@@ -1,0 +1,473 @@
+\doxysection{Admin Class Reference}
+\hypertarget{classAdmin}{}\label{classAdmin}\index{Admin@{Admin}}
+
+
+{\ttfamily \#include $<$Admin.\+h$>$}
+
+
+
+Inheritance diagram for Admin\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classAdmin__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Admin\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classAdmin__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAdmin_a448554907972c73d9680155a00b3970d}{Admin}} (int \mbox{\hyperlink{classUser_aa7e6e39b43020bbe9c3a196b3689b0f7}{id}}=0, const std\+::string \&\mbox{\hyperlink{classUser_aacbb807e514280f69e00bec7d71f3aee}{username}}="{}"{}, const std\+::string \&\mbox{\hyperlink{classUser_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}}="{}"{}, const std\+::string \&\mbox{\hyperlink{classUser_a085d8d69282b6298964eab8351584536}{name}}="{}"{}, const std\+::string \&\mbox{\hyperlink{classUser_ac35b7c63228119cb91acdbd7ed32b8cb}{email}}="{}"{})
+\item 
+void \mbox{\hyperlink{classAdmin_a4678430f3f060a79b3864ae40c50984e}{show\+Menu}} () override
+\item 
+void \mbox{\hyperlink{classAdmin_ad7f8744129c39be23624b33fb30f6bbd}{display\+Info}} () const override
+\item 
+void \mbox{\hyperlink{classAdmin_a958abf574102bdb641d166fcc9ada1d4}{create\+Doctor}} ()
+\item 
+void \mbox{\hyperlink{classAdmin_a6fd079434d5bdc14a2c195e42687039e}{assign\+Schedule}} ()
+\item 
+void \mbox{\hyperlink{classAdmin_a63c185a2aef72ab4e4e8c62abd06c971}{view\+Doctors\+List}} ()
+\item 
+void \mbox{\hyperlink{classAdmin_addd504e4890e76dbb708188bde645f7c}{view\+All\+Users}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classUser}{User}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUser_a6a08c3aa21e1eaed88b4d039d93e8341}{User}} (int \mbox{\hyperlink{classUser_aa7e6e39b43020bbe9c3a196b3689b0f7}{id}}=0, const std\+::string \&\mbox{\hyperlink{classUser_aacbb807e514280f69e00bec7d71f3aee}{username}}="{}"{}, const std\+::string \&\mbox{\hyperlink{classUser_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}}="{}"{}, const std\+::string \&\mbox{\hyperlink{classUser_ac066a219bd8d28680aefb90ecc8fc635}{role}}="{}"{}, const std\+::string \&\mbox{\hyperlink{classUser_a085d8d69282b6298964eab8351584536}{name}}="{}"{}, const std\+::string \&\mbox{\hyperlink{classUser_ac35b7c63228119cb91acdbd7ed32b8cb}{email}}="{}"{})
+\item 
+virtual \mbox{\hyperlink{classUser_a634d7ad22c3d2b5fed35f71e10d98628}{\texorpdfstring{$\sim$}{\string~}\+User}} ()=default
+\item 
+int \mbox{\hyperlink{classUser_a010077fcd52d32fd3b4e1171f748a86a}{get\+Id}} () const
+\item 
+std\+::string \mbox{\hyperlink{classUser_a7079d6aefd9d1b930d837039c1b3e7df}{get\+Username}} () const
+\item 
+std\+::string \mbox{\hyperlink{classUser_a180e5acdc4b150463652d90d54caa8fc}{get\+Password}} () const
+\item 
+std\+::string \mbox{\hyperlink{classUser_a374cbe023e5cc08bdec6d7d009c4cfe4}{get\+Role}} () const
+\item 
+std\+::string \mbox{\hyperlink{classUser_a446a64e63adafbc2e1428532275ad6a1}{get\+Name}} () const
+\item 
+std\+::string \mbox{\hyperlink{classUser_a68c520e78268ba63c97ff04b6fb210a1}{get\+Email}} () const
+\item 
+void \mbox{\hyperlink{classUser_aef93eca94a649b3d4fe0fe891a35646d}{set\+Id}} (int new\+Id)
+\item 
+void \mbox{\hyperlink{classUser_a9416c0140715c84e16df2169ff66db8f}{set\+Name}} (const std\+::string \&new\+Name)
+\item 
+void \mbox{\hyperlink{classUser_a84896b2f45096ec7cb74da2fa8bdf586}{set\+Email}} (const std\+::string \&new\+Email)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classUser}{User}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classUser_aa7e6e39b43020bbe9c3a196b3689b0f7}{id}}
+\item 
+std\+::string \mbox{\hyperlink{classUser_aacbb807e514280f69e00bec7d71f3aee}{username}}
+\item 
+std\+::string \mbox{\hyperlink{classUser_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}}
+\item 
+std\+::string \mbox{\hyperlink{classUser_ac066a219bd8d28680aefb90ecc8fc635}{role}}
+\item 
+std\+::string \mbox{\hyperlink{classUser_a085d8d69282b6298964eab8351584536}{name}}
+\item 
+std\+::string \mbox{\hyperlink{classUser_ac35b7c63228119cb91acdbd7ed32b8cb}{email}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Admin_8h_source_l00008}{8}} of file \mbox{\hyperlink{Admin_8h_source}{Admin.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classAdmin_a448554907972c73d9680155a00b3970d}\label{classAdmin_a448554907972c73d9680155a00b3970d} 
+\index{Admin@{Admin}!Admin@{Admin}}
+\index{Admin@{Admin}!Admin@{Admin}}
+\doxysubsubsection{\texorpdfstring{Admin()}{Admin()}}
+{\footnotesize\ttfamily Admin\+::\+Admin (\begin{DoxyParamCaption}\item[{int}]{id = {\ttfamily 0},  }\item[{const std\+::string \&}]{username = {\ttfamily "{}"{}},  }\item[{const std\+::string \&}]{password = {\ttfamily "{}"{}},  }\item[{const std\+::string \&}]{name = {\ttfamily "{}"{}},  }\item[{const std\+::string \&}]{email = {\ttfamily "{}"{}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Admin_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{Admin_8cpp_source}{Admin.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006\ \ \ \ \ :\ \mbox{\hyperlink{classUser}{User}}(\textcolor{keywordtype}{id},\ \mbox{\hyperlink{classUser_aacbb807e514280f69e00bec7d71f3aee}{username}},\ \mbox{\hyperlink{classUser_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}},\ \textcolor{stringliteral}{"{}Administrator"{}},\ \mbox{\hyperlink{classUser_a085d8d69282b6298964eab8351584536}{name}},\ \mbox{\hyperlink{classUser_ac35b7c63228119cb91acdbd7ed32b8cb}{email}})\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classAdmin_a6fd079434d5bdc14a2c195e42687039e}\label{classAdmin_a6fd079434d5bdc14a2c195e42687039e} 
+\index{Admin@{Admin}!assignSchedule@{assignSchedule}}
+\index{assignSchedule@{assignSchedule}!Admin@{Admin}}
+\doxysubsubsection{\texorpdfstring{assignSchedule()}{assignSchedule()}}
+{\footnotesize\ttfamily void Admin\+::assign\+Schedule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{AdminUtils_8cpp_source_l00062}{62}} of file \mbox{\hyperlink{AdminUtils_8cpp_source}{Admin\+Utils.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \textcolor{comment}{//Me\ falla\ esto}}
+\DoxyCodeLine{00063\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/\ Asignar\ Agenda\ a\ Doctor\ -\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keywordtype}{int}\ idDoctor;}
+\DoxyCodeLine{00066\ \ \ \ \ std::string\ day,\ start,\ end;}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}ID\ del\ Doctor:\ "{}};}
+\DoxyCodeLine{00069\ \ \ \ \ std::cin\ >>\ idDoctor;}
+\DoxyCodeLine{00070\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Día\ (Ej:\ Lunes):\ "{}};}
+\DoxyCodeLine{00071\ \ \ \ \ std::cin\ >>\ day;}
+\DoxyCodeLine{00072\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Hora\ inicio\ (HH:MM):\ "{}};}
+\DoxyCodeLine{00073\ \ \ \ \ std::cin\ >>\ start;}
+\DoxyCodeLine{00074\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Hora\ fin\ (HH:MM):\ "{}};}
+\DoxyCodeLine{00075\ \ \ \ \ std::cin\ >>\ end;}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \mbox{\hyperlink{classSistema}{Sistema}}\&\ sys\ =\ \mbox{\hyperlink{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4}{Sistema::getInstance}}();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordtype}{bool}\ ok\ =\ sys.\mbox{\hyperlink{classSistema_a6c0b070e337e25c0a9f25d60570a7eeb}{assignScheduleToDoctor}}(idDoctor,\ day,\ start,\ end);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keywordflow}{if}\ (ok)}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Agenda\ asignada\ correctamente.\(\backslash\)n"{}};}
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ asignando\ agenda.\(\backslash\)n"{}};}
+\DoxyCodeLine{00085\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classSistema_a6c0b070e337e25c0a9f25d60570a7eeb}{Sistema\+::assign\+Schedule\+To\+Doctor()}}, and \mbox{\hyperlink{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4}{Sistema\+::get\+Instance()}}.
+
+
+
+Referenced by \mbox{\hyperlink{classAdmin_a4678430f3f060a79b3864ae40c50984e}{show\+Menu()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAdmin_a6fd079434d5bdc14a2c195e42687039e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{classAdmin_a6fd079434d5bdc14a2c195e42687039e_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classAdmin_a958abf574102bdb641d166fcc9ada1d4}\label{classAdmin_a958abf574102bdb641d166fcc9ada1d4} 
+\index{Admin@{Admin}!createDoctor@{createDoctor}}
+\index{createDoctor@{createDoctor}!Admin@{Admin}}
+\doxysubsubsection{\texorpdfstring{createDoctor()}{createDoctor()}}
+{\footnotesize\ttfamily void Admin\+::create\+Doctor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{AdminUtils_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{AdminUtils_8cpp_source}{Admin\+Utils.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00011\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/\ Crear\ Doctor\ -\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \ \ std::string\ \mbox{\hyperlink{classUser_aacbb807e514280f69e00bec7d71f3aee}{username}},\ \mbox{\hyperlink{classUser_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}},\ \mbox{\hyperlink{classUser_a085d8d69282b6298964eab8351584536}{name}},\ \mbox{\hyperlink{classUser_ac35b7c63228119cb91acdbd7ed32b8cb}{email}},\ specialty,\ telephone;}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Usuario:\ "{}};}
+\DoxyCodeLine{00016\ \ \ \ \ std::cin\ >>\ \mbox{\hyperlink{classUser_aacbb807e514280f69e00bec7d71f3aee}{username}};}
+\DoxyCodeLine{00017\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Contraseña:\ "{}};}
+\DoxyCodeLine{00018\ \ \ \ \ std::cin\ >>\ \mbox{\hyperlink{classUser_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}};}
+\DoxyCodeLine{00019\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Nombre:\ "{}};}
+\DoxyCodeLine{00020\ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{00021\ \ \ \ \ std::getline(std::cin,\ \mbox{\hyperlink{classUser_a085d8d69282b6298964eab8351584536}{name}});}
+\DoxyCodeLine{00022\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Correo:\ "{}};}
+\DoxyCodeLine{00023\ \ \ \ \ std::cin\ >>\ \mbox{\hyperlink{classUser_ac35b7c63228119cb91acdbd7ed32b8cb}{email}};}
+\DoxyCodeLine{00024\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Especialidad:\ "{}};}
+\DoxyCodeLine{00025\ \ \ \ \ std::cin.ignore();}
+\DoxyCodeLine{00026\ \ \ \ \ std::getline(std::cin,\ specialty);}
+\DoxyCodeLine{00027\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teléfono:\ "{}};}
+\DoxyCodeLine{00028\ \ \ \ \ std::cin\ >>\ telephone;}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{classSistema}{Sistema}}\&\ sys\ =\ \mbox{\hyperlink{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4}{Sistema::getInstance}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordtype}{bool}\ ok\ =\ sys.\mbox{\hyperlink{classSistema_a9366045d0285940588214d310432f02c}{registerUser}}(\mbox{\hyperlink{classUser_aacbb807e514280f69e00bec7d71f3aee}{username}},\ \mbox{\hyperlink{classUser_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}},\ \textcolor{stringliteral}{"{}Doctor"{}},}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classUser_a085d8d69282b6298964eab8351584536}{name}},\ \mbox{\hyperlink{classUser_ac35b7c63228119cb91acdbd7ed32b8cb}{email}},\ specialty,\ telephone);}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{if}\ (ok)}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Doctor\ creado\ exitosamente.\(\backslash\)n"{}};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Error\ al\ crear\ doctor.\(\backslash\)n"{}};}
+\DoxyCodeLine{00039\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classUser_ac35b7c63228119cb91acdbd7ed32b8cb}{User\+::email}}, \mbox{\hyperlink{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4}{Sistema\+::get\+Instance()}}, \mbox{\hyperlink{classUser_a085d8d69282b6298964eab8351584536}{User\+::name}}, \mbox{\hyperlink{classUser_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{User\+::password}}, \mbox{\hyperlink{classSistema_a9366045d0285940588214d310432f02c}{Sistema\+::register\+User()}}, and \mbox{\hyperlink{classUser_aacbb807e514280f69e00bec7d71f3aee}{User\+::username}}.
+
+
+
+Referenced by \mbox{\hyperlink{classAdmin_a4678430f3f060a79b3864ae40c50984e}{show\+Menu()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAdmin_a958abf574102bdb641d166fcc9ada1d4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{classAdmin_a958abf574102bdb641d166fcc9ada1d4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classAdmin_ad7f8744129c39be23624b33fb30f6bbd}\label{classAdmin_ad7f8744129c39be23624b33fb30f6bbd} 
+\index{Admin@{Admin}!displayInfo@{displayInfo}}
+\index{displayInfo@{displayInfo}!Admin@{Admin}}
+\doxysubsubsection{\texorpdfstring{displayInfo()}{displayInfo()}}
+{\footnotesize\ttfamily void Admin\+::display\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classUser_a4c22c369198d67e905eecdda9e05d991}{User}}.
+
+
+
+Definition at line \mbox{\hyperlink{AdminUtils_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{AdminUtils_8cpp_source}{Admin\+Utils.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00005\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00006\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n===\ INFORMACIÓN\ DEL\ ADMINISTRADOR\ ===\(\backslash\)n"{}};}
+\DoxyCodeLine{00007\ \ \ \ \ \mbox{\hyperlink{classUser_a4c22c369198d67e905eecdda9e05d991}{User::displayInfo}}();}
+\DoxyCodeLine{00008\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classUser_a4c22c369198d67e905eecdda9e05d991}{User\+::display\+Info()}}.
+
+
+
+Referenced by \mbox{\hyperlink{classAdmin_a4678430f3f060a79b3864ae40c50984e}{show\+Menu()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{classAdmin_ad7f8744129c39be23624b33fb30f6bbd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classAdmin_ad7f8744129c39be23624b33fb30f6bbd_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classAdmin_a4678430f3f060a79b3864ae40c50984e}\label{classAdmin_a4678430f3f060a79b3864ae40c50984e} 
+\index{Admin@{Admin}!showMenu@{showMenu}}
+\index{showMenu@{showMenu}!Admin@{Admin}}
+\doxysubsubsection{\texorpdfstring{showMenu()}{showMenu()}}
+{\footnotesize\ttfamily void Admin\+::show\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classUser_af8d0e2a0ef50c0dd9c248b72188dd127}{User}}.
+
+
+
+Definition at line \mbox{\hyperlink{Admin_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{Admin_8cpp_source}{Admin.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ option;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n===\ MENÚ\ ADMINISTRADOR\ ===\(\backslash\)n"{}};}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}1.\ Crear\ Doctor\(\backslash\)n"{}};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}2.\ Asignar\ Agenda\ a\ Doctor\(\backslash\)n"{}};}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}3.\ Ver\ Lista\ de\ Doctores\(\backslash\)n"{}};}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}4.\ Ver\ Todos\ los\ Usuarios\(\backslash\)n"{}};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}5.\ Ver\ Mi\ Información\(\backslash\)n"{}};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}6.\ Cerrar\ Sesión\(\backslash\)n"{}};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Seleccione\ una\ opción:\ "{}};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ std::cin\ >>\ option;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(option)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAdmin_a958abf574102bdb641d166fcc9ada1d4}{createDoctor}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAdmin_a6fd079434d5bdc14a2c195e42687039e}{assignSchedule}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAdmin_a63c185a2aef72ab4e4e8c62abd06c971}{viewDoctorsList}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAdmin_addd504e4890e76dbb708188bde645f7c}{viewAllUsers}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 5:}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAdmin_ad7f8744129c39be23624b33fb30f6bbd}{displayInfo}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 6:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Cerrando\ sesión...\(\backslash\)n"{}};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Opción\ no\ válida\(\backslash\)n"{}};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \}\ \textcolor{keywordflow}{while}(option\ !=\ 6);}
+\DoxyCodeLine{00044\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classAdmin_a6fd079434d5bdc14a2c195e42687039e}{assign\+Schedule()}}, \mbox{\hyperlink{classAdmin_a958abf574102bdb641d166fcc9ada1d4}{create\+Doctor()}}, \mbox{\hyperlink{classAdmin_ad7f8744129c39be23624b33fb30f6bbd}{display\+Info()}}, \mbox{\hyperlink{classAdmin_addd504e4890e76dbb708188bde645f7c}{view\+All\+Users()}}, and \mbox{\hyperlink{classAdmin_a63c185a2aef72ab4e4e8c62abd06c971}{view\+Doctors\+List()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAdmin_a4678430f3f060a79b3864ae40c50984e_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classAdmin_addd504e4890e76dbb708188bde645f7c}\label{classAdmin_addd504e4890e76dbb708188bde645f7c} 
+\index{Admin@{Admin}!viewAllUsers@{viewAllUsers}}
+\index{viewAllUsers@{viewAllUsers}!Admin@{Admin}}
+\doxysubsubsection{\texorpdfstring{viewAllUsers()}{viewAllUsers()}}
+{\footnotesize\ttfamily void Admin\+::view\+All\+Users (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{AdminUtils_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{AdminUtils_8cpp_source}{Admin\+Utils.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/\ Todos\ los\ Usuarios\ -\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{classSistema}{Sistema}}\&\ sys\ =\ \mbox{\hyperlink{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4}{Sistema::getInstance}}();}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{auto}\ users\ =\ sys.\mbox{\hyperlink{classSistema_a10fad5f3abeee0871c9a4761468aa4a4}{getAllUsers}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{if}\ (users.empty())\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ hay\ usuarios\ registrados.\(\backslash\)n"{}};}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ u\ :\ users)\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nID:\ "{}}\ <<\ u-\/>getId()}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nUsuario:\ "{}}\ <<\ u-\/>getUsername()}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nRol:\ "{}}\ <<\ u-\/>getRole()}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nNombre:\ "{}}\ <<\ u-\/>getName()}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nEmail:\ "{}}\ <<\ u-\/>getEmail()}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{00059\ \ \ \ \ \}}
+\DoxyCodeLine{00060\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classSistema_a10fad5f3abeee0871c9a4761468aa4a4}{Sistema\+::get\+All\+Users()}}, and \mbox{\hyperlink{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4}{Sistema\+::get\+Instance()}}.
+
+
+
+Referenced by \mbox{\hyperlink{classAdmin_a4678430f3f060a79b3864ae40c50984e}{show\+Menu()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAdmin_addd504e4890e76dbb708188bde645f7c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classAdmin_addd504e4890e76dbb708188bde645f7c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classAdmin_a63c185a2aef72ab4e4e8c62abd06c971}\label{classAdmin_a63c185a2aef72ab4e4e8c62abd06c971} 
+\index{Admin@{Admin}!viewDoctorsList@{viewDoctorsList}}
+\index{viewDoctorsList@{viewDoctorsList}!Admin@{Admin}}
+\doxysubsubsection{\texorpdfstring{viewDoctorsList()}{viewDoctorsList()}}
+{\footnotesize\ttfamily void Admin\+::view\+Doctors\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{AdminUtils_8cpp_source_l00087}{87}} of file \mbox{\hyperlink{AdminUtils_8cpp_source}{Admin\+Utils.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \mbox{\hyperlink{classSistema}{Sistema}}\&\ sys\ =\ \mbox{\hyperlink{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4}{Sistema::getInstance}}();}
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{auto}\ doctors\ =\ sys.\mbox{\hyperlink{classSistema_a9b25934d304fb47644608d6ca3128e00}{getDoctorsList}}();}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keywordflow}{if}\ (doctors.empty())\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}No\ hay\ doctores\ registrados.\(\backslash\)n"{}};}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00094\ \ \ \ \ \}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\&\ d\ :\ doctors)\ \{}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nID:\ "{}}\ <<\ d-\/>getId()}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)nNombre:\ "{}}\ <<\ d-\/>getName()}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{00100\ \ \ \ \ \}}
+\DoxyCodeLine{00101\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classSistema_a9b25934d304fb47644608d6ca3128e00}{Sistema\+::get\+Doctors\+List()}}, and \mbox{\hyperlink{classSistema_ae6f4460ef7164a0c4b77b072e22c8db4}{Sistema\+::get\+Instance()}}.
+
+
+
+Referenced by \mbox{\hyperlink{classAdmin_a4678430f3f060a79b3864ae40c50984e}{show\+Menu()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classAdmin_a63c185a2aef72ab4e4e8c62abd06c971_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{classAdmin_a63c185a2aef72ab4e4e8c62abd06c971_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+import/\mbox{\hyperlink{Admin_8h}{Admin.\+h}}\item 
+src/\mbox{\hyperlink{Admin_8cpp}{Admin.\+cpp}}\item 
+src/\mbox{\hyperlink{AdminUtils_8cpp}{Admin\+Utils.\+cpp}}\end{DoxyCompactItemize}

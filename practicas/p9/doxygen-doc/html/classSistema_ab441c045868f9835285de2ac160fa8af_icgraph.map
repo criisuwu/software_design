@@ -1,0 +1,7 @@
+<map id="Sistema::assignRobotTask" name="Sistema::assignRobotTask">
+<area shape="rect" id="Node000001" title="Asigna una tarea a un robot específico." alt="" coords="311,5,489,31"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#ad448663e45a2e200260f02b5b7a24a2a" title=" " alt="" coords="104,5,263,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="297,21,263,21,263,15,297,15"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,56,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="90,21,56,21,56,15,90,15"/>
+</map>

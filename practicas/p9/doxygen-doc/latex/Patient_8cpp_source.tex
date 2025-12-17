@@ -1,0 +1,70 @@
+\doxysection{Patient.\+cpp}
+\hypertarget{Patient_8cpp_source}{}\label{Patient_8cpp_source}\index{src/Patient.cpp@{src/Patient.cpp}}
+\mbox{\hyperlink{Patient_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../import/Patient.h"{}}}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00004}\mbox{\hyperlink{classPatient_a57f4bb407571c51aeea44416b6d3068c}{00004}}\ \mbox{\hyperlink{classPatient_a57f4bb407571c51aeea44416b6d3068c}{Patient::Patient}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ std::string\&\ username,\ \textcolor{keyword}{const}\ std::string\&\ password,\ }
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00005}00005\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ email,\ \textcolor{keyword}{const}\ std::string\&\ telephone)}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00006}00006\ \ \ \ \ :\ \mbox{\hyperlink{classUser}{User}}(id,\ username,\ password,\ \textcolor{stringliteral}{"{}Patient"{}},\ name,\ email),\ telephone(telephone)\ \{\}}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00008}\mbox{\hyperlink{classPatient_a037305c60089fdfe1596ec046d32bd5a}{00008}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPatient_a037305c60089fdfe1596ec046d32bd5a}{Patient::showMenu}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keywordtype}{int}\ option;}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n===\ MENÚ\ PACIENTE\ ===\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}1.\ Solicitar\ Cita\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}2.\ Ver\ Mis\ Citas\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}3.\ Cancelar\ Cita\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}4.\ Ver\ Mi\ Información\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}5.\ Cerrar\ Sesión\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Seleccione\ una\ opción:\ "{}};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ std::cin\ >>\ option;}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(option)\ \{}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPatient_a82fa1f20987f1da67ee32a267b3e9c59}{requestAppointment}}();}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPatient_a704e4dfb0a59474bf8832e7a02789c80}{viewMyAppointments}}();}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPatient_a545ad8c342a3f9a71a60055e7faac054}{cancelAppointment}}();}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPatient_a589bcc31885c4ebbc9c6f6ef0d50bbf6}{displayInfo}}();}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 5:}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Cerrando\ sesión...\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Opción\ no\ válida\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00039}00039\ \ \ \ \ \}\ \textcolor{keywordflow}{while}(option\ !=\ 5);}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00040}00040\ \}}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00042}\mbox{\hyperlink{classPatient_a589bcc31885c4ebbc9c6f6ef0d50bbf6}{00042}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPatient_a589bcc31885c4ebbc9c6f6ef0d50bbf6}{Patient::displayInfo}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00043}00043\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n===\ INFORMACIÓN\ DEL\ PACIENTE\ ===\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00044}00044\ \ \ \ \ \mbox{\hyperlink{classUser_a4c22c369198d67e905eecdda9e05d991}{User::displayInfo}}();}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00045}00045\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teléfono:\ "{}}\ <<\ \mbox{\hyperlink{classPatient_a3b13f4948931dbfba688cff60d48ff4e}{telephone}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00046}00046\ \}}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00048}\mbox{\hyperlink{classPatient_a82fa1f20987f1da67ee32a267b3e9c59}{00048}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPatient_a82fa1f20987f1da67ee32a267b3e9c59}{Patient::requestAppointment}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00049}00049\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/\ Solicitar\ Cita\ -\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00050}00050\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Funcionalidad\ en\ desarrollo...\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//TODO}}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00054}\mbox{\hyperlink{classPatient_a704e4dfb0a59474bf8832e7a02789c80}{00054}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPatient_a704e4dfb0a59474bf8832e7a02789c80}{Patient::viewMyAppointments}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00055}00055\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/\ Mis\ Citas\ -\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00056}00056\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Funcionalidad\ en\ desarrollo...\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{comment}{//TODO}}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00058}00058\ \}}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00060}\mbox{\hyperlink{classPatient_a545ad8c342a3f9a71a60055e7faac054}{00060}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPatient_a545ad8c342a3f9a71a60055e7faac054}{Patient::cancelAppointment}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00061}00061\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/\ Cancelar\ Cita\ -\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00062}00062\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Funcionalidad\ en\ desarrollo...\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{comment}{//TODO}}
+\DoxyCodeLine{\Hypertarget{Patient_8cpp_source_l00064}00064\ \}}
+
+\end{DoxyCode}

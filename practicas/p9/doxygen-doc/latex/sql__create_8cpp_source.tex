@@ -1,0 +1,98 @@
+\doxysection{sql\+\_\+create.\+cpp}
+\hypertarget{sql__create_8cpp_source}{}\label{sql__create_8cpp_source}\index{db/sql\_create.cpp@{db/sql\_create.cpp}}
+\mbox{\hyperlink{sql__create_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <sqlite3.h>}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00004}\mbox{\hyperlink{sql__create_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{00004}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{sql__create_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()\ \{}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00005}00005\ \ \ \ \ sqlite3\ *db\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00006}00006\ \ \ \ \ \textcolor{keywordtype}{char}\ *errMsg\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{keywordtype}{int}\ rc;}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{comment}{//\ Abrir\ (o\ crear)\ la\ base\ de\ datos}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00010}00010\ \ \ \ \ rc\ =\ sqlite3\_open(\textcolor{stringliteral}{"{}appointment\_system.db"{}},\ \&db);}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc)\ \{}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}No\ se\ pudo\ abrir/crear\ la\ BD:\ "{}}\ <<\ sqlite3\_errmsg(db)\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (db)\ sqlite3\_close(db);}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00015}00015\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{comment}{//\ Activar\ foreign\ keys}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00018}00018\ \ \ \ \ rc\ =\ sqlite3\_exec(db,\ \textcolor{stringliteral}{"{}PRAGMA\ foreign\_keys\ =\ ON;"{}},\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ \&errMsg);}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_OK)\ \{}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ activando\ foreign\_keys:\ "{}}\ <<\ errMsg\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ sqlite3\_free(errMsg);}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ sqlite3\_close(db);}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00024}00024\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{comment}{//\ Sentencia\ para\ crear\ la\ tabla\ USER\ (solo\ campos\ básicos)}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *sqlCreateUser\ =}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ USER\ ("{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ID\ INTEGER\ PRIMARY\ KEY\ AUTOINCREMENT,\ "{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}USERNAME\ TEXT\ NOT\ NULL\ UNIQUE,\ "{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}PASSWORD\ TEXT\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ROLE\ TEXT\ NOT\ NULL\ CHECK(ROLE\ IN\ ('Doctor','Patient','Administrator')),\ "{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}NAME\ TEXT\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}EMAIL\ TEXT,\ "{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}SPECIALTY\ TEXT,\ "{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}TELEPHONE\ TEXT"{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{});"{}};}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00039}00039\ \ \ \ \ rc\ =\ sqlite3\_exec(db,\ sqlCreateUser,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ \&errMsg);}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_OK)\ \{}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ creando\ la\ tabla\ USER:\ "{}}\ <<\ errMsg\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ sqlite3\_free(errMsg);}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ sqlite3\_close(db);}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00045}00045\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00047}00047\ \ \ \ \ \textcolor{comment}{//\ Sentencia\ para\ crear\ la\ tabla\ SCHEDULE}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00048}00048\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *sqlCreateSchedule\ =}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ SCHEDULE\ ("{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ID\ INTEGER\ PRIMARY\ KEY\ AUTOINCREMENT,\ "{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ID\_DOCTOR\ INTEGER\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}DAY\ TEXT\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}START\_TIME\ TEXT\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}END\_TIME\ TEXT\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}FOREIGN\ KEY(ID\_DOCTOR)\ REFERENCES\ USER(ID)"{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{});"{}};}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00058}00058\ \ \ \ \ rc\ =\ sqlite3\_exec(db,\ sqlCreateSchedule,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ \&errMsg);}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_OK)\ \{}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ creando\ la\ tabla\ SCHEDULE:\ "{}}\ <<\ errMsg\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ sqlite3\_free(errMsg);}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ sqlite3\_close(db);}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{comment}{//\ Sentencia\ para\ crear\ la\ tabla\ APPOINTMENT}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *sqlCreateAppointment\ =}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}CREATE\ TABLE\ IF\ NOT\ EXISTS\ APPOINTMENT\ ("{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ID\ INTEGER\ PRIMARY\ KEY\ AUTOINCREMENT,\ "{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ID\_PATIENT\ INTEGER\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}ID\_DOCTOR\ INTEGER\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}DATE\ TEXT\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}TIME\ TEXT\ NOT\ NULL,\ "{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}STATUS\ TEXT\ DEFAULT\ 'Pendiente',\ "{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}NOTES\ TEXT,\ "{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}FOREIGN\ KEY(ID\_PATIENT)\ REFERENCES\ USER(ID),\ "{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}FOREIGN\ KEY(ID\_DOCTOR)\ REFERENCES\ USER(ID)"{}}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{});"{}};}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00080}00080\ \ \ \ \ rc\ =\ sqlite3\_exec(db,\ sqlCreateAppointment,\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ \&errMsg);}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_OK)\ \{}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ creando\ la\ tabla\ APPOINTMENT:\ "{}}\ <<\ errMsg\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ sqlite3\_free(errMsg);}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ sqlite3\_close(db);}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00086}00086\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00088}00088\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Tablas\ creadas\ correctamente\ en\ appointment\_system.db\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00090}00090\ \ \ \ \ sqlite3\_close(db);}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{sql__create_8cpp_source_l00092}00092\ \}}
+
+\end{DoxyCode}

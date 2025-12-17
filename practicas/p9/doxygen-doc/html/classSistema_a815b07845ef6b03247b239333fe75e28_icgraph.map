@@ -1,0 +1,18 @@
+<map id="Sistema::Sistema" name="Sistema::Sistema">
+<area shape="rect" id="Node000001" title="Constructor de la clase Sistema." alt="" coords="588,80,715,105"/>
+<area shape="rect" id="Node000002" href="$classSistema.html#ae6f4460ef7164a0c4b77b072e22c8db4" title="Obtiene la instancia única del sistema (Singleton)." alt="" coords="393,80,540,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="574,95,541,95,541,90,574,90"/>
+<area shape="rect" id="Node000003" href="$classAdmin.html#a6fd079434d5bdc14a2c195e42687039e" title=" " alt="" coords="185,5,344,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="424,77,344,45,310,33,312,28,346,39,426,72"/>
+<area shape="rect" id="Node000005" href="$classAdmin.html#a958abf574102bdb641d166fcc9ada1d4" title=" " alt="" coords="193,55,336,80"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="379,84,336,79,336,74,380,79"/>
+<area shape="rect" id="Node000006" href="$classAdmin.html#addd504e4890e76dbb708188bde645f7c" title=" " alt="" coords="193,104,337,129"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="380,106,337,111,336,105,379,100"/>
+<area shape="rect" id="Node000007" href="$classAdmin.html#a63c185a2aef72ab4e4e8c62abd06c971" title=" " alt="" coords="184,153,345,179"/>
+<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="423,113,346,143,309,156,307,151,344,138,421,108"/>
+<area shape="rect" id="Node000004" href="$classAdmin.html#a4678430f3f060a79b3864ae40c50984e" title=" " alt="" coords="5,80,136,105"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="205,37,185,44,99,82,97,77,183,40,204,32"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="180,81,137,87,136,81,180,76"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="179,109,136,103,136,98,179,103"/>
+<area shape="poly" id="edge9_Node000007_Node000004" title=" " alt="" coords="207,151,183,143,99,108,101,103,185,138,208,146"/>
+</map>

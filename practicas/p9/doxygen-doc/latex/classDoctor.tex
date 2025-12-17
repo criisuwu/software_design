@@ -1,0 +1,420 @@
+\doxysection{Doctor Class Reference}
+\hypertarget{classDoctor}{}\label{classDoctor}\index{Doctor@{Doctor}}
+
+
+{\ttfamily \#include $<$Doctor.\+h$>$}
+
+
+
+Inheritance diagram for Doctor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classDoctor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Doctor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classDoctor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDoctor_aee9ee11800af3f8b53c10b9e18ddded4}{Doctor}} (int \mbox{\hyperlink{classUser_aa7e6e39b43020bbe9c3a196b3689b0f7}{id}}=0, const std\+::string \&\mbox{\hyperlink{classUser_aacbb807e514280f69e00bec7d71f3aee}{username}}="{}"{}, const std\+::string \&\mbox{\hyperlink{classUser_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}}="{}"{}, const std\+::string \&\mbox{\hyperlink{classUser_a085d8d69282b6298964eab8351584536}{name}}="{}"{}, const std\+::string \&\mbox{\hyperlink{classUser_ac35b7c63228119cb91acdbd7ed32b8cb}{email}}="{}"{}, const std\+::string \&\mbox{\hyperlink{classDoctor_a0af6906851207d4d36aac959dd747d11}{specialty}}="{}"{})
+\item 
+std\+::string \mbox{\hyperlink{classDoctor_a8db27937fc7ea3afcff0666d2537dcdc}{get\+Specialty}} () const
+\item 
+void \mbox{\hyperlink{classDoctor_a161d7244b1af3d56594de0914fcd9d7a}{set\+Specialty}} (const std\+::string \&spec)
+\item 
+void \mbox{\hyperlink{classDoctor_a0276ca3bb4a6e18ca1fcf8a67dfd31ea}{show\+Menu}} () override
+\item 
+void \mbox{\hyperlink{classDoctor_a24f30b223f15a64e14278665316d2d78}{display\+Info}} () const override
+\item 
+void \mbox{\hyperlink{classDoctor_a33e214194167b4cf8645cf38cb3ec8b4}{confirm\+Attendance}} ()
+\item 
+void \mbox{\hyperlink{classDoctor_aa71e0fb55a1f065cd461fc15a3d64a54}{modify\+Schedule}} ()
+\item 
+void \mbox{\hyperlink{classDoctor_af964da62b97cdd21d7cac18674543c2f}{add\+Notes\+To\+Appointment}} ()
+\item 
+void \mbox{\hyperlink{classDoctor_a694c23cd59b9b8f053734486cc4b5372}{view\+My\+Schedule}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classUser}{User}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classUser_a6a08c3aa21e1eaed88b4d039d93e8341}{User}} (int \mbox{\hyperlink{classUser_aa7e6e39b43020bbe9c3a196b3689b0f7}{id}}=0, const std\+::string \&\mbox{\hyperlink{classUser_aacbb807e514280f69e00bec7d71f3aee}{username}}="{}"{}, const std\+::string \&\mbox{\hyperlink{classUser_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}}="{}"{}, const std\+::string \&\mbox{\hyperlink{classUser_ac066a219bd8d28680aefb90ecc8fc635}{role}}="{}"{}, const std\+::string \&\mbox{\hyperlink{classUser_a085d8d69282b6298964eab8351584536}{name}}="{}"{}, const std\+::string \&\mbox{\hyperlink{classUser_ac35b7c63228119cb91acdbd7ed32b8cb}{email}}="{}"{})
+\item 
+virtual \mbox{\hyperlink{classUser_a634d7ad22c3d2b5fed35f71e10d98628}{\texorpdfstring{$\sim$}{\string~}\+User}} ()=default
+\item 
+int \mbox{\hyperlink{classUser_a010077fcd52d32fd3b4e1171f748a86a}{get\+Id}} () const
+\item 
+std\+::string \mbox{\hyperlink{classUser_a7079d6aefd9d1b930d837039c1b3e7df}{get\+Username}} () const
+\item 
+std\+::string \mbox{\hyperlink{classUser_a180e5acdc4b150463652d90d54caa8fc}{get\+Password}} () const
+\item 
+std\+::string \mbox{\hyperlink{classUser_a374cbe023e5cc08bdec6d7d009c4cfe4}{get\+Role}} () const
+\item 
+std\+::string \mbox{\hyperlink{classUser_a446a64e63adafbc2e1428532275ad6a1}{get\+Name}} () const
+\item 
+std\+::string \mbox{\hyperlink{classUser_a68c520e78268ba63c97ff04b6fb210a1}{get\+Email}} () const
+\item 
+void \mbox{\hyperlink{classUser_aef93eca94a649b3d4fe0fe891a35646d}{set\+Id}} (int new\+Id)
+\item 
+void \mbox{\hyperlink{classUser_a9416c0140715c84e16df2169ff66db8f}{set\+Name}} (const std\+::string \&new\+Name)
+\item 
+void \mbox{\hyperlink{classUser_a84896b2f45096ec7cb74da2fa8bdf586}{set\+Email}} (const std\+::string \&new\+Email)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classDoctor_a0af6906851207d4d36aac959dd747d11}{specialty}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classUser}{User}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classUser_aa7e6e39b43020bbe9c3a196b3689b0f7}{id}}
+\item 
+std\+::string \mbox{\hyperlink{classUser_aacbb807e514280f69e00bec7d71f3aee}{username}}
+\item 
+std\+::string \mbox{\hyperlink{classUser_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}}
+\item 
+std\+::string \mbox{\hyperlink{classUser_ac066a219bd8d28680aefb90ecc8fc635}{role}}
+\item 
+std\+::string \mbox{\hyperlink{classUser_a085d8d69282b6298964eab8351584536}{name}}
+\item 
+std\+::string \mbox{\hyperlink{classUser_ac35b7c63228119cb91acdbd7ed32b8cb}{email}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{Doctor_8h_source_l00008}{8}} of file \mbox{\hyperlink{Doctor_8h_source}{Doctor.\+h}}.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDoctor_aee9ee11800af3f8b53c10b9e18ddded4}\label{classDoctor_aee9ee11800af3f8b53c10b9e18ddded4} 
+\index{Doctor@{Doctor}!Doctor@{Doctor}}
+\index{Doctor@{Doctor}!Doctor@{Doctor}}
+\doxysubsubsection{\texorpdfstring{Doctor()}{Doctor()}}
+{\footnotesize\ttfamily Doctor\+::\+Doctor (\begin{DoxyParamCaption}\item[{int}]{id = {\ttfamily 0},  }\item[{const std\+::string \&}]{username = {\ttfamily "{}"{}},  }\item[{const std\+::string \&}]{password = {\ttfamily "{}"{}},  }\item[{const std\+::string \&}]{name = {\ttfamily "{}"{}},  }\item[{const std\+::string \&}]{email = {\ttfamily "{}"{}},  }\item[{const std\+::string \&}]{specialty = {\ttfamily "{}"{}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Doctor_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{Doctor_8cpp_source}{Doctor.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00006\ \ \ \ \ :\ \mbox{\hyperlink{classUser}{User}}(\textcolor{keywordtype}{id},\ \mbox{\hyperlink{classUser_aacbb807e514280f69e00bec7d71f3aee}{username}},\ \mbox{\hyperlink{classUser_ac2f2e75b15e8eb6cbb030fc85a6cd59f}{password}},\ \textcolor{stringliteral}{"{}Doctor"{}},\ \mbox{\hyperlink{classUser_a085d8d69282b6298964eab8351584536}{name}},\ \mbox{\hyperlink{classUser_ac35b7c63228119cb91acdbd7ed32b8cb}{email}}),\ \mbox{\hyperlink{classDoctor_a0af6906851207d4d36aac959dd747d11}{specialty}}(\mbox{\hyperlink{classDoctor_a0af6906851207d4d36aac959dd747d11}{specialty}})\ \{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDoctor_af964da62b97cdd21d7cac18674543c2f}\label{classDoctor_af964da62b97cdd21d7cac18674543c2f} 
+\index{Doctor@{Doctor}!addNotesToAppointment@{addNotesToAppointment}}
+\index{addNotesToAppointment@{addNotesToAppointment}!Doctor@{Doctor}}
+\doxysubsubsection{\texorpdfstring{addNotesToAppointment()}{addNotesToAppointment()}}
+{\footnotesize\ttfamily void Doctor\+::add\+Notes\+To\+Appointment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Doctor_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{Doctor_8cpp_source}{Doctor.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/\ Añadir\ Notas\ a\ Cita\ -\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{00066\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Funcionalidad\ en\ desarrollo...\(\backslash\)n"{}};}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{comment}{//TODO}}
+\DoxyCodeLine{00068\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{classDoctor_a0276ca3bb4a6e18ca1fcf8a67dfd31ea}{show\+Menu()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDoctor_af964da62b97cdd21d7cac18674543c2f_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDoctor_a33e214194167b4cf8645cf38cb3ec8b4}\label{classDoctor_a33e214194167b4cf8645cf38cb3ec8b4} 
+\index{Doctor@{Doctor}!confirmAttendance@{confirmAttendance}}
+\index{confirmAttendance@{confirmAttendance}!Doctor@{Doctor}}
+\doxysubsubsection{\texorpdfstring{confirmAttendance()}{confirmAttendance()}}
+{\footnotesize\ttfamily void Doctor\+::confirm\+Attendance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Doctor_8cpp_source_l00052}{52}} of file \mbox{\hyperlink{Doctor_8cpp_source}{Doctor.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/\ Confirmar\ Asistencia\ -\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{00054\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Funcionalidad\ en\ desarrollo...\(\backslash\)n"{}};}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//TODO}}
+\DoxyCodeLine{00056\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{classDoctor_a0276ca3bb4a6e18ca1fcf8a67dfd31ea}{show\+Menu()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{classDoctor_a33e214194167b4cf8645cf38cb3ec8b4_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDoctor_a24f30b223f15a64e14278665316d2d78}\label{classDoctor_a24f30b223f15a64e14278665316d2d78} 
+\index{Doctor@{Doctor}!displayInfo@{displayInfo}}
+\index{displayInfo@{displayInfo}!Doctor@{Doctor}}
+\doxysubsubsection{\texorpdfstring{displayInfo()}{displayInfo()}}
+{\footnotesize\ttfamily void Doctor\+::display\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Reimplemented from \mbox{\hyperlink{classUser_a4c22c369198d67e905eecdda9e05d991}{User}}.
+
+
+
+Definition at line \mbox{\hyperlink{Doctor_8cpp_source_l00046}{46}} of file \mbox{\hyperlink{Doctor_8cpp_source}{Doctor.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00047\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n===\ INFORMACIÓN\ DEL\ DOCTOR\ ===\(\backslash\)n"{}};}
+\DoxyCodeLine{00048\ \ \ \ \ \mbox{\hyperlink{classUser_a4c22c369198d67e905eecdda9e05d991}{User::displayInfo}}();}
+\DoxyCodeLine{00049\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Especialidad:\ "{}}\ <<\ \mbox{\hyperlink{classDoctor_a0af6906851207d4d36aac959dd747d11}{specialty}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00050\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classUser_a4c22c369198d67e905eecdda9e05d991}{User\+::display\+Info()}}, and \mbox{\hyperlink{classDoctor_a0af6906851207d4d36aac959dd747d11}{specialty}}.
+
+
+
+Referenced by \mbox{\hyperlink{classDoctor_a0276ca3bb4a6e18ca1fcf8a67dfd31ea}{show\+Menu()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{classDoctor_a24f30b223f15a64e14278665316d2d78_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{classDoctor_a24f30b223f15a64e14278665316d2d78_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDoctor_a8db27937fc7ea3afcff0666d2537dcdc}\label{classDoctor_a8db27937fc7ea3afcff0666d2537dcdc} 
+\index{Doctor@{Doctor}!getSpecialty@{getSpecialty}}
+\index{getSpecialty@{getSpecialty}!Doctor@{Doctor}}
+\doxysubsubsection{\texorpdfstring{getSpecialty()}{getSpecialty()}}
+{\footnotesize\ttfamily std\+::string Doctor\+::get\+Specialty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Doctor_8h_source_l00016}{16}} of file \mbox{\hyperlink{Doctor_8h_source}{Doctor.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016\ \{\ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classDoctor_a0af6906851207d4d36aac959dd747d11}{specialty}};\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classDoctor_a0af6906851207d4d36aac959dd747d11}{specialty}}.
+
+\Hypertarget{classDoctor_aa71e0fb55a1f065cd461fc15a3d64a54}\label{classDoctor_aa71e0fb55a1f065cd461fc15a3d64a54} 
+\index{Doctor@{Doctor}!modifySchedule@{modifySchedule}}
+\index{modifySchedule@{modifySchedule}!Doctor@{Doctor}}
+\doxysubsubsection{\texorpdfstring{modifySchedule()}{modifySchedule()}}
+{\footnotesize\ttfamily void Doctor\+::modify\+Schedule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Doctor_8cpp_source_l00058}{58}} of file \mbox{\hyperlink{Doctor_8cpp_source}{Doctor.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/\ Modificar\ Agenda\ -\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{00060\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Funcionalidad\ en\ desarrollo...\(\backslash\)n"{}};}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//TODO}}
+\DoxyCodeLine{00062\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{classDoctor_a0276ca3bb4a6e18ca1fcf8a67dfd31ea}{show\+Menu()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{classDoctor_aa71e0fb55a1f065cd461fc15a3d64a54_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDoctor_a161d7244b1af3d56594de0914fcd9d7a}\label{classDoctor_a161d7244b1af3d56594de0914fcd9d7a} 
+\index{Doctor@{Doctor}!setSpecialty@{setSpecialty}}
+\index{setSpecialty@{setSpecialty}!Doctor@{Doctor}}
+\doxysubsubsection{\texorpdfstring{setSpecialty()}{setSpecialty()}}
+{\footnotesize\ttfamily void Doctor\+::set\+Specialty (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{spec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{Doctor_8h_source_l00017}{17}} of file \mbox{\hyperlink{Doctor_8h_source}{Doctor.\+h}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017\ \{\ \mbox{\hyperlink{classDoctor_a0af6906851207d4d36aac959dd747d11}{specialty}}\ =\ spec;\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classDoctor_a0af6906851207d4d36aac959dd747d11}{specialty}}.
+
+\Hypertarget{classDoctor_a0276ca3bb4a6e18ca1fcf8a67dfd31ea}\label{classDoctor_a0276ca3bb4a6e18ca1fcf8a67dfd31ea} 
+\index{Doctor@{Doctor}!showMenu@{showMenu}}
+\index{showMenu@{showMenu}!Doctor@{Doctor}}
+\doxysubsubsection{\texorpdfstring{showMenu()}{showMenu()}}
+{\footnotesize\ttfamily void Doctor\+::show\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classUser_af8d0e2a0ef50c0dd9c248b72188dd127}{User}}.
+
+
+
+Definition at line \mbox{\hyperlink{Doctor_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{Doctor_8cpp_source}{Doctor.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ option;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n===\ MENÚ\ DOCTOR\ ===\(\backslash\)n"{}};}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}1.\ Confirmar\ Asistencia\(\backslash\)n"{}};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}2.\ Modificar\ Agenda\(\backslash\)n"{}};}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}3.\ Añadir\ Notas\ a\ Cita\(\backslash\)n"{}};}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}4.\ Ver\ Mi\ Agenda\(\backslash\)n"{}};}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}5.\ Ver\ Mi\ Información\(\backslash\)n"{}};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}6.\ Cerrar\ Sesión\(\backslash\)n"{}};}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Seleccione\ una\ opción:\ "{}};}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ std::cin\ >>\ option;}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(option)\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDoctor_a33e214194167b4cf8645cf38cb3ec8b4}{confirmAttendance}}();}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDoctor_aa71e0fb55a1f065cd461fc15a3d64a54}{modifySchedule}}();}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDoctor_af964da62b97cdd21d7cac18674543c2f}{addNotesToAppointment}}();}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDoctor_a694c23cd59b9b8f053734486cc4b5372}{viewMySchedule}}();}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 5:}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDoctor_a24f30b223f15a64e14278665316d2d78}{displayInfo}}();}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 6:}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Cerrando\ sesión...\(\backslash\)n"{}};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Opción\ no\ válida\(\backslash\)n"{}};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \}\ \textcolor{keywordflow}{while}(option\ !=\ 6);}
+\DoxyCodeLine{00044\ \}}
+
+\end{DoxyCode}
+
+
+References \mbox{\hyperlink{classDoctor_af964da62b97cdd21d7cac18674543c2f}{add\+Notes\+To\+Appointment()}}, \mbox{\hyperlink{classDoctor_a33e214194167b4cf8645cf38cb3ec8b4}{confirm\+Attendance()}}, \mbox{\hyperlink{classDoctor_a24f30b223f15a64e14278665316d2d78}{display\+Info()}}, \mbox{\hyperlink{classDoctor_aa71e0fb55a1f065cd461fc15a3d64a54}{modify\+Schedule()}}, and \mbox{\hyperlink{classDoctor_a694c23cd59b9b8f053734486cc4b5372}{view\+My\+Schedule()}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDoctor_a0276ca3bb4a6e18ca1fcf8a67dfd31ea_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{classDoctor_a694c23cd59b9b8f053734486cc4b5372}\label{classDoctor_a694c23cd59b9b8f053734486cc4b5372} 
+\index{Doctor@{Doctor}!viewMySchedule@{viewMySchedule}}
+\index{viewMySchedule@{viewMySchedule}!Doctor@{Doctor}}
+\doxysubsubsection{\texorpdfstring{viewMySchedule()}{viewMySchedule()}}
+{\footnotesize\ttfamily void Doctor\+::view\+My\+Schedule (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{Doctor_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{Doctor_8cpp_source}{Doctor.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00071\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/\ Mi\ Agenda\ -\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{00072\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Funcionalidad\ en\ desarrollo...\(\backslash\)n"{}};}
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{comment}{//TODO}}
+\DoxyCodeLine{00074\ \}}
+
+\end{DoxyCode}
+
+
+Referenced by \mbox{\hyperlink{classDoctor_a0276ca3bb4a6e18ca1fcf8a67dfd31ea}{show\+Menu()}}.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{classDoctor_a694c23cd59b9b8f053734486cc4b5372_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classDoctor_a0af6906851207d4d36aac959dd747d11}\label{classDoctor_a0af6906851207d4d36aac959dd747d11} 
+\index{Doctor@{Doctor}!specialty@{specialty}}
+\index{specialty@{specialty}!Doctor@{Doctor}}
+\doxysubsubsection{\texorpdfstring{specialty}{specialty}}
+{\footnotesize\ttfamily std\+::string Doctor\+::specialty\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{Doctor_8h_source_l00010}{10}} of file \mbox{\hyperlink{Doctor_8h_source}{Doctor.\+h}}.
+
+
+
+Referenced by \mbox{\hyperlink{classDoctor_a24f30b223f15a64e14278665316d2d78}{display\+Info()}}, \mbox{\hyperlink{classDoctor_a8db27937fc7ea3afcff0666d2537dcdc}{get\+Specialty()}}, and \mbox{\hyperlink{classDoctor_a161d7244b1af3d56594de0914fcd9d7a}{set\+Specialty()}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+import/\mbox{\hyperlink{Doctor_8h}{Doctor.\+h}}\item 
+src/\mbox{\hyperlink{Doctor_8cpp}{Doctor.\+cpp}}\end{DoxyCompactItemize}

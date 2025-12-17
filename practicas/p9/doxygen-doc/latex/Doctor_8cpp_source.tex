@@ -1,0 +1,80 @@
+\doxysection{Doctor.\+cpp}
+\hypertarget{Doctor_8cpp_source}{}\label{Doctor_8cpp_source}\index{src/Doctor.cpp@{src/Doctor.cpp}}
+\mbox{\hyperlink{Doctor_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../import/Doctor.h"{}}}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00004}\mbox{\hyperlink{classDoctor_aee9ee11800af3f8b53c10b9e18ddded4}{00004}}\ \mbox{\hyperlink{classDoctor_aee9ee11800af3f8b53c10b9e18ddded4}{Doctor::Doctor}}(\textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id},\ \textcolor{keyword}{const}\ std::string\&\ username,\ \textcolor{keyword}{const}\ std::string\&\ password,\ }
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00005}00005\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ name,\ \textcolor{keyword}{const}\ std::string\&\ email,\ \textcolor{keyword}{const}\ std::string\&\ specialty)}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00006}00006\ \ \ \ \ :\ \mbox{\hyperlink{classUser}{User}}(id,\ username,\ password,\ \textcolor{stringliteral}{"{}Doctor"{}},\ name,\ email),\ specialty(specialty)\ \{\}}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00008}\mbox{\hyperlink{classDoctor_a0276ca3bb4a6e18ca1fcf8a67dfd31ea}{00008}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDoctor_a0276ca3bb4a6e18ca1fcf8a67dfd31ea}{Doctor::showMenu}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keywordtype}{int}\ option;}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00011}00011\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n===\ MENÚ\ DOCTOR\ ===\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}1.\ Confirmar\ Asistencia\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}2.\ Modificar\ Agenda\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}3.\ Añadir\ Notas\ a\ Cita\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}4.\ Ver\ Mi\ Agenda\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}5.\ Ver\ Mi\ Información\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}6.\ Cerrar\ Sesión\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Seleccione\ una\ opción:\ "{}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ std::cin\ >>\ option;}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}(option)\ \{}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDoctor_a33e214194167b4cf8645cf38cb3ec8b4}{confirmAttendance}}();}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDoctor_aa71e0fb55a1f065cd461fc15a3d64a54}{modifySchedule}}();}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDoctor_af964da62b97cdd21d7cac18674543c2f}{addNotesToAppointment}}();}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDoctor_a694c23cd59b9b8f053734486cc4b5372}{viewMySchedule}}();}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 5:}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDoctor_a24f30b223f15a64e14278665316d2d78}{displayInfo}}();}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 6:}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Cerrando\ sesión...\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Opción\ no\ válida\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00043}00043\ \ \ \ \ \}\ \textcolor{keywordflow}{while}(option\ !=\ 6);}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00044}00044\ \}}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00046}\mbox{\hyperlink{classDoctor_a24f30b223f15a64e14278665316d2d78}{00046}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDoctor_a24f30b223f15a64e14278665316d2d78}{Doctor::displayInfo}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00047}00047\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n===\ INFORMACIÓN\ DEL\ DOCTOR\ ===\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00048}00048\ \ \ \ \ \mbox{\hyperlink{classUser_a4c22c369198d67e905eecdda9e05d991}{User::displayInfo}}();}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00049}00049\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Especialidad:\ "{}}\ <<\ \mbox{\hyperlink{classDoctor_a0af6906851207d4d36aac959dd747d11}{specialty}}\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00052}\mbox{\hyperlink{classDoctor_a33e214194167b4cf8645cf38cb3ec8b4}{00052}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDoctor_a33e214194167b4cf8645cf38cb3ec8b4}{Doctor::confirmAttendance}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00053}00053\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/\ Confirmar\ Asistencia\ -\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00054}00054\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Funcionalidad\ en\ desarrollo...\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{comment}{//TODO}}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00056}00056\ \}}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00058}\mbox{\hyperlink{classDoctor_aa71e0fb55a1f065cd461fc15a3d64a54}{00058}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDoctor_aa71e0fb55a1f065cd461fc15a3d64a54}{Doctor::modifySchedule}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00059}00059\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/\ Modificar\ Agenda\ -\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00060}00060\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Funcionalidad\ en\ desarrollo...\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//TODO}}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00062}00062\ \}}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00064}\mbox{\hyperlink{classDoctor_af964da62b97cdd21d7cac18674543c2f}{00064}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDoctor_af964da62b97cdd21d7cac18674543c2f}{Doctor::addNotesToAppointment}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00065}00065\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/\ Añadir\ Notas\ a\ Cita\ -\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00066}00066\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Funcionalidad\ en\ desarrollo...\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{comment}{//TODO}}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00068}00068\ \}}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00070}\mbox{\hyperlink{classDoctor_a694c23cd59b9b8f053734486cc4b5372}{00070}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classDoctor_a694c23cd59b9b8f053734486cc4b5372}{Doctor::viewMySchedule}}()\ \{}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00071}00071\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n-\/-\/-\/\ Mi\ Agenda\ -\/-\/-\/\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00072}00072\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Funcionalidad\ en\ desarrollo...\(\backslash\)n"{}};}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{comment}{//TODO}}
+\DoxyCodeLine{\Hypertarget{Doctor_8cpp_source_l00074}00074\ \}}
+
+\end{DoxyCode}

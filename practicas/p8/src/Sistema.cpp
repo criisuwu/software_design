@@ -15,6 +15,13 @@ Sistema::~Sistema() {
     }
 }
 
+Sistema& Sistema::getInstance() {
+    if (instance == nullptr) {
+        instance = new Sistema();
+    }
+    return *instance;
+}
+
 bool Sistema::connectDatabase() {
     int rc = sqlite3_open("appointment_system.db", &db);
     if (rc) {
@@ -165,11 +172,3 @@ void Sistema::freeRobot(int robotId) {
         std::cout << "Robot no encontrado.\n";
     }
 }
-
-//NEW
-// Sistema* Sistema::getInstance() {
-//     if (instance == nullptr) {
-//         instance = new Sistema();
-//     }
-//     return instance;
-// }

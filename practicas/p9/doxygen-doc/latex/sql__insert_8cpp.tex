@@ -1,0 +1,86 @@
+\doxysection{db/sql\+\_\+insert.cpp File Reference}
+\hypertarget{sql__insert_8cpp}{}\label{sql__insert_8cpp}\index{db/sql\_insert.cpp@{db/sql\_insert.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sqlite3.\+h$>$}\newline
+Include dependency graph for sql\+\_\+insert.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=206pt]{sql__insert_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{sql__insert_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{sql__insert_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{sql__insert_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4} 
+\index{sql\_insert.cpp@{sql\_insert.cpp}!main@{main}}
+\index{main@{main}!sql\_insert.cpp@{sql\_insert.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{sql__insert_8cpp_source_l00004}{4}} of file \mbox{\hyperlink{sql__insert_8cpp_source}{sql\+\_\+insert.\+cpp}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00004\ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00005\ \ \ \ \ sqlite3\ *db\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{keywordtype}{char}\ *errMsg\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{int}\ rc;}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{//\ Abrir\ la\ base\ de\ datos}}
+\DoxyCodeLine{00010\ \ \ \ \ rc\ =\ sqlite3\_open(\textcolor{stringliteral}{"{}appointment\_system.db"{}},\ \&db);}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (rc)\ \{}
+\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}No\ se\ pudo\ abrir\ la\ BD:\ "{}}\ <<\ sqlite3\_errmsg(db)\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (db)\ sqlite3\_close(db);}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00015\ \ \ \ \ \}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{comment}{//\ Insertar\ usuarios\ de\ ejemplo\ en\ USER\ con\ TODOS\ los\ campos}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ userInserts[]\ =\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Administrador}}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}INSERT\ OR\ IGNORE\ INTO\ USER\ (USERNAME,\ PASSWORD,\ ROLE,\ NAME,\ EMAIL)\ VALUES\ "{}}}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}('admin',\ 'admin123',\ 'Administrator',\ 'Administrador\ Principal',\ 'admin@hospital.com')"{}},}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Doctores}}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}INSERT\ OR\ IGNORE\ INTO\ USER\ (USERNAME,\ PASSWORD,\ ROLE,\ NAME,\ EMAIL,\ SPECIALTY)\ VALUES\ "{}}}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}('drgarcia',\ 'doctor123',\ 'Doctor',\ 'Dr.\ García\ López',\ 'garcia@hospital.com',\ 'Cardiología')"{}},}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}INSERT\ OR\ IGNORE\ INTO\ USER\ (USERNAME,\ PASSWORD,\ ROLE,\ NAME,\ EMAIL,\ SPECIALTY)\ VALUES\ "{}}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}('drmartinez',\ 'doctor123',\ 'Doctor',\ 'Dra.\ Martínez\ Ruiz',\ 'martinez@hospital.com',\ 'Pediatría')"{}},}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Pacientes}}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}INSERT\ OR\ IGNORE\ INTO\ USER\ (USERNAME,\ PASSWORD,\ ROLE,\ NAME,\ EMAIL,\ TELEPHONE)\ VALUES\ "{}}}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}('paciente1',\ 'paciente123',\ 'Patient',\ 'Juan\ Pérez',\ 'juan@email.com',\ '123456789')"{}},}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}INSERT\ OR\ IGNORE\ INTO\ USER\ (USERNAME,\ PASSWORD,\ ROLE,\ NAME,\ EMAIL,\ TELEPHONE)\ VALUES\ "{}}}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}('paciente2',\ 'paciente123',\ 'Patient',\ 'María\ López',\ 'maria@email.com',\ '987654321')"{}}}
+\DoxyCodeLine{00036\ \ \ \ \ \};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ numUserInserts\ =\ \textcolor{keyword}{sizeof}(userInserts)\ /\ \textcolor{keyword}{sizeof}(userInserts[0]);}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{int}\ successfulUserInserts\ =\ 0;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ numUserInserts;\ i++)\ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ rc\ =\ sqlite3\_exec(db,\ userInserts[i],\ \textcolor{keyword}{nullptr},\ \textcolor{keyword}{nullptr},\ \&errMsg);}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (rc\ !=\ SQLITE\_OK)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}Error\ en\ inserción\ de\ usuario\ "{}}\ <<\ i+1\ <<\ \textcolor{stringliteral}{"{}:\ "{}}\ <<\ errMsg\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ sqlite3\_free(errMsg);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ successfulUserInserts++;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Se\ insertaron\ "{}}\ <<\ successfulUserInserts\ <<\ \textcolor{stringliteral}{"{}\ usuarios\ correctamente.\(\backslash\)n"{}};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ sqlite3\_close(db);}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00055\ \}}
+
+\end{DoxyCode}

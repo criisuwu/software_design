@@ -1,0 +1,29 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,158,56,184"/>
+<area shape="rect" id="Node000002" href="$main_8cpp.html#a20bbd4d45e3f01305dd709f5a9cc9952" title=" " alt="" coords="381,10,467,36"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="33,157,41,132,54,101,75,70,102,45,135,28,169,16,241,4,310,4,368,10,368,15,309,9,241,10,170,21,137,33,106,49,79,73,59,104,46,134,38,159"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#af48652e2877601ad5c287b37619416a6" title=" " alt="" coords="104,60,281,85"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="39,156,65,125,103,94,115,88,117,92,105,98,69,129,43,159"/>
+<area shape="rect" id="Node000004" href="$classSistema.html#ae73f607f7499295c3d838f0804298058" title="Inicializa una cantidad específica de robots dentro del sistema." alt="" coords="109,158,276,184"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="56,168,96,168,96,174,56,174"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#a16ba583341554f7a7286f4825794ec2b" title=" " alt="" coords="154,208,231,233"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="57,177,105,192,141,203,140,208,103,197,56,182"/>
+<area shape="rect" id="Node000007" href="$main_8cpp.html#a772fb6161ca7b62e307249661c3806a9" title=" " alt="" coords="133,257,253,282"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="43,182,69,213,105,243,121,251,118,256,103,248,65,217,39,186"/>
+<area shape="rect" id="Node000009" href="$main_8cpp.html#ad448663e45a2e200260f02b5b7a24a2a" title=" " alt="" coords="113,109,272,134"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="56,159,103,143,129,135,130,141,105,148,57,164"/>
+<area shape="rect" id="Node000013" href="$main_8cpp.html#a547646815560a705ed2ab461dbf46d04" title=" " alt="" coords="136,306,249,332"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="38,183,61,236,80,267,106,293,124,304,122,308,102,297,76,270,56,239,33,185"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="252,57,367,32,369,37,253,62"/>
+<area shape="rect" id="Node000006" href="$classSistema.html#a47d1acd84ef5cd60735f821f303d3c80" title="Autentica un usuario mediante sus credenciales." alt="" coords="357,208,491,233"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="232,218,343,218,343,223,232,223"/>
+<area shape="rect" id="Node000008" href="$classSistema.html#a9366045d0285940588214d310432f02c" title="Registra un nuevo usuario en la base de datos." alt="" coords="349,257,499,282"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="253,267,336,267,336,272,253,272"/>
+<area shape="poly" id="edge12_Node000009_Node000002" title=" " alt="" coords="252,106,280,94,294,82,303,70,312,57,328,45,367,29,369,34,331,49,316,61,307,73,298,86,283,98,255,111"/>
+<area shape="rect" id="Node000010" href="$classSistema.html#a8f94144d7165754eaa871512469039ae" title="Asigna una tarea al primer robot disponible." alt="" coords="337,60,511,85"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="252,106,350,85,351,90,253,111"/>
+<area shape="rect" id="Node000011" href="$classSistema.html#ab441c045868f9835285de2ac160fa8af" title="Asigna una tarea a un robot específico." alt="" coords="335,109,513,134"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="272,119,321,119,321,124,272,124"/>
+<area shape="rect" id="Node000012" href="$classSistema.html#a436062bec22de4d3b31b97a8be693ae8" title="Muestra el estado actual de todos los robots en el sistema." alt="" coords="329,158,519,184"/>
+<area shape="poly" id="edge13_Node000009_Node000012" title=" " alt="" coords="253,132,351,153,350,158,252,137"/>
+</map>

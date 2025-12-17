@@ -194,7 +194,8 @@ int main() {
     }
     
     // Crear el system con la cantidad especificada de robots
-    Sistema system(numberRobots);
+    Sistema& system = Sistema::getInstance();
+    system.initializeRobots(numberRobots);
     std::cout << "Sistema inicializado con " << numberRobots << " robots.\n";
     
     int option;

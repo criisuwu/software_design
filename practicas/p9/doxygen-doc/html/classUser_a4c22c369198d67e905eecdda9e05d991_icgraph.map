@@ -1,0 +1,15 @@
+<map id="User::displayInfo" name="User::displayInfo">
+<area shape="rect" id="Node000001" title=" " alt="" coords="371,55,492,80"/>
+<area shape="rect" id="Node000002" href="$classAdmin.html#ad7f8744129c39be23624b33fb30f6bbd" title=" " alt="" coords="190,5,321,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="372,53,301,33,302,28,373,48"/>
+<area shape="rect" id="Node000004" href="$classDoctor.html#a24f30b223f15a64e14278665316d2d78" title=" " alt="" coords="189,55,321,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="357,70,322,70,322,65,357,65"/>
+<area shape="rect" id="Node000006" href="$classPatient.html#a589bcc31885c4ebbc9c6f6ef0d50bbf6" title=" " alt="" coords="188,104,323,129"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="373,86,302,106,301,101,372,81"/>
+<area shape="rect" id="Node000003" href="$classAdmin.html#a4678430f3f060a79b3864ae40c50984e" title=" " alt="" coords="7,5,138,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="176,21,138,21,138,15,176,15"/>
+<area shape="rect" id="Node000005" href="$classDoctor.html#a0276ca3bb4a6e18ca1fcf8a67dfd31ea" title=" " alt="" coords="7,55,139,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="175,70,139,70,139,65,175,65"/>
+<area shape="rect" id="Node000007" href="$classPatient.html#a037305c60089fdfe1596ec046d32bd5a" title=" " alt="" coords="5,104,140,129"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="174,119,141,119,141,114,174,114"/>
+</map>

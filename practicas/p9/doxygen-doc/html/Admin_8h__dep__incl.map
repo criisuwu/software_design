@@ -1,0 +1,17 @@
+<map id="import/Admin.h" name="import/Admin.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="293,5,403,31"/>
+<area shape="rect" id="Node000002" href="$Sistema_8h.html" title=" " alt="" coords="238,79,359,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="334,44,309,80,304,77,330,41"/>
+<area shape="rect" id="Node000003" href="$AdminUtils_8cpp.html" title=" " alt="" coords="5,152,139,177"/>
+<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="312,39,228,81,94,154,91,149,225,76,310,34"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html" title=" " alt="" coords="473,152,570,177"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="366,40,392,71,424,102,463,129,499,150,497,154,460,134,421,106,388,74,362,43"/>
+<area shape="rect" id="Node000007" href="$Admin_8cpp.html" title=" " alt="" coords="435,79,541,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="384,34,466,76,464,81,381,39"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="250,111,109,154,108,149,248,106"/>
+<area shape="rect" id="Node000004" href="$Sistema_8cpp.html" title=" " alt="" coords="163,152,280,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="278,115,236,154,232,150,274,111"/>
+<area shape="rect" id="Node000005" href="$SistemaUtils_8cpp.html" title=" " alt="" coords="304,152,448,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="323,111,365,150,362,154,319,115"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="348,106,486,149,484,154,346,111"/>
+</map>

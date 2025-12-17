@@ -1,0 +1,9 @@
+<map id="Robot::assignTask" name="Robot::assignTask">
+<area shape="rect" id="Node000001" title=" " alt="" coords="248,55,379,80"/>
+<area shape="rect" id="Node000002" href="$classRobot.html#a4485940b8d53c61b79d3778d11813d49" title=" " alt="" coords="5,5,200,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="245,54,157,33,158,28,246,49"/>
+<area shape="rect" id="Node000003" href="$classRobot.html#acc5c78240fedeed22d3f8b1371782257" title=" " alt="" coords="34,55,171,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="235,70,171,70,171,65,235,65"/>
+<area shape="rect" id="Node000004" href="$classRobot.html#a1326c0dc16d31ef4f9f9493fac1765fc" title=" " alt="" coords="17,104,188,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="246,86,158,107,157,101,245,81"/>
+</map>
